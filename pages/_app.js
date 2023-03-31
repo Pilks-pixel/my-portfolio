@@ -1,16 +1,14 @@
 import '@/styles/globals.css'
-import { Roboto_Flex, Titillium_Web } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
-const roboto = Roboto_Flex({ subsets: ['latin'] })
-const titillium = Titillium_Web({
+const roboto = Roboto({ 
   subsets: ['latin'],
-  weight: ["400", "900"],
-  fallback: "sans-serif"
+  weight: ['400']
 })
 
 
 export default function App({ Component, pageProps }) {
-  return <main className={`${titillium.className}`}>
+  return <main className={roboto.className}>
   <Component {...pageProps} />
   </main>
 }
