@@ -2,29 +2,113 @@
 Layout
 ====== */
 
+
 .description,
 .contact {
   display: flex;
+  padding: 1em;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  min-height: 4em;
+  outline: 2px solid hotpink;
+}
+
+.description {
+  top: 0;
+}
+
+.contact {
+  bottom: 0;
 }
 
 .main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 93px;
+  gap: 1em;
 }
+
+.grid,
+.about_article {
+  height: 10rem;
+  color: hotpink;
+  opacity: 0;
+
+}
+
+.grid[aria-hidden='true'] {
+  animation: fade-out 1000ms ease-in forwards;
+}
+
+.grid[aria-hidden='false'] {
+  animation: fade-in 1000ms ease-in forwards;
+}
+
+.about_article[aria-hidden='true'] {
+  animation: fade-out 1000ms ease-in forwards;
+}
+
+.about_article[aria-hidden='false'] {
+  animation: fade-in 1000ms ease-in forwards;
+}
+
+
+/* fade elements animations */
+@keyframes fade-in {
+  to {opacity: 1;}
+}
+
+@keyframes fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 
 /* ========
 Typography
 ======== */
+/* remove default button styles */
+.center button {
+    display: block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: clamp(2.5rem, 10vw ,5.5rem);
+    font-weight: inherit;
+    letter-spacing: var(--text-headings-spacing);
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.center,
+.description__job {
+  font-family: var(--font-headings);
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.description__job {
+font-size: clamp(1.25rem, 2.5vw ,1.625rem);
+}
 
 .description__name,
 .contact > h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
 } 
+
 
 /* .main {
   display: flex;
