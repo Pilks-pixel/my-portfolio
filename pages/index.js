@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useState, useRef } from "react";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
 
 export default function Home() {
 	const [projectVisable, setProjectViable] = useState(false);
@@ -80,14 +82,14 @@ export default function Home() {
 			<footer className={styles.contact}>
 				<h2>contact</h2>
 				<div className={styles.contact__links}>
+					<a href='https://github.com/Pilks-pixel' target='_blank'>
+          <FaGithub size={32} />
+					</a>
 					<a
 						href='https://www.linkedin.com/in/peter-pilkington-322262107/'
 						target='_blank'
 					>
-						linkedin
-					</a>
-					<a href='https://github.com/Pilks-pixel' target='_blank'>
-						github
+          <FaLinkedin size={32} color="#0077b5" />
 					</a>
 				</div>
 			</footer>

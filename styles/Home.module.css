@@ -11,7 +11,9 @@ Layout
 	position: fixed;
 	left: 0;
 	right: 0;
-	min-height: 4em;
+	min-height: min-content;
+  gap: .5em;
+  text-align: center;
 	outline: 2px solid hotpink;
 }
 
@@ -159,6 +161,11 @@ Center__Buttons
 	height: 150px;
 }
 
+/* Links */
+.contact__links > a{
+  margin: 4px;
+}
+
 /* ========
 Typography
 ======== */
@@ -170,12 +177,12 @@ Typography
 }
 
 .description__job {
-	font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+	font-size: clamp(1rem, 2.5vw, 1.625rem);
 }
 
 .description__name,
 .contact > h2 {
-	font-size: 1.125rem;
+	font-size: clamp(.75rem ,2.5vw, 1.125rem);
 }
 
 /* .main {
