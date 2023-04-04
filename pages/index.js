@@ -13,13 +13,12 @@ export default function Home() {
 	const handleClick = e => {
 		console.log(e.target, projectRef.current);
 		if (e.target.id === "projects_btn") {
-      setProjectViable(!projectVisable)
-      projectRef.current.setAttribute('aria-hidden', projectVisable)
-      
-    } else {
-      setAboutViable(!aboutVisable)
-      aboutRef.current.setAttribute('aria-hidden', aboutVisable)
-    }
+			setProjectViable(!projectVisable);
+			projectRef.current.setAttribute("aria-hidden", projectVisable);
+		} else {
+			setAboutViable(!aboutVisable);
+			aboutRef.current.setAttribute("aria-hidden", aboutVisable);
+		}
 	};
 
 	return (
@@ -43,29 +42,28 @@ export default function Home() {
 				<section className={styles.center}>
 					<button
 						id='projects_btn'
-						className={styles.center__project}
+						className={`${styles.center__btn} ${styles.center__btn_gradient}`}
 						onClick={e => handleClick(e)}
-            aria-expanded={projectVisable}
-            aria-controls="project_container"
+						aria-expanded={projectVisable}
+						aria-controls='project_container'
 					>
-						&lt; Projects
+						<span>&lt;</span> Projects
 					</button>
 					<button
 						id='about_btn'
-						className={styles.center__about}
+						className={`${styles.center__btn} ${styles.center__btn_about}`}
 						onClick={e => handleClick(e)}
-            aria-expanded={aboutVisable}
-            aria-controls="about_container"
-
+						aria-expanded={aboutVisable}
+						aria-controls='about_container'
 					>
-						About / &gt;
+						About /&gt;
 					</button>
 				</section>
 
 				<section
 					ref={projectRef}
 					className={`${styles.grid}`}
-          id='project_container'
+					id='project_container'
 				>
 					<p>projects here</p>
 				</section>
