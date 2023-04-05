@@ -5,7 +5,7 @@ function About() {
 	return (
 		<>
 			<article className={styles.about}>
-				<h3 className={styles.about__title}><span className={styles.about__bigH}>Hi</span> I'm Pete</h3>
+				<h3 className={styles.about__title}>Hi I'm<br/><span className={styles.about__big}>Pete</span></h3>
 				<p className={styles.about__sub_title}>
 					I love building things on the web! A person with a big appetite for
 					knowledge and boundless curiosity.
