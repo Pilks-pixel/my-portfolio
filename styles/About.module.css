@@ -1,0 +1,36 @@
+/* ======
+Layout
+====== */
+.about,
+.skills {
+    margin: 0 auto;
+    margin-bottom: 2em;
+    width: min(80%, 450px);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.about__bigH {
+    /* font-size: 1.5em;
+    font-weight: 900;
+    font-family: var(--font-headings);
+    padding: .05em .4em;
+    border-radius: var(--border-radius);
+    color: var(--background);
+    box-shadow: 0 10px 10px -5px rgba(151, 146, 146, 0.2);
+    background-color: var(--text-color);
+    background-image: radial-gradient(
+		circle at bottom center,
+		#23817d,
+		#57969d,
+		rgba(255, 255, 255, 1)
+	); */
+
+}
+/* =========
+Typography
+========= */

@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { About } from "@/components/index";
 
 
 export default function Home() {
@@ -75,8 +76,9 @@ export default function Home() {
 					className={`${styles.about_article}`}
 					id='about_container'
 				>
-					<p>Learn about me</p>
+          <About />
 				</section>
+        
 			</main>
 
 			<footer className={styles.contact}>
