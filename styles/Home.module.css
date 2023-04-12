@@ -2,19 +2,44 @@
 Layout
 ====== */
 
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+}
+
+.wrapper > .description {
+  grid-area: header;
+}
+
+.wrapper > .main {
+  grid-area: main;
+  overflow: auto;
+  padding: 1em 0 1em 0;
+  /* margin-bottom: 30px; */
+}
+
+.wrapper > .contact {
+  grid-area: footer;
+}
+
 .description,
 .contact {
 	display: flex;
 	padding: 1em;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
-	left: 0;
-	right: 0;
-	min-height: min-content;
+	/* position: fixed; */
+  /* width: 100%; */
+	/* min-height: min-content; */
 	gap: 0.5em;
 	text-align: center;
-	z-index: 2;
+	/* z-index: 2; */
 }
 
 .description {
@@ -30,7 +55,7 @@ Layout
 }
 
 .main {
-	height: 100vh;
+	/* height: 100vh; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

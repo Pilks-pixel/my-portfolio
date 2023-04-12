@@ -9,8 +9,8 @@ import {
 	SiGit,
 	SiFigma,
 } from "react-icons/si";
-import { FaNodeJs } from 'react-icons/fa';
-import Image from 'next/image';
+import { FaNodeJs } from "react-icons/fa";
+import Image from "next/image";
 
 function About() {
 	return (
@@ -52,9 +52,25 @@ function About() {
 				</p>
 				<p>
 					I'm a great believer in pushing outside my comfort zone, to achieve
-					big things. So when facing challenges I apply the Kaizen philosophy
-					and the 5 P's to push though obstacles. Which means I'm excited to
-					continue growing and perfecting the craft of web development.
+					big things. So when facing challenges I apply the 
+					<a
+            className={styles.about__links}
+            href='https://www.agile-academy.com/en/agile-dictionary/kaizen/'
+						target='_blank
+            '
+            >
+						<em> Kaizen </em>
+					</a>
+					philosophy and the 
+					<a
+            className={styles.about__links}
+						href='https://kanbanize.com/lean-management/improvement/5-whys-analysis-tool'
+						target='_blank'
+					>
+						<em> 5 Why's</em>
+					</a>{" "}
+					to push though obstacles. Which means I'm excited to continue growing
+					and perfecting the craft of web development.
 				</p>
 				<p>
 					When not at the computer, you can find me nosing social science books,
@@ -70,17 +86,38 @@ function About() {
 					something new and dive deeper into what I already know.
 				</p>
 				<ul className={styles.skills__list}>
-					<li><SiHtml5 color="#E44D26" size={42}/> HTML </li>
-					<li><SiCss3 color="#1572B6" size={42}/> CSS</li>
-					<li><SiJavascript color="#F0DB4F" size={42}/>Javascript ES6</li>
-					<li><SiReact color="#61DAFB" size={42}/> React</li>
-					<li><FaNodeJs color="#3C873A" size={42}/>Node.js &amp; Express.js</li>
-					<li><Image src="/next.svg" alt="Next.js icon" width={60} height={60} />Next.js</li>
-					<li><SiMongodb color="#47A248" size={42}/> Mongo DB</li>
-					<li><SiGit color="#F05032" size={42}/> Git</li>
-					<li><SiFigma color="#F24E1E" size={42}/>Figma</li>
+					<li>
+						<SiHtml5 color='#E44D26' size={42} /> HTML{" "}
+					</li>
+					<li>
+						<SiCss3 color='#1572B6' size={42} /> CSS
+					</li>
+					<li>
+						<SiJavascript color='#F0DB4F' size={42} />
+						Javascript ES6
+					</li>
+					<li>
+						<SiReact color='#61DAFB' size={42} /> React
+					</li>
+					<li>
+						<FaNodeJs color='#3C873A' size={42} />
+						Node.js &amp; Express.js
+					</li>
+					<li>
+						<Image src='/next.svg' alt='Next.js icon' width={60} height={60} />
+						Next.js
+					</li>
+					<li>
+						<SiMongodb color='#47A248' size={42} /> Mongo DB
+					</li>
+					<li>
+						<SiGit color='#F05032' size={42} /> Git
+					</li>
+					<li>
+						<SiFigma color='#F24E1E' size={42} />
+						Figma
+					</li>
 					<li>Agile Methodology</li>
-
 				</ul>
 			</section>
 		</>
