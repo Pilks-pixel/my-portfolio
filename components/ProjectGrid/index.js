@@ -1,16 +1,41 @@
-import React from "react";
-import styles from "../../styles/ProjectGrid.module.css"
+import React, { useState } from "react";
+import Image from "next/image";
+import styles from "../../styles/ProjectGrid.module.css";
+import { data } from "../../pages/data";
+import { v4 as uuidv4 } from "uuid";
+
 
 function ProjectGrid() {
+    // Generate random ID for data
+	const cardsWithId = data.map(card => {
+		return {
+			...card,
+			id: uuidv4(),
+		};
+	});
 
-    const cards = [] 
+    // Render project cards from the data
+
+	const cards = cardsWithId.map(card => {
+		console.log(card);
+		return (
+			<div className={styles.project_container__card} key={card.id}>
+				<Image
+					width={250}
+					height={250}
+					src={card.image}
+					alt={`${card.name} project image`}
+				/>
+                <div className={styles.card__info}>
+				    <h3>{card.name}</h3>
+                </div>
+			</div>
+		);
+	});
 
 	return (
 		<>
-			<div>Hello World!</div>
-			<div className={styles.project_container}>
-                
-            </div>
+			<div className={styles.project_container}>{cards}</div>
 		</>
 	);
 }

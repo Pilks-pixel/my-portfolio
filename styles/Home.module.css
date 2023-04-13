@@ -20,8 +20,7 @@ Layout
 .wrapper > .main {
   grid-area: main;
   overflow: auto;
-  padding: 1em 0 1em 0;
-  /* margin-bottom: 30px; */
+  padding: 3em 0 1em 0;
 }
 
 .wrapper > .contact {
@@ -55,18 +54,20 @@ Layout
 }
 
 .main {
-	/* height: 100vh; */
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1em;
+	gap: 1em; */
+}
+.center {
+  outline: 2px solid hotpink;
+  margin-bottom: 2rem;
 }
 
 /* section element open/close */
 .grid,
 .about_article {
-	height: 10rem;
 	opacity: 0;
 }
 
@@ -112,7 +113,7 @@ Center__Buttons
 	display: block;
 	border: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	margin-bottom: 2px;
 	text-decoration: none;
 	background: inherit;
@@ -123,8 +124,6 @@ Center__Buttons
 	letter-spacing: var(--text-headings-spacing);
 	cursor: pointer;
 	text-align: center;
-	/* transition: background 250ms ease-in-out, 
-              transform 150ms ease; */
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
