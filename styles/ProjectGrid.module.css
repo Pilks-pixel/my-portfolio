@@ -12,6 +12,7 @@
     height: min(50vh, 480px);
     border: 1px solid hotpink;
     border-radius: var(--border-radius);
+    text-align: center;
 
 
 }
@@ -20,4 +21,7 @@
     width: 100%;
     height: min(45vh, 450px);
     object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    
+
 }
