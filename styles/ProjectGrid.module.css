@@ -8,20 +8,46 @@
 }
 
 .project_container__card {
+    position: relative;
     width: min(80vw, 260px);
     height: min(50vh, 480px);
     border: 1px solid hotpink;
     border-radius: var(--border-radius);
     text-align: center;
-
-
 }
 
-.project_container__card > img {
+.card__info {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 30%;
+    padding: 1.25em 1em .5em;
+    background-image: linear-gradient(
+    rgba(26, 29, 34, 0),
+    rgba(26, 29, 34, 0.3) 20%,
+    rgba(26, 29, 34, 0.5) 40%,
+    rgba(26, 29, 34, 1) 90% 
+    );
+}
+
+
+
+/* .project_container__card > img {
     width: 100%;
     height: min(45vh, 450px);
     object-fit: cover;
+    overflow: hidden;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
-    
+} */
 
+/* ==========
+Typography
+============= */
+.card__info {
+font-size: .75rem;
+}
+
+.card__info > :not(p) {
+    font-family: var(--font-headings);
+    font-size: 1rem;
 }

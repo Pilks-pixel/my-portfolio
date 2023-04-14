@@ -1,7 +1,7 @@
 /* ======
 Layout
 ====== */
-
+/* wrapper for sticky header & footer */
 .wrapper {
   height: 100vh;
   display: grid;
@@ -148,6 +148,7 @@ Center__Buttons
 	background-position: center bottom;
 }
 
+/* Blured radial gradients */
 .center__btn_gradient::before,
 .center__btn_about::after {
 	content: "";
@@ -299,11 +300,4 @@ Media
   }
 }*/
 
-/* @keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-} */
+
