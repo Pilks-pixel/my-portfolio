@@ -24,12 +24,6 @@ function ProjectGrid() {
             key={card.id}
             style={{'backgroundImage' : `url(${card.image})`}}
             >
-				{/* <Image
-					width={250}
-					height={250}
-					src={card.image}
-					alt={`${card.name} project image`}
-				/> */}
                 <div className={styles.card__info}>
 				    <h3>{card.name}</h3>
                     <p>{card.description}</p>
