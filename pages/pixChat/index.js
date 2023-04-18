@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 
-function nou() {
+function pixChat() {
   return (
     <>
         <Head>
@@ -50,4 +50,4 @@ function nou() {
   )
 }
 
-export default nou
+export default pixChat
