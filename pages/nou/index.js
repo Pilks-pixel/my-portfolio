@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from "next/head";
 import utils from "../../styles/Utils.module.css"
+import styles from "../../styles/Nou.module.css"
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
@@ -25,6 +26,23 @@ function nou() {
         </header>
 
         <main className={utils.main}>
+            <section className={styles.title}>
+                <h2>Nou Design Studio</h2>
+            </section>
+            
+            <section className={styles.hero_section}>
+                <div className={styles.hero_section__main}>
+                    <Image
+                    className={styles.main__img} 
+                    src="/nou.png"
+                    alt="Nou hero image"
+                    height={400}
+                    width={600}
+                    />
+                </div>
+                <aside>Project</aside>
+            </section>
+
           
 
         </main>

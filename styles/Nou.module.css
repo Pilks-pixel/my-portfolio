@@ -1,0 +1,49 @@
+/* ======
+Layout
+====== */
+.title {
+    padding: 1em;
+}
+
+/* hero with side element */
+.hero_section {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	gap: 1em;
+}
+
+.hero_section > :first-child {
+    flex-basis: 500px;
+	flex-grow: 999;
+}
+
+.hero_section > :last-child {
+    flex-basis: 300px;
+	flex-grow: 1;
+}
+
+.hero_section__main {
+    padding: 1em;
+}
+
+.main__img {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* ========
+Typography
+======== */
+.title {
+    font-family: var(--font-headings);
+	font-weight: 900;
+	font-size: clamp(2.5rem, 6vw, 3.5rem);
+	text-transform: capitalize;
+    letter-spacing: var(--text-headings-spacing);
+}
