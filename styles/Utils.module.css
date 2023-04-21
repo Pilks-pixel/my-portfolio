@@ -128,7 +128,7 @@ Layout
 
 /* buttons */
 .btn {
-	border: 1px solid var(--btn-color);
+	border: none;
 	border-radius: var(--border-radius);
 	padding: 0.5em 1em;
 	margin: 0.5em 0.5em 2em;
