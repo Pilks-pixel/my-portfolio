@@ -4,6 +4,7 @@ import utils from "../../styles/Utils.module.css";
 import styles from "../../styles/Nou.module.css";
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
 
 function nou() {
 	return (
@@ -59,10 +60,18 @@ function nou() {
 								</ul>
 							</div>
 							<div className={utils.aside__links}>
-								<a className={utils.link} href='https://github.com/Pilks-pixel' target='_blank'>
+								<a
+									className={utils.link}
+									href='https://github.com/Pilks-pixel'
+									target='_blank'
+								>
 									Source Code
 								</a>
-								<a className={utils.link} href='https://nou-ng2gsrpkw-pilks-pixel.vercel.app/' target='_blank'>
+								<a
+									className={utils.link}
+									href='https://nou-ng2gsrpkw-pilks-pixel.vercel.app/'
+									target='_blank'
+								>
 									Live Site
 								</a>
 							</div>
@@ -79,22 +88,78 @@ function nou() {
 						{/* <Image src={} alt='Adobe XD planning pictures' /> */}
 
 						<p className={utils.planning_section__planning}>
-							I utilised the clients designs from Adobe XD, to create a mobile
-							first webpage that is responsive for tablet and desktops. Workflow
-							was tracked with use of a Kanban board to outline an MVP and then
-							break down goals into actionable tasks. While Version control was
-							managed with GitHub, including feature branches to avoid breaking
-							commits to the main branch.
+							I&apos;ve utilised the clients designs from Adobe XD, to create a
+							mobile first webpage that is responsive for tablet and desktops.
+							Workflow was managed with use of a Kanban board to outline an MVP
+							and then break down goals into actionable tasks. While Version
+							control was managed with GitHub, including feature branches to
+							avoid breaking commits to the main branch.
 						</p>
 						{/* <Image src={} alt='Trello Kanban board picture' /> */}
 					</section>
 
-					<section className={utils.challenges}>
-						<h2>Challenges and wins</h2>
-					</section>
-
 					<section className={utils.stack}>
 						<h2>Stack &amp; Features</h2>
+						<div className={utils.stack__icons}>
+							<ul className={utils.icons__list}>
+								<li>
+									<SiReact color='#61DAFB' size={42} /> React
+								</li>
+								<li>
+									<Image
+										src='/next.svg'
+										alt='Next.js icon'
+										width={60}
+										height={60}
+									/>
+									Next.js
+								</li>
+								<li>
+									<SiCss3 color='#1572B6' size={42} />
+									CSS
+								</li>
+								<li>
+									<SiJavascript color='#F0DB4F' size={42} />
+									Javascript ES6
+								</li>
+								<li>
+									<Image
+										src='/vercel.svg'
+										alt='Next.js icon'
+										width={60}
+										height={60}
+									/>
+									Vercel
+								</li>
+							</ul>
+						</div>
+
+						<div className={utils.stack__features}>
+							<h3 className={utils.features_heading}>Stack</h3>
+							<p>
+								This website is built with React and the Next.js meta framework.
+								Next enabled optimised development and deployment features like
+								automatic code spliting, lazy loaded images and improved SEO.
+								Allowing me to deliver a performant website with excellent user
+								experience.
+								<br></br>
+								Next also meant Vercel was used for deployment, which meant I
+								could utilise seprate production and feature deployments
+								alongside version control.
+							</p>
+
+							<h3 className={utils.features_heading}>Features</h3>
+							<p>
+								Animations were used to add fliar to the site with transitions
+								and CSS pseudo elements. I also chose to use an the web animation API with an intersection
+								observer which allowed animation only when entering the
+								viewport, giving a more polished UI and improved perfomance.
+							</p>
+						</div>
+					</section>
+
+					<section className={utils.challenges}>
+						<h2>Challenges and wins</h2>
 					</section>
 
 					<section className={utils.conclusion}>
