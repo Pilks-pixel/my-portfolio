@@ -77,7 +77,6 @@ Layout
 .hero_section__main {
 	display: flex;
 	justify-content: center;
-	/* align-self: center; */
 }
 
 .main__img {
@@ -99,8 +98,16 @@ Layout
 	text-align: center;
 }
 
-.aside__title {
+.aside__title,
+.aside__links {
 	margin-bottom: 1rem;
+}
+
+.aside__links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5px;
 }
 
 .keyword__list {
@@ -126,27 +133,29 @@ Layout
 	margin-bottom: 1.5em;
 }
 
-/* buttons */
-.btn {
+
+/* Links */
+.contact__links > a {
+	margin: 4px;
+	padding: 4px;
+}
+
+/* aside links */
+.link {
 	border: none;
 	border-radius: var(--border-radius);
-	padding: 0.5em 1em;
-	margin: 0.5em 0.5em 2em;
-	text-decoration: none;
+	padding: 0.5em .75em;
 	background-color: var(--btn-color);
 	box-shadow: var(--picture-shadow);
 	color: inherit;
 	font-family: inherit;
-	font-size: 1rem;
-	font-weight: inherit;
+	font-size: 1.1rem;
 	cursor: pointer;
 	text-align: center;
-	-webkit-appearance: none;
-	-moz-appearance: none;
 }
 
-/* btn gradients */
-.aside__btns > button {
+/* gradients */
+.aside__links > a {
 	background-image: linear-gradient(
 		180deg,
 		#23817d 0%,
@@ -159,16 +168,10 @@ Layout
 	transition: 350ms ease-in;
 }
 
-.aside__btns > button:hover,
-.aside__btns > button:focus {
+.aside__links > a:hover,
+.aside__links > a:focus {
 	background-position: center bottom;
 	color: var(--background);
-}
-
-/* Links */
-.contact__links > a {
-	margin: 4px;
-	padding: 4px;
 }
 
 /* ========

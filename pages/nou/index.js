@@ -58,9 +58,13 @@ function nou() {
 									<li>Node mailer</li>
 								</ul>
 							</div>
-							<div className={utils.aside__btns}>
-								<button className={utils.btn}>Live Site</button>
-								<button className={utils.btn}>Source Code</button>
+							<div className={utils.aside__links}>
+								<a className={utils.link} href='https://github.com/Pilks-pixel' target='_blank'>
+									Source Code
+								</a>
+								<a className={utils.link} href='https://nou-ng2gsrpkw-pilks-pixel.vercel.app/' target='_blank'>
+									Live Site
+								</a>
 							</div>
 						</aside>
 					</section>
@@ -72,17 +76,17 @@ function nou() {
 							clients of the business. It lists the services, creatively
 							displays previous projects and provides a form for enquiries
 						</p>
-                        {/* <Image src={} alt='Adobe XD planning pictures' /> */}
+						{/* <Image src={} alt='Adobe XD planning pictures' /> */}
 
 						<p className={utils.planning_section__planning}>
 							I utilised the clients designs from Adobe XD, to create a mobile
 							first webpage that is responsive for tablet and desktops. Workflow
 							was tracked with use of a Kanban board to outline an MVP and then
-							break down goals into actionable tasks. While Version control was managed with GitHub,
-                            including feature branches to avoid breaking commits to the main branch. 
+							break down goals into actionable tasks. While Version control was
+							managed with GitHub, including feature branches to avoid breaking
+							commits to the main branch.
 						</p>
-                        {/* <Image src={} alt='Trello Kanban board picture' /> */}
-
+						{/* <Image src={} alt='Trello Kanban board picture' /> */}
 					</section>
 
 					<section className={utils.challenges}>
