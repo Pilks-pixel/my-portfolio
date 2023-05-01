@@ -79,83 +79,100 @@ function nou() {
 					</section>
 
 					<section className={utils.planning_section}>
-						<h2>Purpose &amp; Planning</h2>
-						<p className={utils.planning_section__purpose}>
-							This project was made to market and showcase projects to potential
-							clients of the business. It lists the services, creatively
-							displays previous projects and provides a form for enquiries
-						</p>
-						{/* <Image src={} alt='Adobe XD planning pictures' /> */}
+                        <h2>Purpose &amp; Planning</h2>
+                        <div className={utils.section_grid}>
+                            <p className={utils.planning_section__purpose}>
+                                This project was made to market and showcase projects to potential
+                                clients of the business. It lists the services, creatively
+                                displays previous projects and provides a form for enquiries
+                            </p>
+                            <Image
+                                className={utils.planning_section__image}
+                                src="/adobe_screenshot.png"
+                                alt='Trello Kanban board picture'
+                                height={600}
+                                width={800}
+                            />
 
-						<p className={utils.planning_section__planning}>
-							I&apos;ve utilised the clients designs from Adobe XD, to create a
-							mobile first webpage that is responsive for tablet and desktops.
-							Workflow was managed with use of a Kanban board to outline an MVP
-							and then break down goals into actionable tasks. While Version
-							control was managed with GitHub, including feature branches to
-							avoid breaking commits to the main branch.
-						</p>
-						{/* <Image src={} alt='Trello Kanban board picture' /> */}
+                            <p className={utils.planning_section__planning}>
+                                I&apos;ve utilised the clients designs from Adobe XD, to create a
+                                mobile first webpage that is responsive for tablet and desktops.
+                                Workflow was managed with use of a Kanban board to outline an MVP
+                                and then break down goals into actionable tasks. While Version
+                                control was managed with GitHub, including feature branches to
+                                avoid breaking commits to the main branch.
+                            </p>
+                            <Image
+                                className={utils.planning_section__image}
+                                src="/trello_screenshot.png"
+                                alt='Trello Kanban board picture'
+                                height={600}
+                                width={800}
+                            />
+                        </div>
 					</section>
 
 					<section className={utils.stack}>
 						<h2>Stack &amp; Features</h2>
-						<div className={utils.stack__icons}>
-							<ul className={utils.icons__list}>
-								<li>
-									<SiReact color='#61DAFB' size={42} /> React
-								</li>
-								<li>
-									<Image
-										src='/next.svg'
-										alt='Next.js icon'
-										width={60}
-										height={60}
-									/>
-									Next.js
-								</li>
-								<li>
-									<SiCss3 color='#1572B6' size={42} />
-									CSS
-								</li>
-								<li>
-									<SiJavascript color='#F0DB4F' size={42} />
-									Javascript ES6
-								</li>
-								<li>
-									<Image
-										src='/vercel.svg'
-										alt='Next.js icon'
-										width={60}
-										height={60}
-									/>
-									Vercel
-								</li>
-							</ul>
-						</div>
+                        <div className={utils.section_grid}>
+                            <div className={utils.stack__icons}>
+                                <ul className={utils.icons__list}>
+                                    <li>
+                                        <SiReact color='#61DAFB' size={42} /> React
+                                    </li>
+                                    <li>
+                                        <Image
+                                            src='/next.svg'
+                                            alt='Next.js icon'
+                                            width={60}
+                                            height={60}
+                                        />
+                                        Next.js
+                                    </li>
+                                    <li>
+                                        <SiCss3 color='#1572B6' size={42} />
+                                        CSS
+                                    </li>
+                                    <li>
+                                        <SiJavascript color='#F0DB4F' size={42} />
+                                        Javascript ES6
+                                    </li>
+                                    <li>
+                                        <Image
+                                            src='/vercel.svg'
+                                            alt='Next.js icon'
+                                            width={60}
+                                            height={60}
+                                        />
+                                        Vercel
+                                    </li>
+                                </ul>
+                            </div>
 
-						<div className={utils.stack__features}>
-							<h3 className={utils.features_heading}>Stack</h3>
-							<p>
-								This website is built with React and the Next.js meta framework.
-								Next enabled optimised development and deployment features like
-								automatic code spliting, lazy loaded images and improved SEO.
-								Allowing me to deliver a performant website with excellent user
-								experience.
-								<br></br>
-								Next also meant Vercel was used for deployment, which meant I
-								could utilise seprate production and feature deployments
-								alongside version control.
-							</p>
+                            <div className={utils.stack__features}>
+                                <h3 className={utils.features_heading}>Stack</h3>
+                                <p>
+                                    This website is built with React and the Next.js meta framework.
+                                    Next enabled optimised development and deployment features like
+                                    automatic code spliting, lazy loaded images and improved SEO.
+                                    Allowing me to deliver a performant website with excellent user
+                                    experience.
+                                    <br></br>
+                                    Next also meant Vercel was used for deployment, which meant I
+                                    could utilise seprate production and feature deployments
+                                    alongside version control.
+                                </p>
 
-							<h3 className={utils.features_heading}>Features</h3>
-							<p>
-								Animations were used to add fliar to the site with transitions
-								and CSS pseudo elements. I also chose to use an the web animation API with an intersection
-								observer which allowed animation only when entering the
-								viewport, giving a more polished UI and improved perfomance.
-							</p>
-						</div>
+                                <h3 className={utils.features_heading}>Features</h3>
+                                <p>
+                                    Animations were used to add fliar to the site with transitions
+                                    and CSS pseudo elements. I also chose to use an the web
+                                    animation API with an intersection observer which allowed
+                                    animation only when entering the viewport, giving a more
+                                    polished UI and improved perfomance.
+                                </p>
+                            </div>
+                        </div>
 					</section>
 
 					<section className={utils.challenges}>
