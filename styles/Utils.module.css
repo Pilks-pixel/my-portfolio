@@ -233,24 +233,28 @@ Typography
 	font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-.title,
-.aside__title {
-	font-family: var(--font-headings);
-	font-weight: 900;
-	text-transform: capitalize;
-	letter-spacing: var(--text-headings-spacing);
-	color: var(--btn-color);
-}
-
 .aside__title {
 	font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+.title,
+.aside__title,
 .sections > h2 {
 	font-family: var(--font-headings);
 	font-weight: 900;
-	letter-spacing: var(--text-headings-spacing);
+	text-transform: capitalize;
+	color: var(--btn-color);
+}
 
+.title,
+.aside__title {
+	letter-spacing: var(--text-headings-spacing);
+}
+
+
+.sections > h3,
+.sections > h2 {
+	letter-spacing: 2px;
 }
 
 /* Aside */
