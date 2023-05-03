@@ -13,6 +13,7 @@
 		var(--btn-color)
 	);
 	--text-headings-spacing: 0.25em;
+	--text-paragrah-weight: 300;
 }
 
 *,

@@ -57,6 +57,7 @@ function nou() {
 								alt='Nou hero image'
 								height={600}
 								width={800}
+								priority={true}
 							/>
 						</div>
 						<aside className={utils.hero_section__aside}>
@@ -171,7 +172,6 @@ function nou() {
 							</div>
 
 							<div className={utils.stack__features}>
-								<h2 className={utils.features__heading}>Stack</h2>
 								<p>
 									This website is built with React and the Next.js meta
 									framework. Next enabled optimised development and deployment
@@ -188,10 +188,10 @@ function nou() {
 					</section>
 
 					<section className={`${utils.challenges} ${utils.sections}`}>
+						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>
                             {projectImages}
 						</div>
-						<h2>Features &amp; Challenges</h2>
 						<h3>Animations</h3>
 						<p>
 							Parallax scroll was used with CSS transitions to add fliar to the
@@ -202,7 +202,6 @@ function nou() {
 						</p>
 						<p>
 							This was tricky as I wanted different elements to fade in at
-							staggered timings, so had to use callback functions to create an
 							array of Refs and iterate over in the observer. This allowed me to
 							animate elements based on position in the viewport and apply
 							delays based on element tag names.
@@ -214,6 +213,7 @@ function nou() {
 							needing to utilize layout tools like Grid and Flexbox. Media
 							queries were also useful to define breakpoints but I tried to
 							implement modern CSS functions like clamp in order to give
+							staggered timings, so had to use callback functions to create an
 							responsive text without media queries.
 						</p>
 						<h3>Contact Form</h3>
