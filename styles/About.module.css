@@ -11,15 +11,21 @@ Layout
     gap: 1.5rem;
 }
 
-.about > p {
-    line-height: 1.6;
-    text-align: justify;
-}
-
 .about > p:last-child {
     margin-top: .5rem;
     padding: 1em;
     border-top: 1px solid var(--btn-color);
+}
+
+.about__sub_title > p,
+.skills__sub_title {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.about__sub_title > p:first-child{
+    margin-bottom: 0;
 }
 
 .skills__list {
@@ -91,11 +97,8 @@ Typography
     color: transparent;
 }
 
-.about__sub_title,
+.about__sub_title > p,
 .skills__sub_title {
-    width: 95%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
     line-height: 1.2;
     font-size: clamp(1rem ,2.1vw ,2.2rem);
     color: rgba(248,242,242,.6);

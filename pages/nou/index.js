@@ -115,7 +115,7 @@ function nou() {
 								width={800}
 							/>
 
-							<p className={utils.planning_section__planning}>
+							<p className={utils.planning_section__purpose}>
 								I&apos;ve worked to the clients designs from Adobe XD, to create
 								a webpage that is fully responsive. Workflow was managed with
 								use of a Kanban board to outline an MVP and then break down

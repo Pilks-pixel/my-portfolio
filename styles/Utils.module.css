@@ -56,8 +56,9 @@ Layout
 }
 
 .sections {
+	/* outline: 2px solid hotpink; */
 	padding: 0 1em;
-	margin-bottom: min(2rem, 2vh);
+	margin-bottom: 5rem;
 }
 
 .sections h2,
@@ -66,9 +67,7 @@ Layout
 }
 
 .sections p {
-	margin-bottom: 1.5em;
-	max-width: 450px;
-	outline: 2px solid hotpink;
+	max-width: 500px;
 }
 
 /* flex containers */
@@ -77,7 +76,7 @@ Layout
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	gap: 1em;
+	gap: 1.5em;
 }
 
 /* hero image section with side element */
@@ -108,6 +107,10 @@ Layout
 .aside__title,
 .aside__links {
 	margin-bottom: 1rem;
+}
+
+.aside__info {
+	margin: 0 auto;
 }
 
 .aside__links {
@@ -143,18 +146,18 @@ Layout
 
 /* Grid container sections */
 .section_grid {
-	outline: 2px solid hotpink;
 	padding: 1em;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%),1fr));
 	place-items: center;
-	gap: 5px;
+	grid-gap: 3em;
 }
 
 /* Features */
 .features__flex {
 	padding: 2em;
 	justify-content: center;
+	gap: 2.5em;
 }
 
 .icons__list {
@@ -299,14 +302,9 @@ Typography
 }
 
 /* body */
-/* .sections p{
-	font-weight: var(--text-paragrah-weight);
-	line-height: 1.5;
-	text-align: justify;
-} */
-
-.planning_section__purpose{
-	
+.conclusion > p {
+	margin: 0 auto;
+	max-width: 700px;
 }
 
 /* Aside */
@@ -324,5 +322,14 @@ Media
 	.hero_section__aside {
 		margin: 0;
 		margin-right: 4rem;
+	}
+
+	.conclusion {
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.sections { 
+		margin-bottom: 15vh;
 	}
 }
