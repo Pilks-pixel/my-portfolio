@@ -104,13 +104,15 @@ Layout
 	text-align: center;
 }
 
+.aside__keyword,
+.aside__info {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
 .aside__title,
 .aside__links {
 	margin-bottom: 1rem;
-}
-
-.aside__info {
-	margin: 0 auto;
 }
 
 .aside__links {
@@ -209,6 +211,12 @@ Layout
 
 .flex__image {
 	max-width: 400px;
+}
+
+.planning_section__image,
+.flex__image{
+	opacity: 0;
+	transform-style: preserve-3d;
 }
 
 
@@ -313,6 +321,16 @@ Typography
 	font-family: var(--font-headings);
 	font-weight: 900;
 	letter-spacing: 1px;
+}
+
+/* =========
+Animations
+========== */
+.planning_section__purpose,
+.stack__features,
+.features__flex > div,
+.conclusion > p{
+	opacity: 0;
 }
 
 /* ======

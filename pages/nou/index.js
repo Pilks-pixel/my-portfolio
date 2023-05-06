@@ -3,11 +3,15 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import styles from "../../styles/Nou.module.css";
 import Image from "next/image";
+import { useRef, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
 import { data } from "../data";
 
 function nou() {
+	const itemsRef = useRef(null);
+
+	// Display projects images
 	const projectImages = data.map(project => {
 		if (project.id === "NOU") {
 			return project.images.map((img, index) => {
@@ -19,11 +23,81 @@ function nou() {
 						height={600}
 						width={800}
 						key={index}
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
 					/>
 				);
 			});
 		}
 	});
+
+	// WAAPI animations
+	const fadeInKeyImgFrame = [
+		{ opacity: 0, filter: "blur(8px)" },
+		{ opacity: 1, filter: "blur(0)" },
+	];
+
+	const fadeInKeyTextFrame = [
+		{ opacity: 0, filter: "blur(8px)" },
+		{ opacity: 1, filter: "blur(0)" },
+	];
+
+	const imageTiming = {
+		duration: 1000,
+		iterations: 1,
+		fill: "both",
+		easing: "cubic-bezier(0.550, 0.085, 0.680, 0.530)",
+	};
+
+	const textTiming = {
+		duration: 1000,
+		iterations: 1,
+		fill: "both",
+		easing: "cubic-bezier(0.550, 0.085, 0.680, 0.530)",
+		delay: 500,
+	};
+
+	// Intersection Observer Appear on Scroll Logic
+	function getArr() {
+		if (!itemsRef.current) {
+			itemsRef.current = [];
+		}
+		return itemsRef.current;
+	}
+
+	const options = {
+		root: null,
+		rootMargin: "0px",
+		threshold: 0.5,
+	};
+
+	useEffect(() => {
+		const callback = (entries, observer) => {
+			entries.forEach(entry => {
+				if (!entry.isIntersecting) {
+					return;
+				}
+
+				if (entry.target.tagName.toLowerCase() === "img") {
+					entry.target.animate(fadeInKeyImgFrame, imageTiming);
+				} else {
+					entry.target.animate(fadeInKeyTextFrame, textTiming);
+				}
+
+				observer.unobserve(entry.target);
+			});
+		};
+
+		const observer = new IntersectionObserver(callback, options);
+
+		let target = itemsRef.current;
+
+		target.forEach(item => observer.observe(item));
+	}, [itemsRef]);
 
 	return (
 		<>
@@ -101,7 +175,15 @@ function nou() {
 					<section className={`${utils.planning_section} ${utils.sections}`}>
 						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
-							<p className={utils.planning_section__purpose}>
+							<p
+								className={utils.planning_section__purpose}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								This project was made to market and showcase projects to
 								potential clients of the business. It lists the services,
 								creatively displays previous projects and provides a form for
@@ -113,9 +195,23 @@ function nou() {
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
 							/>
 
-							<p className={utils.planning_section__purpose}>
+							<p
+								className={utils.planning_section__purpose}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								I&apos;ve worked to the clients designs from Adobe XD, to create
 								a webpage that is fully responsive. Workflow was managed with
 								use of a Kanban board to outline an MVP and then break down
@@ -129,6 +225,12 @@ function nou() {
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
 							/>
 						</div>
 					</section>
@@ -170,7 +272,15 @@ function nou() {
 								</ul>
 							</div>
 
-							<div className={utils.stack__features}>
+							<div
+								className={utils.stack__features}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								<p>
 									This website is built with React and the Next.js meta
 									framework. Next enabled optimised development and deployment
@@ -190,7 +300,14 @@ function nou() {
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
 						<div className={utils.features__flex}>
-							<div>
+							<div
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								<h3>Animations</h3>
 								<p>
 									Parallax scroll was used with CSS transitions to add fliar to
@@ -206,7 +323,14 @@ function nou() {
 									apply delays based on element tag names.
 								</p>
 							</div>
-							<div>
+							<div
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								<h3>Responsive layouts</h3>
 								<p>
 									Getting the site to be responsive at all screen sizes, meant
@@ -217,7 +341,14 @@ function nou() {
 									an responsive text without media queries.
 								</p>
 							</div>
-							<div>
+							<div
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
 								<h3>Contact Form</h3>
 								<p>
 									The useState hook allowed a controlled form with validation
@@ -232,7 +363,14 @@ function nou() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<p>
+						<p
+							ref={node => {
+								if (node) {
+									const nodeArr = getArr();
+									nodeArr.push(node);
+								}
+							}}
+						>
 							This project enabled me to learn how to create smooth animations
 							according to uses scroll position. I also learned how to handle
 							user inputs with email submission through node mailer and
