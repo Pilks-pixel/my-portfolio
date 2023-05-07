@@ -200,13 +200,24 @@ Layout
 .main__img,
 .planning_section__image,
 .flex__image {
-	width: 90%;
 	height: auto;
+	border-radius: 8px;
+	box-shadow: var(--picture-shadow);
+	object-fit: cover;
+}
+
+.planning_section__image,
+.flex__image {
+	width: 90%;
 	max-width: 800px;
 	max-height: 500px;
-	border-radius: 8px;
+}
+
+.main__img {
+	width: 100%;
+	max-width: 850px;
+	min-height: 300px;
 	object-fit: cover;
-	box-shadow: var(--picture-shadow);
 }
 
 .flex__image {

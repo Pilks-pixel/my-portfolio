@@ -11,7 +11,7 @@ import { data } from "../data";
 function nou() {
 	const itemsRef = useRef(null);
 
-	// Display projects images
+	// Display projects media
 	const projectImages = data.map(project => {
 		if (project.id === "NOU") {
 			return project.images.map((img, index) => {
@@ -32,6 +32,23 @@ function nou() {
 					/>
 				);
 			});
+		}
+	});
+
+	const projectVideo = data.map(project => {
+		if (project.id === "NOU") {
+			return (
+				<video
+					width='800'
+					height='600'
+					className={utils.main__img}
+					preload='auto'
+					key={project.id}
+					controls
+				>
+					<source src={project.video} type='video/mp4' />
+				</video>
+			);
 		}
 	});
 
@@ -123,16 +140,7 @@ function nou() {
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
-						<div className={utils.hero_section__main}>
-							<Image
-								className={utils.main__img}
-								src='/nou.png'
-								alt='Nou hero image'
-								height={600}
-								width={800}
-								priority={true}
-							/>
-						</div>
+						<div className={utils.hero_section__main}>{projectVideo}</div>
 						<aside className={utils.hero_section__aside}>
 							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
 							<p className={utils.aside__info}>
