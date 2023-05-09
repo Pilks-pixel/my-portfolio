@@ -14,14 +14,17 @@ export default function Home() {
 	const aboutRef = useRef(null);
 
 	const handleClick = e => {
-		console.log(e.target, projectRef.current);
-		if (e.target.id === "projects_btn") {
-			setProjectViable(!projectVisable);
-			projectRef.current.setAttribute("aria-hidden", projectVisable);
-		} else {
-			setAboutViable(!aboutVisable);
-			aboutRef.current.setAttribute("aria-hidden", aboutVisable);
-		}
+    let sectionNode 
+
+    e.target.id === "projects_btn"? sectionNode = projectRef.current
+      : sectionNode = aboutRef.current;
+    
+      sectionNode.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+  
 	};
 
 	return (

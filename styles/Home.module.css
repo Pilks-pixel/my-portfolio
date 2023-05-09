@@ -54,7 +54,7 @@ Layout
 }
 
 /* section element open/close */
-.grid,
+/* .grid,
 .about_article {
 	opacity: 0;
 }
@@ -73,7 +73,7 @@ Layout
 
 .about_article[aria-hidden="false"] {
 	animation: fade-in 1000ms ease-in forwards;
-}
+} */
 
 /* section fade elements animations */
 @keyframes fade-in {
