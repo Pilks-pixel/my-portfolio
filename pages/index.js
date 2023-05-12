@@ -9,8 +9,6 @@ import { About, ProjectGrid } from "@/components/index";
 export default function Home() {
 	const [projectVisable, setProjectViable] = useState(false);
 	const [aboutVisable, setAboutViable] = useState(false);
-	// const projectRef = useRef(null);
-	// const aboutRef = useRef(null);
 	const itemsRef = useRef(null);
 
 	const handleClick = e => {
@@ -40,32 +38,31 @@ export default function Home() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.5,
+		threshold: 0.25,
 	};
 
-	// useEffect(() => {
-	// 	const callback = (entries, observer) => {
-	// 		entries.forEach(entry => {
-	// 			if (!entry.isIntersecting) {
-	// 				return;
-	// 			}
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      } 
+      console.log(entry.target)
 
-	// 			// if (entry.target.tagName.toLowerCase() === "img") {
-	// 			// 	entry.target.animate(fadeInKeyImgFrame, imageTiming);
-	// 			// } else {
-	// 			// 	entry.target.animate(fadeInKeyTextFrame, textTiming);
-	// 			// }
+      entry.target.classList.add(`${styles.visable}`)
 
-	// 			observer.unobserve(entry.target);
-	// 		});
-	// 	};
 
-	// 	const observer = new IntersectionObserver(callback, options);
+      observer.unobserve(entry.target);
+    });
+  };
 
-	// 	let target = itemsRef.current;
+	useEffect(() => {
+		const observer = new IntersectionObserver(callback, options);
 
-	// 	target.forEach(item => observer.observe(item));
-	// }, [itemsRef]);
+		let target = itemsRef.current;
+    console.log(target)
+
+		target.forEach(item => observer.observe(item));
+	}, []);
 
 	return (
 		<>
@@ -108,7 +105,6 @@ export default function Home() {
 					</section>
 
 					<section
-						// ref={projectRef}
 						className={`${styles.grid}`}
 						id='project_container'
 						ref={node => {
@@ -122,7 +118,6 @@ export default function Home() {
 					</section>
 
 					<section
-						// ref={aboutRef}
 						className={`${styles.about_article}`}
 						id='about_container'
 						ref={node => {
