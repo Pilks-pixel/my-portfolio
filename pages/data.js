@@ -2,6 +2,7 @@ const data = [
 	{
 		name: "Quiz Night",
 		id: 'QUIZ',
+		src: '/quiz',
 		primaryImage: "/quiz.png",
 		images: [],
 		video: "/nou/nou_screen.mp4",
@@ -12,6 +13,7 @@ const data = [
     {
         name: "Nou Design Studio",
 		id: 'NOU',
+		src: '/nou',
 		primaryImage: "/nou.png",
 		images: ['/nou/desktop.png', '/nou/mobile.png', '/nou/tablet.png'],
 		video: "/nou/nou_screen.mp4",
@@ -22,6 +24,7 @@ const data = [
     {
         name: "Pix Chat",
 		id: 'CHAT',
+		src: '/chat',
 		primaryImage: "/nou.png",
 		images: [],
 		video: "/nou/nou_screen.mp4",

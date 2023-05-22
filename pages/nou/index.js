@@ -2,11 +2,13 @@ import React from "react";
 import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import styles from "../../styles/Nou.module.css";
+import Link from "next/link";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
 import { data } from "../data";
+import { Nav } from "@/components";
 
 function nou() {
 	const itemsRef = useRef(null);
@@ -130,8 +132,7 @@ function nou() {
 
 			<div className={utils.wrapper}>
 				<header className={utils.description}>
-					<h2 className={utils.description__name}>Peter Pilkington</h2>
-					<h1 className={utils.description__job}>full Stack developer</h1>
+					<Nav />
 				</header>
 
 				<main className={utils.main}>

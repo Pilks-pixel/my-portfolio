@@ -46,10 +46,8 @@ export default function Home() {
       if (!entry.isIntersecting) {
         return;
       } 
-      console.log(entry.target)
 
       entry.target.classList.add(`${styles.visable}`)
-
 
       observer.unobserve(entry.target);
     });
@@ -59,7 +57,6 @@ export default function Home() {
 		const observer = new IntersectionObserver(callback, options);
 
 		let target = itemsRef.current;
-    console.log(target)
 
 		target.forEach(item => observer.observe(item));
 	}, []);

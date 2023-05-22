@@ -3,6 +3,7 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css"
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Nav } from '@/components';
 
 
 function pixChat() {
@@ -20,8 +21,7 @@ function pixChat() {
 
         <div className={utils.wrapper} >
         <header className={utils.description}>
-          <h2 className={utils.description__name}>Peter Pilkington</h2>
-          <h1 className={utils.description__job}>full Stack developer</h1>
+          <Nav />
         </header>
 
         <main className={utils.main}>
