@@ -3,28 +3,28 @@ Layout
 ====== */
 /* wrapper for sticky header & footer */
 .wrapper {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    'header'
-    'main'
-    'footer';
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
 }
 
 .wrapper > .description {
-  grid-area: header;
+	grid-area: header;
 }
 
 .wrapper > .main {
-  grid-area: main;
-  overflow: auto;
-  padding: 3em 0 1em 0;
+	grid-area: main;
+	overflow: auto;
+	padding: 3em 0 1em 0;
 }
 
 .wrapper > .contact {
-  grid-area: footer;
+	grid-area: footer;
 }
 
 .description,
@@ -46,23 +46,23 @@ Layout
 .contact {
 	bottom: 0;
 	box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
-  	background-color: var(--background);
+	background-color: var(--background);
 }
 
 .center {
-  margin: 10rem 0;
+	margin: 10rem 0;
 }
 
 /* section element open/close */
- .grid,
+.grid,
 .about_article {
 	opacity: 0;
+	margin-bottom: 7rem;
 }
 
 .visable {
 	animation: fade-in 1000ms ease-in forwards;
 }
-
 
 /*
 .grid[aria-hidden="true"] {
@@ -113,7 +113,7 @@ Center__Buttons
 	background: inherit;
 	color: var(--btn-color);
 	font-family: inherit;
-	font-size: clamp(2.5rem, 10vw, 5.5rem);
+	font-size: clamp(2.2rem, 10vw, 5.5rem);
 	font-weight: inherit;
 	letter-spacing: var(--text-headings-spacing);
 	cursor: pointer;
@@ -221,5 +221,3 @@ Media
 		inset: 20% 0 0 70%;
 	}
 }
-
-

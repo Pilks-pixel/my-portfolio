@@ -22,7 +22,7 @@ function ProjectGrid() {
 			<div 
             className={styles.project_container__card}
             key={card.id}
-            style={{'backgroundImage' : `url(${card.image})`}}
+            style={{'backgroundImage' : `url(${card.primaryImage})`}}
             >
                 <div className={styles.card__info}>
 				    <h3>{card.name}</h3>
