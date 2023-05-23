@@ -10,9 +10,9 @@ import { Contact, Nav } from "@/components";
 function quiz() {
 	const itemsRef = useRef(null);
 
-	// Display projects media
+	// Display project media & info
 	const projectImages = data.map(project => {
-		if (project.id === "NOU") {
+		if (project.id === "QUIZ") {
 			return project.images.map((img, index) => {
 				return (
 					<Image
@@ -50,6 +50,16 @@ function quiz() {
 			);
 		}
 	});
+
+  const stack = data.map(project => {
+    if (project.id === "QUIZ") {
+      return(
+        project.stack.map((item, index) => {
+          return <li key={index} >{item}</li>
+        })
+      )
+    }
+  })
 
 	// WAAPI animations
 	const fadeInKeyImgFrame = [
@@ -149,14 +159,7 @@ function quiz() {
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>
-									<li>React</li>
-									<li>Next.js</li>
-									<li>Responsive Design</li>
-									<li>WAAPI</li>
-									<li>Intersection Observer</li>
-									<li>Parallax</li>
-									<li>RegEx</li>
-									<li>Node mailer</li>
+                  {stack}
 								</ul>
 							</div>
 							<div className={utils.aside__links}>
@@ -197,7 +200,7 @@ function quiz() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/adobe_screenshot.png'
+								src='/nou/adobe_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
@@ -227,7 +230,7 @@ function quiz() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/trello_screenshot.png'
+								src='/nou/trello_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}

@@ -10,7 +10,7 @@ import { Contact, Nav } from "@/components";
 function nou() {
 	const itemsRef = useRef(null);
 
-	// Display projects media
+	// Display projects media & info
 	const projectImages = data.map(project => {
 		if (project.id === "NOU") {
 			return project.images.map((img, index) => {
@@ -50,6 +50,17 @@ function nou() {
 			);
 		}
 	});
+
+	const stack = data.map(project => {
+		if (project.id === "NOU") {
+		  return(
+			project.stack.map((item, index) => {
+			  return <li key={index} >{item}</li>
+			})
+		  )
+		}
+	  })
+	
 
 	// WAAPI animations
 	const fadeInKeyImgFrame = [
@@ -149,14 +160,7 @@ function nou() {
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>
-									<li>React</li>
-									<li>Next.js</li>
-									<li>Responsive Design</li>
-									<li>WAAPI</li>
-									<li>Intersection Observer</li>
-									<li>Parallax</li>
-									<li>RegEx</li>
-									<li>Node mailer</li>
+									{stack}
 								</ul>
 							</div>
 							<div className={utils.aside__links}>
@@ -197,8 +201,8 @@ function nou() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/adobe_screenshot.png'
-								alt='Trello Kanban board picture'
+								src='/nou/adobe_screenshot.png'
+								alt='adobe XD picture'
 								height={600}
 								width={800}
 								ref={node => {
@@ -227,7 +231,7 @@ function nou() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/trello_screenshot.png'
+								src='/nou/trello_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
