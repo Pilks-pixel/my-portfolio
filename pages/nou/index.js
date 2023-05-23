@@ -1,14 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
-import styles from "../../styles/Nou.module.css";
-import Link from "next/link";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
 import { data } from "../data";
-import { Nav } from "@/components";
+import { Contact, Nav } from "@/components";
 
 function nou() {
 	const itemsRef = useRef(null);
@@ -390,18 +387,7 @@ function nou() {
 				</main>
 
 				<footer className={utils.contact}>
-					<h2>contact</h2>
-					<div className={utils.contact__links}>
-						<a href='https://github.com/Pilks-pixel' target='_blank'>
-							<FaGithub size={32} />
-						</a>
-						<a
-							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-							target='_blank'
-						>
-							<FaLinkedin size={32} color='#0077b5' />
-						</a>
-					</div>
+					<Contact />
 				</footer>
 			</div>
 		</>
