@@ -3,7 +3,16 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
+import {
+	SiCss3,
+	SiJavascript,
+	SiReact,
+	SiGit,
+	SiNetlify,
+	SiMongodb,
+	SiNodedotjs,
+} from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
 import { data } from "../data";
 import { Contact, Nav } from "@/components";
 
@@ -51,15 +60,13 @@ function quiz() {
 		}
 	});
 
-  const stack = data.map(project => {
-    if (project.id === "QUIZ") {
-      return(
-        project.stack.map((item, index) => {
-          return <li key={index} >{item}</li>
-        })
-      )
-    }
-  })
+	const stack = data.map(project => {
+		if (project.id === "QUIZ") {
+			return project.stack.map((item, index) => {
+				return <li key={index}>{item}</li>;
+			});
+		}
+	});
 
 	// WAAPI animations
 	const fadeInKeyImgFrame = [
@@ -158,9 +165,7 @@ function quiz() {
 								with validation and email submission.
 							</p>
 							<div className={utils.aside__keyword}>
-								<ul className={utils.keyword__list}>
-                  {stack}
-								</ul>
+								<ul className={utils.keyword__list}>{stack}</ul>
 							</div>
 							<div className={utils.aside__links}>
 								<a
@@ -252,14 +257,12 @@ function quiz() {
 									<li className={utils.list__icon}>
 										<SiReact color='#61DAFB' size={42} /> React
 									</li>
-									<li className={`${utils.list__icon} ${utils.list_img}`}>
-										<Image
-											src='/next.svg'
-											alt='Next.js icon'
-											width={60}
-											height={60}
-										/>
-										Next.js
+									<li className={utils.list__icon}>
+										<FaNodeJs color='#3C873A' size={42} />
+										Node.js &amp; Express.js
+									</li>
+									<li className={`${utils.list__icon} ${utils.list_icon}`}>
+										<SiMongodb color='#47A248' size={42} />  MongoDB
 									</li>
 									<li className={utils.list__icon}>
 										<SiCss3 color='#1572B6' size={42} />
@@ -269,14 +272,9 @@ function quiz() {
 										<SiJavascript color='#F0DB4F' size={42} />
 										Javascript ES6
 									</li>
-									<li className={`${utils.list__icon} ${utils.list_img}`}>
-										<Image
-											src='/vercel.svg'
-											alt='Next.js icon'
-											width={60}
-											height={60}
-										/>
-										Vercel
+									<li className={`${utils.list__icon} ${utils.list_icon}`}>
+										<SiNetlify size={50} color='#00ad9f' />
+										Netlify
 									</li>
 								</ul>
 							</div>
@@ -390,19 +388,7 @@ function quiz() {
 				</main>
 
 				<footer className={utils.contact}>
-          <Contact  />
-					{/* <h2>contact</h2>
-					<div className={utils.contact__links}>
-						<a href='https://github.com/Pilks-pixel' target='_blank'>
-							<FaGithub size={32} />
-						</a>
-						<a
-							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-							target='_blank'
-						>
-							<FaLinkedin size={32} color='#0077b5' />
-						</a>
-					</div> */}
+					<Contact />
 				</footer>
 			</div>
 		</>
