@@ -151,7 +151,7 @@ function quiz() {
 
 				<main className={utils.main}>
 					<section className={utils.title}>
-						<h2 className={utils.title_primary}>Nou Design Studio</h2>
+						<h2 className={utils.title_primary}>Quiz Night</h2>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
@@ -159,10 +159,12 @@ function quiz() {
 						<aside className={utils.hero_section__aside}>
 							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
 							<p className={utils.aside__info}>
-								This site was created for a branding and web design studio. It's
-								built with React / Next.js, showcasing reponsive design,
-								animations including parallax scroll, web animations API, forms
-								with validation and email submission.
+								Quiz Night was designed to provide a fun and interactive quiz
+								experience using the Open trivia API. Users can customise each
+								quiz by subject or difficulty and features a leaderboard where
+								players high scores are persisted. Through this project, I
+								demonstrate front &amp; back-end skills using React with Node.js
+								and MongoDB.
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>{stack}</ul>
@@ -198,10 +200,11 @@ function quiz() {
 									}
 								}}
 							>
-								This project was made to market and showcase projects to
-								potential clients of the business. It lists the services,
-								creatively displays previous projects and provides a form for
-								enquiries
+								The purpose of the project was to create a quiz app that
+								entertains users while enhances their knowledge under time
+								pressure. I've planned the app's functionality to create an
+								intuative UX &amp; UI with colour sinalling correct or incorrect
+								answers and messages idicating the game status.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -226,12 +229,14 @@ function quiz() {
 									}
 								}}
 							>
-								I&apos;ve worked to the clients designs from Adobe XD, to create
-								a webpage that is fully responsive. Workflow was managed with
-								use of a Kanban board to outline an MVP and then break down
-								goals into actionable tasks. While Version control was managed
-								with GitHub, including feature branches to avoid breaking
-								commits to the main branch.
+								While planning the app, I choose to use the MVC (Model, View,
+								Controller) design pattern. This provided a clear seperation of
+								concerns between client, server and database. With the API used
+								to efficiently send requests between client and database.
+								Allowing the storage and retrieval of player scores.
+								<br></br>I also used the Open Trivia API for fetching quiz
+								questions which could be customised by user input for enhanced
+								user experience.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -250,7 +255,7 @@ function quiz() {
 					</section>
 
 					<section className={`${utils.stack} ${utils.sections}`}>
-						<h2>Stack &amp; Features</h2>
+						<h2>Stack</h2>
 						<div className={utils.section_grid}>
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
@@ -262,15 +267,11 @@ function quiz() {
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} />  MongoDB
+										<SiMongodb color='#47A248' size={42} /> MongoDB
 									</li>
 									<li className={utils.list__icon}>
 										<SiCss3 color='#1572B6' size={42} />
 										CSS
-									</li>
-									<li className={utils.list__icon}>
-										<SiJavascript color='#F0DB4F' size={42} />
-										Javascript ES6
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
 										<SiNetlify size={50} color='#00ad9f' />
@@ -289,15 +290,15 @@ function quiz() {
 								}}
 							>
 								<p>
-									This website is built with React and the Next.js meta
-									framework. Next enabled optimised development and deployment
-									features like automatic code spliting, lazy loaded images and
-									improved SEO. Allowing me to deliver a performant website with
-									excellent user experience.
+									The app was built using the MERN stack, React for front-end
+									and Node.js with MongoDB for the back-end. React was used over
+									Vanilla JS as it allowed the use of reusable and dynamic
+									components to handle real-time score tracking and countdown
+									timers for each question / answer combination.
 									<br></br>
-									Next also meant Vercel was used for deployment, which meant I
-									could utilise seprate production and feature deployments
-									alongside version control.
+									Node.js enabled server-side logic and database interactions.
+									MongoDB, a NoSQL database, offered flexibility in storing and
+									querying the simple nature of leaderboard data.
 								</p>
 							</div>
 						</div>
@@ -315,19 +316,16 @@ function quiz() {
 									}
 								}}
 							>
-								<h3>Animations</h3>
+								<h3>Leaderboard</h3>
 								<p>
-									Parallax scroll was used with CSS transitions to add fliar to
-									the site. I also chose to use an the web animation API with an
-									intersection observer which allowed animation according to
-									viewport position, giving a more polished UI and improved
-									perfomance.
+									Creating the leaderboard functionality involved designing the
+									database schema, implementing data retrieval and insertion
+									CRUD operations.
 								</p>
 								<p>
-									This was tricky as I wanted different elements to fade in at
-									array of Refs and iterate over in the observer. This allowed
-									me to animate elements based on position in the viewport and
-									apply delays based on element tag names.
+									As the funtionality only required queries from GET and POST requests I
+									opted not to use an ORM and used a JS class to create the
+									database schema.
 								</p>
 							</div>
 							<div
@@ -338,14 +336,9 @@ function quiz() {
 									}
 								}}
 							>
-								<h3>Responsive layouts</h3>
+								<h3>Reactive Buttons</h3>
 								<p>
-									Getting the site to be responsive at all screen sizes, meant
-									needing to utilize layout tools like Grid and Flexbox. Media
-									queries were also useful to define breakpoints but I tried to
-									implement modern CSS functions like clamp in order to give
-									staggered timings, so had to use callback functions to create
-									an responsive text without media queries.
+									
 								</p>
 							</div>
 							<div
