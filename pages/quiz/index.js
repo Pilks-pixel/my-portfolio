@@ -5,12 +5,9 @@ import Image from "next/image";
 import { useRef, useEffect } from "react";
 import {
 	SiCss3,
-	SiJavascript,
 	SiReact,
-	SiGit,
 	SiNetlify,
 	SiMongodb,
-	SiNodedotjs,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { data } from "../data";
@@ -172,14 +169,14 @@ function quiz() {
 							<div className={utils.aside__links}>
 								<a
 									className={utils.link}
-									href='https://github.com/Pilks-pixel'
+									href='https://github.com/Pilks-pixel/QuizNight/tree/main/quiz-night'
 									target='_blank'
 								>
 									Source Code
 								</a>
 								<a
 									className={utils.link}
-									href='https://noudesignstudio.vercel.app'
+									href='https://pete-quiz-night.netlify.app/'
 									target='_blank'
 								>
 									Live Site
@@ -203,12 +200,12 @@ function quiz() {
 								The purpose of the project was to create a quiz app that
 								entertains users while enhances their knowledge under time
 								pressure. I've planned the app's functionality to create an
-								intuative UX &amp; UI with colour sinalling correct or incorrect
-								answers and messages idicating the game status.
+								intuitive UX &amp; UI with colour signlling correct or incorrect
+								answers and messages indicating the game status.
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/nou/adobe_screenshot.png'
+								src='/quiz/figma_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
@@ -230,7 +227,7 @@ function quiz() {
 								}}
 							>
 								While planning the app, I choose to use the MVC (Model, View,
-								Controller) design pattern. This provided a clear seperation of
+								Controller) design pattern. This provided a clear separation of
 								concerns between client, server and database. With the API used
 								to efficiently send requests between client and database.
 								Allowing the storage and retrieval of player scores.
@@ -240,7 +237,7 @@ function quiz() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/nou/trello_screenshot.png'
+								src='/quiz/mobile.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
@@ -292,13 +289,14 @@ function quiz() {
 								<p>
 									The app was built using the MERN stack, React for front-end
 									and Node.js with MongoDB for the back-end. React was used over
-									Vanilla JS as it allowed the use of reusable and dynamic
+									Vanilla JS to allow the use of reusable and dynamic
 									components to handle real-time score tracking and countdown
 									timers for each question / answer combination.
 									<br></br>
 									Node.js enabled server-side logic and database interactions.
 									MongoDB, a NoSQL database, offered flexibility in storing and
 									querying the simple nature of leaderboard data.
+                  While Netlify was used for deployment.
 								</p>
 							</div>
 						</div>
@@ -323,9 +321,9 @@ function quiz() {
 									CRUD operations.
 								</p>
 								<p>
-									As the funtionality only required queries from GET and POST requests I
-									opted not to use an ORM and used a JS class to create the
-									database schema.
+									As this funtionality only required queries from GET and POST
+									requests I used a JS class to create the database schema
+									without using an ORM.
 								</p>
 							</div>
 							<div
@@ -336,9 +334,14 @@ function quiz() {
 									}
 								}}
 							>
-								<h3>Reactive Buttons</h3>
+								<h3>Dynamic Answer Buttons</h3>
 								<p>
-									
+									To create an intuitive UX &amp; UI, I've used button colour
+									changes to indicate correct / incorrect answers on click or at
+									countdown 0. In order to show these and and generate new
+									questions in a single function I had to utilise set timeout
+									functions. Thus ensuring less code repetition and enhanced
+									readability.
 								</p>
 							</div>
 							<div
@@ -349,13 +352,18 @@ function quiz() {
 									}
 								}}
 							>
-								<h3>Contact Form</h3>
+								<h3>Timer Custom Hook</h3>
 								<p>
-									The useState hook allowed a controlled form with validation
-									for user input, including Regex pattern for email inputs. I
-									was able to make use of the in built next js API. This allowed
-									me to handle form submission of user data with the node mailer
-									library.
+									Adding a timer feature provides some extra excitment to the
+									quiz and would typically be acomplished using a setInterval
+									function. However the challenge was the setInerval API is not
+									compatible with React's state re-renders.
+								</p>
+								<p>
+									Therefore I needed implement a custom hook that made use of
+									the useRef hook to persit values between renders. Allowing the
+									counts previous values to be acessed and decreased between
+									renders.
 								</p>
 							</div>
 						</div>
@@ -371,11 +379,12 @@ function quiz() {
 								}
 							}}
 						>
-							This project enabled me to learn how to create smooth animations
-							according to uses scroll position. I also learned how to handle
-							user inputs with email submission through node mailer and
-							increased my understanding of responsive design with layout tools
-							like CSS grid.
+							Durring this project I've honed my proficiency in React, making use
+							of reusable components and state management with hooks to create a
+							dynamic and interactive UI.
+							<br></br>I  also gained experience in setting up a database using
+							MongoDB and implementing CRUD operations to manage leaderboard
+							entries.
 						</p>
 					</section>
 				</main>

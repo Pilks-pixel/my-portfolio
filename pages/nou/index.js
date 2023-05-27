@@ -166,7 +166,7 @@ function nou() {
 							<div className={utils.aside__links}>
 								<a
 									className={utils.link}
-									href='https://github.com/Pilks-pixel'
+									href='https://github.com/Pilks-pixel/Nou'
 									target='_blank'
 								>
 									Source Code
