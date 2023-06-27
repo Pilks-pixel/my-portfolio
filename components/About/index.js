@@ -8,6 +8,7 @@ import {
 	SiMongodb,
 	SiGit,
 	SiFigma,
+	SiTailwindcss,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import Image from "next/image";
@@ -102,6 +103,10 @@ function About() {
 					<li>
 						<FaNodeJs color='#3C873A' size={42} />
 						Node.js &amp; Express.js
+					</li>
+					<li>
+						<SiTailwindcss color='#06B6D4' size={42} />
+						Tailwind CSS
 					</li>
 					<li>
 						<Image src='/next.svg' alt='Next.js icon' width={60} height={60} />

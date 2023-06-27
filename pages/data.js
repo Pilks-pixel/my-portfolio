@@ -5,7 +5,7 @@ const data = [
 		src: "/quiz",
 		primaryImage: "/quiz.png",
 		images: ["/quiz/tablet.png", "/quiz/mobile.png", "/quiz/desktop.png"],
-		video: "/nou/nou_screen.mp4",
+		video: "/quiz/quiz_screen.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
 		description:
 			"Quiz Night was built in React and uses the Open trivia api letting the user cusomise their quiz and uses MongoDB to store scores in a leaderboard",
@@ -34,11 +34,12 @@ const data = [
 		id: "CHAT",
 		src: "/chat",
 		primaryImage: "/nou.png",
-		images: [],
+		images: ["/chat/desktop.png", "/chat/mobile.png", "/chat/tablet.png"],
 		video: "/nou/nou_screen.mp4",
-		stack: ["Next.js", "React", "CSS", "Node.js", "Express", "Socket IO"],
+		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
 		description: "Real time chat with Socket IO",
 	},
 ];
 
 export { data };
+

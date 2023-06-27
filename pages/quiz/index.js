@@ -3,12 +3,7 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import {
-	SiCss3,
-	SiReact,
-	SiNetlify,
-	SiMongodb,
-} from "react-icons/si";
+import { SiCss3, SiReact, SiNetlify, SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { data } from "../data";
 import { Contact, Nav } from "@/components";
@@ -41,7 +36,7 @@ function quiz() {
 	});
 
 	const projectVideo = data.map(project => {
-		if (project.id === "NOU") {
+		if (project.id === "QUIZ") {
 			return (
 				<video
 					width='800'
@@ -56,6 +51,8 @@ function quiz() {
 			);
 		}
 	});
+
+	console.log(data[0])
 
 	const stack = data.map(project => {
 		if (project.id === "QUIZ") {
@@ -159,7 +156,7 @@ function quiz() {
 								Quiz Night was designed to provide a fun and interactive quiz
 								experience using the Open trivia API. Users can customise each
 								quiz by subject or difficulty and features a leaderboard where
-								players high scores are persisted. Through this project, I
+								high scores are persisted. In this project, I
 								demonstrate front &amp; back-end skills using React with Node.js
 								and MongoDB.
 							</p>
@@ -176,7 +173,7 @@ function quiz() {
 								</a>
 								<a
 									className={utils.link}
-									href='https://pete-quiz-night.netlify.app/'
+									href='https://quiz-night.netlify.app/'
 									target='_blank'
 								>
 									Live Site
@@ -289,14 +286,14 @@ function quiz() {
 								<p>
 									The app was built using the MERN stack, React for front-end
 									and Node.js with MongoDB for the back-end. React was used over
-									Vanilla JS to allow the use of reusable and dynamic
-									components to handle real-time score tracking and countdown
-									timers for each question / answer combination.
+									Vanilla JS to allow the use of reusable and dynamic components
+									to handle real-time score tracking and countdown timers for
+									each question / answer combination.
 									<br></br>
 									Node.js enabled server-side logic and database interactions.
 									MongoDB, a NoSQL database, offered flexibility in storing and
-									querying the simple nature of leaderboard data.
-                  While Netlify was used for deployment.
+									querying the simple nature of leaderboard data. While Netlify
+									&amp; Render were used for deployment.
 								</p>
 							</div>
 						</div>
@@ -336,12 +333,11 @@ function quiz() {
 							>
 								<h3>Dynamic Answer Buttons</h3>
 								<p>
-									To create an intuitive UX &amp; UI, I've used button colour
-									changes to indicate correct / incorrect answers on click or at
-									countdown 0. In order to show these and and generate new
-									questions in a single function I had to utilise set timeout
-									functions. Thus ensuring less code repetition and enhanced
-									readability.
+									To create an intuitive UX &amp; UI, I've used button colour to
+									indicate correct / incorrect answers on click or at countdown
+									0. To show these and and generate new questions in a single
+									function I had to utilise set timeout function. Thus ensuring
+									less code repetition and enhanced readability.
 								</p>
 							</div>
 							<div
@@ -379,12 +375,14 @@ function quiz() {
 								}
 							}}
 						>
-							Durring this project I've honed my proficiency in React, making use
-							of reusable components and state management with hooks to create a
-							dynamic and interactive UI.
-							<br></br>I  also gained experience in setting up a database using
+							Durring this project I've honed my proficiency in React, making
+							use of reusable components and state management with hooks to
+							create a dynamic and interactive UI. Therefore I also had to learn about
+							ARIA conventions to ensure accessability for all users with dynamic
+							content.
+							<br></br>Further to this I gained experience in setting up a database using
 							MongoDB and implementing CRUD operations to manage leaderboard
-							entries.
+							entries. Giving me valuable experience of a Full Stack Application.
 						</p>
 					</section>
 				</main>
