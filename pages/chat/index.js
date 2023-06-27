@@ -1,18 +1,23 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
-import utils from "../../styles/Utils.module.css"
+import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { SiCss3, SiReact, SiNetlify, SiMongodb ,SiTailwindcss } from "react-icons/si";
+import {
+	SiCss3,
+	SiReact,
+	SiNetlify,
+	SiMongodb,
+	SiTailwindcss,
+} from "react-icons/si";
 import { data } from "../data";
 import { FaNodeJs } from "react-icons/fa";
-import { Nav, Contact } from '@/components';
-
+import { Nav, Contact } from "@/components";
 
 function pixChat() {
 	const itemsRef = useRef(null);
 
-  // Display project media & info
+	// Display project media & info
 	const projectImages = data.map(project => {
 		if (project.id === "CHAT") {
 			return project.images.map((img, index) => {
@@ -53,7 +58,7 @@ function pixChat() {
 		}
 	});
 
-	console.log(data[0])
+	console.log(data[0]);
 
 	const stack = data.map(project => {
 		if (project.id === "CHAT") {
@@ -127,10 +132,9 @@ function pixChat() {
 		target.forEach(item => observer.observe(item));
 	}, [itemsRef]);
 
-
-  return (
-    <>
-        <Head>
+	return (
+		<>
+			<Head>
 				<title>Peter Pilkington | web developer portfolio</title>
 				<meta
 					name='description'
@@ -138,14 +142,14 @@ function pixChat() {
 				/>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/favicon.ico' />
-		</Head>
+			</Head>
 
-        <div className={utils.wrapper} >
-        <header className={utils.description}>
-          <Nav />
-        </header>
+			<div className={utils.wrapper}>
+				<header className={utils.description}>
+					<Nav />
+				</header>
 
-        <main className={utils.main}>
+				<main className={utils.main}>
 					<section className={utils.title}>
 						<h2 className={utils.title_primary}>Pix Chat</h2>
 					</section>
@@ -155,7 +159,8 @@ function pixChat() {
 						<aside className={utils.hero_section__aside}>
 							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
 							<p className={utils.aside__info}>
-								Pix Chat is built to allow users to share messages and gifs with other users that can interact with their posts. In this project, I
+								Pixel Chat allows users to share messages and gifs with others
+								that can interact with their posts. In this project, I
 								demonstrate front &amp; back-end skills using React with Node.js
 								, MongoDB and Tailwind CSS.
 							</p>
@@ -193,11 +198,13 @@ function pixChat() {
 									}
 								}}
 							>
-								The purpose of the project was to create a quiz app that
-								entertains users while enhances their knowledge under time
-								pressure. I've planned the app's functionality to create an
-								intuitive UX &amp; UI with colour signlling correct or incorrect
-								answers and messages indicating the game status.
+								The primary purpose of Pixel Chat is to enable instant messaging
+								between users whom can also share gifs, like posts or change
+								their profile avatar. Each user creates a profile in order to,
+								allow storage and retrieval of previous messages upon login,
+								therefore I needed to use a database to store user credentials
+								and protect passwords. This meant protected routes were required
+								within the app to authenticate valid users.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -222,14 +229,11 @@ function pixChat() {
 									}
 								}}
 							>
-								While planning the app, I choose to use the MVC (Model, View,
-								Controller) design pattern. This provided a clear separation of
-								concerns between client, server and database. With the API used
-								to efficiently send requests between client and database.
-								Allowing the storage and retrieval of player scores.
-								<br></br>I also used the Open Trivia API for fetching quiz
-								questions which could be customised by user input for enhanced
-								user experience.
+								Taking app requirements into consideration while planning led me
+								to use the mongoose ORM with Mongo DB. I needed to store users
+								and message models that interacted, therefore built my schema
+								with a join between the two. I managed my work flow with Trello
+								a kanban board and used Figma for prototyping the app.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -283,16 +287,22 @@ function pixChat() {
 								}}
 							>
 								<p>
-									The app was built using the MERN stack, React for front-end
-									and Node.js with MongoDB for the back-end. React was used over
-									Vanilla JS to allow the use of reusable and dynamic components
-									to handle real-time score tracking and countdown timers for
-									each question / answer combination.
-									<br></br>
-									Node.js enabled server-side logic and database interactions.
-									MongoDB, a NoSQL database, offered flexibility in storing and
-									querying the simple nature of leaderboard data. While Netlify
-									&amp; Render were used for deployment.
+									The MERN stack was used, with socket IO in my backend API
+									allowing instant messages between users. While creation of a
+									profile, is handled with Mongo DB, &amp; bcrypt for storage,
+									encryption and authentication of credentials. While user
+									authorization with JWT enables a login to persist across
+									multiple requests.
+								</p>
+
+								<p>
+									The API was built in Node.js giving full C.R.U.D functionality
+									that allows users messages / profile to be updated or deleted.
+									For styling I've chosen Tailwind because its utility classes
+									enabled me to match my Figma prototype quickly and meant
+									styles were easier to pasre inside JSX. While Netlify &amp;
+									Render were used for deployment and linked with GitHub repos
+									to enable continuous integration.
 								</p>
 							</div>
 						</div>
@@ -310,33 +320,21 @@ function pixChat() {
 									}
 								}}
 							>
-								<h3>Leaderboard</h3>
+								<h3>Like / Laugh reactions</h3>
 								<p>
-									Creating the leaderboard functionality involved designing the
-									database schema, implementing data retrieval and insertion
-									CRUD operations.
+									I wanted users to be able to react to received messages. This
+									was challenging as it required updating the senders message in
+									real time as well as messages stored in the database while
+									additionally only rendering reactions to a sender if the
+									receiver clicked a reaction button.
 								</p>
 								<p>
-									As this funtionality only required queries from GET and POST
-									requests I used a JS class to create the database schema
-									without using an ORM.
-								</p>
-							</div>
-							<div
-								ref={node => {
-									if (node) {
-										const nodeArr = getArr();
-										nodeArr.push(node);
-									}
-								}}
-							>
-								<h3>Dynamic Answer Buttons</h3>
-								<p>
-									To create an intuitive UX &amp; UI, I've used button colour to
-									indicate correct / incorrect answers on click or at countdown
-									0. To show these and and generate new questions in a single
-									function I had to utilise set timeout function. Thus ensuring
-									less code repetition and enhanced readability.
+									To implement this feature, I created a function that emitted
+									reactions to the socket in real time and updated the specific
+									message in the database with a PUT request and mongo query. To
+									ensure senders only see icons on their message when reacted
+									upon, I used conditional rendering in React with hooks
+									managing state of the reactions.
 								</p>
 							</div>
 							<div
@@ -347,18 +345,42 @@ function pixChat() {
 									}
 								}}
 							>
-								<h3>Timer Custom Hook</h3>
+								<h3>Authorization with JWT</h3>
 								<p>
-									Adding a timer feature provides some extra excitment to the
-									quiz and would typically be acomplished using a setInterval
-									function. However the challenge was the setInerval API is not
-									compatible with React's state re-renders.
+									In order to ensure that only authorized users could access a
+									profile I needed to create routes that were private and
+									protect CRUD requests to the API.
 								</p>
 								<p>
-									Therefore I needed implement a custom hook that made use of
-									the useRef hook to persit values between renders. Allowing the
-									counts previous values to be acessed and decreased between
-									renders.
+									To fulfill this I've used a JSON web token, generated upon a
+									successful login or registration request to the API. This is
+									then stored in local storage, allowing access for CRUD
+									requests to the server side. I further use this to create
+									private and public route components with React router,
+									authenticated by the token in local storage. This ensures a
+									user can only access authorized pages in the app.
+								</p>
+							</div>
+							<div
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
+								<h3>Bad Word Regex</h3>
+								<p>
+									Chat apps are prone to inappropriate / abusive messages
+									therefore I've decided to implement a parser built with regex
+									to replace any profanities.
+								</p>
+								<p>
+									To accomplish this I've used an array of common inappropriate
+									words and created a regex constructor which iterates the array
+									matching against dynamic content from user input. I've
+									composed this with the JS replace method to match and swap the
+									bad words array with a crossed out alternative.
 								</p>
 							</div>
 						</div>
@@ -374,28 +396,23 @@ function pixChat() {
 								}
 							}}
 						>
-							Durring this project I've honed my proficiency in React, making
-							use of reusable components and state management with hooks to
-							create a dynamic and interactive UI. Therefore I also had to learn about
-							ARIA conventions to ensure accessability for all users with dynamic
-							content.
-							<br></br>Further to this I gained experience in setting up a database using
-							MongoDB and implementing CRUD operations to manage leaderboard
-							entries. Giving me valuable experience of a Full Stack Application.
+							Overall, this project enhanced my skills in full-stack
+							development, creating real-time communication functionality,
+							without the need for manual refreshing using React, Socket.io, and
+							Node.js. 
 						</p>
+            <p>
+create API routes for sending and receiving messages, storing them in a database, and retrieving message history between users. Additionally, I strengthened my knowledge of RESTful API principles and made HTTP requests using the axios library.
+            </p>
 					</section>
-				
+				</main>
 
-        </main>
-
-        <footer className={utils.contact}>
-              <Contact />
-        </footer>
-      </div>
-
-
-    </>
-  )
+				<footer className={utils.contact}>
+					<Contact />
+				</footer>
+			</div>
+		</>
+	);
 }
 
-export default pixChat
+export default pixChat;

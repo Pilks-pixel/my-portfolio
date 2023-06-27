@@ -162,6 +162,11 @@ Layout
 	gap: 2.5em;
 }
 
+.features__flex p,
+.stack__features p {
+	margin-bottom: 1rem;
+}
+
 .icons__list {
 	position: relative;
 }
@@ -291,7 +296,7 @@ Typography
 	font-size: clamp(1rem, 2.5vw, 1.125rem);
 }
 
-/* Titles & Headins */
+/* Titles & Headings */
 .title_primary {
 	font-size: clamp(2rem, 5vw, 3.5rem);
 }
