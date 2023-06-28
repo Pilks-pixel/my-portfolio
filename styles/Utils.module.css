@@ -62,7 +62,8 @@ Layout
 }
 
 .sections h2,
-.sections h3{
+.sections h3,
+.sections p {
 	margin-bottom: 0.5em;
 }
 
@@ -123,7 +124,7 @@ Layout
 }
 
 .keyword__list,
-.icons__list{
+.icons__list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 5px;
@@ -150,7 +151,7 @@ Layout
 .section_grid {
 	padding: 1em;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%),1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 	place-items: center;
 	grid-gap: 3em;
 }
@@ -172,34 +173,34 @@ Layout
 }
 
 .icons__list::before {
-    position: absolute;
-    inset: 20px 0 20px 0;
-    content: "";
+	position: absolute;
+	inset: 20px 0 20px 0;
+	content: "";
 	filter: blur(45px);
-    background-image: radial-gradient(
-    circle farthest-corner at center 45%,
-    rgba(255, 255, 255, .5),
-    var(--background)60%);
+	background-image: radial-gradient(
+		circle farthest-corner at center 45%,
+		rgba(255, 255, 255, 0.5),
+		var(--background) 60%
+	);
 }
 
-.list__icon{
-    margin: .25em;
-    height: 7em;
-    width: 7em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5em;
-    text-align: center;
-    z-index: 2;
+.list__icon {
+	margin: 0.25em;
+	height: 7em;
+	width: 7em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	text-align: center;
+	z-index: 2;
 }
 
-.list_img{
+.list_img {
 	padding-bottom: 10px;
-	gap:0;
+	gap: 0;
 }
-
 
 /* images */
 .main__img,
@@ -230,11 +231,10 @@ Layout
 }
 
 .planning_section__image,
-.flex__image{
+.flex__image {
 	opacity: 0;
 	transform-style: preserve-3d;
 }
-
 
 /* Links */
 .contact__links > a {
@@ -319,15 +319,15 @@ Typography
 	letter-spacing: var(--text-headings-spacing);
 }
 
-
 .sections h3,
 .sections h2 {
 	letter-spacing: 1.5px;
 }
 
 /* body */
-.conclusion > p {
+.conclusion {
 	margin: 0 auto;
+	text-align: justify;
 	max-width: 700px;
 }
 
@@ -345,7 +345,7 @@ Animations
 .planning_section__purpose,
 .stack__features,
 .features__flex > div,
-.conclusion > p{
+.conclusion > div {
 	opacity: 0;
 }
 
@@ -358,12 +358,7 @@ Media
 		margin-right: 4rem;
 	}
 
-	.conclusion {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	.sections { 
+	.sections {
 		margin-bottom: 15vh;
 	}
 }

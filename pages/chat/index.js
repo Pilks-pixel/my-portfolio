@@ -232,8 +232,8 @@ function pixChat() {
 								Taking app requirements into consideration while planning led me
 								to use the mongoose ORM with Mongo DB. I needed to store users
 								and message models that interacted, therefore built my schema
-								with a join between the two. I managed my work flow with Trello
-								a kanban board and used Figma for prototyping the app.
+								with a join between the two. I managed my work flow with a
+								Trello kanban board and used Figma for prototyping the app.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -290,17 +290,16 @@ function pixChat() {
 									The MERN stack was used, with socket IO in my backend API
 									allowing instant messages between users. While creation of a
 									profile, is handled with Mongo DB, &amp; bcrypt for storage,
-									encryption and authentication of credentials. While user
+									encryption and authentication of credentials. Additionally user
 									authorization with JWT enables a login to persist across
 									multiple requests.
 								</p>
-
 								<p>
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
 									For styling I've chosen Tailwind because its utility classes
 									enabled me to match my Figma prototype quickly and meant
-									styles were easier to pasre inside JSX. While Netlify &amp;
+									styles were easier to parse inside JSX. While Netlify &amp;
 									Render were used for deployment and linked with GitHub repos
 									to enable continuous integration.
 								</p>
@@ -380,7 +379,7 @@ function pixChat() {
 									words and created a regex constructor which iterates the array
 									matching against dynamic content from user input. I've
 									composed this with the JS replace method to match and swap the
-									bad words array with a crossed out alternative.
+									bad words with a crossed out alternative.
 								</p>
 							</div>
 						</div>
@@ -388,7 +387,7 @@ function pixChat() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<p
+						<div
 							ref={node => {
 								if (node) {
 									const nodeArr = getArr();
@@ -396,14 +395,18 @@ function pixChat() {
 								}
 							}}
 						>
-							Overall, this project enhanced my skills in full-stack
-							development, creating real-time communication functionality,
-							without the need for manual refreshing using React, Socket.io, and
-							Node.js. 
-						</p>
-            <p>
-create API routes for sending and receiving messages, storing them in a database, and retrieving message history between users. Additionally, I strengthened my knowledge of RESTful API principles and made HTTP requests using the axios library.
-            </p>
+							<p>
+								Overall, this project enhanced my skills in full-stack
+								development, creating real-time communication, without the need
+								for manual refreshing using React, Socket.io, and Node.js.
+							</p>
+							<p>
+								Making API routes for C.R.U.D functionality among users /
+								messages, storing them in a database, and retrieving message
+								history between users, strengthened my knowledge of RESTful API
+								principles and HTTP requests using the axios library.
+							</p>
+						</div>
 					</section>
 				</main>
 
