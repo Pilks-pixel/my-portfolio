@@ -216,7 +216,7 @@ Layout
 .flex__image {
 	width: 90%;
 	max-width: 800px;
-	max-height: 500px;
+	height: min(50vh, 400px)
 }
 
 .main__img {

@@ -25,11 +25,10 @@ function About() {
 
 				<div className={styles.about__sub_title}>
 					<p className={styles.about__sub_title_top}>
-						I love building things on <strong>the web.</strong>
+						I love building things on <strong>the web.</strong> A person with a big appetite for <strong>knowledge</strong> and
+						boundless <strong>curiosity.</strong>
 					</p>
 					<p className={styles.about__sub_title_center}>
-						A person with a big appetite for <strong>knowledge</strong> and
-						boundless <strong>curiosity.</strong>
 					</p>
 				</div>
 
@@ -84,7 +83,7 @@ function About() {
 				<p className={styles.skills__sub_title}>
 					What I use to build my projects... Although{" "}
 					<strong>I'm always learning </strong>
-					something new and dive deeper into what I already know.
+					something new and diving deeper into what I already know.
 				</p>
 				<ul className={styles.skills__list}>
 					<li>

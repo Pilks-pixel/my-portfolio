@@ -4,28 +4,32 @@ Layout
 .about,
 .skills {
     margin: 0 auto;
-    margin-bottom: 2em;
-    width: min(80%, 610px);
+    margin-bottom: 7em;
+    width: min(85%, 900px);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.about > p {
+    width: min(100%, 700px);
+    margin-bottom: 1rem;
+}
+
+.about__title,
+.skills__title,
+.about__sub_title {
+    margin-bottom: 10%;
+}
+
+.skills__sub_title {
+    margin-bottom: 15%;
 }
 
 .about > p:last-child {
     margin-top: .5rem;
     padding: 1em;
     border-top: 1px solid var(--btn-color);
-}
-
-.about__sub_title > p,
-.skills__sub_title {
-    width: 95%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-}
-
-.about__sub_title > p:first-child{
-    margin-bottom: 0;
 }
 
 .skills__list {
@@ -97,7 +101,7 @@ Typography
     color: transparent;
 }
 
-.about__sub_title > p,
+.about__sub_title ,
 .skills__sub_title {
     line-height: 1.2;
     font-size: clamp(1rem ,2.1vw ,2.2rem);
@@ -109,13 +113,10 @@ Typography
     color: rgba(248,242,242,1);
 }
 
-.about__sub_title_center {
-    text-align-last: center;
-}
-
 .about__sub_title_top,
 .skills__sub_title {
-    text-align: right;
+    text-indent: 20%;
+    text-align: left;
 }
 
 .skills__list > li {

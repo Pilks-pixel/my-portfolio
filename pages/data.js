@@ -8,7 +8,7 @@ const data = [
 		video: "/quiz/quiz_screen.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
 		description:
-			"Quiz Night was built in React and uses the Open trivia api letting the user cusomise their quiz and uses MongoDB to store scores in a leaderboard",
+			"React Quiz app using Open trivia API with MongoDB to store scores in a leaderboard",
 	},
 	{
 		name: "Nou Design Studio",
@@ -33,11 +33,11 @@ const data = [
 		name: "Pix Chat",
 		id: "CHAT",
 		src: "/chat",
-		primaryImage: "/nou.png",
+		primaryImage: "/chat.png",
 		images: ["/chat/desktop.png", "/chat/mobile.png", "/chat/tablet.png"],
 		video: "/nou/nou_screen.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
-		description: "Real time chat with Socket IO",
+		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
 	},
 ];
 
