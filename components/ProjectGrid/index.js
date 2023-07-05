@@ -16,8 +16,10 @@ function ProjectGrid() {
 	});
 
 	// Render project cards from the data
-
-	const cards = cardsWithId.map(card => {
+	const alternateOrder = (index) => index % 2;
+	
+	const cards = cardsWithId.map((card, index) => {
+		const even = alternateOrder(index)
 		console.log(card);
 		return (
 			<Link
@@ -26,12 +28,11 @@ function ProjectGrid() {
 				className={styles.project_container__card}
 			>
 				<div
-					className={styles.card__img}
-					style={{ backgroundImage: `url(${card.primaryImage})` }}
+					className={`${styles.card__img} ${even && styles.card__img_even}  `}
+					style={{ backgroundImage: `url(${card.primaryImage})`}}
 				></div>
 				<div className={styles.card__info}>
-					<h3>{card.name}</h3>
-					<p>{card.description}</p>
+					<h3 className={styles.info__heading}>{card.name}</h3>
 					<button className={styles.info__btn} >
 					 	<p>View Project</p>	 
 						<FaArrowRight style={{ color: "white" }} />
