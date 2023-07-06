@@ -30,7 +30,7 @@ const data = [
 		description: "Nou is a brand and web design studio, inspired by minimalism",
 	},
 	{
-		name: "Pix Chat",
+		name: "Pixel Chat",
 		id: "CHAT",
 		src: "/chat",
 		primaryImage: "/chat.png",
