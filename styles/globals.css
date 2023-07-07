@@ -5,8 +5,10 @@
 	--small-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 	--font-headings: 'Bevan', cursive;
 	--text-color: #f8f2f2;
+	--text-color-dark: #1b1919;
 	--btn-color: #dbdbdb;
 	--background: #1a1d22;
+	--background-secondary: #F4F6F6; 
 	--text-gradient: linear-gradient(
 		180deg,
 		#23817d 0%,

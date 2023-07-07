@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState, useRef, useEffect } from "react";	
+import { FaArrowRight } from "react-icons/fa";
+
 import { About, ProjectGrid } from "@/components/index";
 
 export default function Home() {
@@ -76,7 +77,17 @@ export default function Home() {
 			<div className={styles.wrapper}>
 				<header className={styles.description}>
 					<h2 className={styles.description__name}>Peter Pilkington</h2>
-					<h1 className={styles.description__job}>full Stack developer</h1>
+					<div className={styles.description__links}>
+							<a href='https://github.com/Pilks-pixel' target='_blank'>
+								Github
+							</a>
+							<a
+								href='https://www.linkedin.com/in/peter-pilkington-322262107/'
+								target='_blank'
+							>
+								Linkedin
+							</a>
+					</div>
 				</header>
 
 				<main className={styles.main}>
@@ -97,8 +108,9 @@ export default function Home() {
 							aria-expanded={aboutVisable}
 							aria-controls='about_container'
 						>
-							About /&gt;
+							About&nbsp;/&gt;
 						</button>
+						<h2 className={styles.center__title}>FULL STACK DEVELOPER </h2>
 					</section>
 
 					<section
@@ -126,22 +138,22 @@ export default function Home() {
 					>
 						<About />
 					</section>
+					<footer className={styles.contact}>
+						<div className={styles.contact__info}>
+							<h2>Let’s work together</h2>
+							<p>peterpilkington@hotmail.com</p>
+							<p>+44 07804839393</p>
+						</div>
+						<button className={styles.contact__btn}>
+						<p>
+						 GET IN TOUCH
+						</p>
+						<FaArrowRight />
+						 </button>
+						
+					</footer>
 				</main>
 
-				<footer className={styles.contact}>
-					<h2>contact</h2>
-					<div className={styles.contact__links}>
-						<a href='https://github.com/Pilks-pixel' target='_blank'>
-							<FaGithub size={32} />
-						</a>
-						<a
-							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-							target='_blank'
-						>
-							<FaLinkedin size={32} color='#0077b5' />
-						</a>
-					</div>
-				</footer>
 			</div>
 		</>
 	);

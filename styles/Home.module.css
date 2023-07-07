@@ -1,7 +1,7 @@
 /* ======
 Layout
 ====== */
-/* wrapper for sticky header & footer */
+/* wrapper for sticky header*/
 .wrapper {
 	height: 100vh;
 	display: grid;
@@ -9,8 +9,7 @@ Layout
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		"header"
-		"main"
-		"footer";
+		"main";
 }
 
 .wrapper > .description {
@@ -23,17 +22,11 @@ Layout
 	padding: 3em 0 1em 0;
 }
 
-.wrapper > .contact {
-	grid-area: footer;
-}
-
 .description,
 .contact {
 	display: flex;
 	padding: 1em;
-	justify-content: space-between;
 	align-items: center;
-	gap: 0.5em;
 	text-align: center;
 }
 
@@ -41,29 +34,49 @@ Layout
 	top: 0;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	backdrop-filter: blur(5px);
+	justify-content: space-between;
+	gap: 0.5em;
 }
 
 .contact {
-	bottom: 0;
-	box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: var(--background);
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 2.5rem;
+	margin-bottom: 5rem;
+}
+
+.contact__info > * {
+	margin-bottom: 1rem;
+	text-align: start;
+	flex: 2;
+}
+
+.contact__info > p {
+	border: 1px solid #fff;
+	border-radius: 3.5625rem;
+	padding: 0.5em 0.75em;
+	max-width: max-content;
 }
 
 .center {
-	margin: 10rem 0;
+	margin: 10rem auto;
+	min-height: 100wh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 100%;
 }
 
 /* section element open/close */
 .grid,
 .about_article {
 	opacity: 0;
-	margin-bottom: 7rem;
+	margin-bottom: min(15%, 5rem)
 }
 
 .visable {
 	animation: fade-in 1000ms ease-in forwards;
 }
-
 
 /* section fade elements animations */
 @keyframes fade-in {
@@ -82,29 +95,31 @@ Layout
 }
 
 /* ===========
-Center__Buttons
+Buttons
 ============== */
-
 /* remove default button styles */
+.contact__btn,
 .center__btn {
 	position: relative;
-	display: block;
 	border: none;
-	padding: 0;
-	margin: 0 auto;
-	margin-bottom: 2px;
 	text-decoration: none;
 	text-transform: uppercase;
-	background: inherit;
-	color: var(--btn-color);
 	font-family: inherit;
-	font-size: clamp(2.2rem, 10vw, 5.5rem);
-	font-weight: inherit;
+	background: inherit;
 	letter-spacing: var(--text-headings-spacing);
 	cursor: pointer;
-	text-align: center;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+}
+
+.center__btn {
+	display: block;
+	padding: 0;
+	margin-bottom: 2px;
+	color: var(--btn-color);
+	font-size: clamp(2rem, 10vw, 5.5rem);
+	font-weight: inherit;
+	max-width: 90%;
 }
 
 .center__btn_gradient {
@@ -125,6 +140,37 @@ Center__Buttons
 .center__btn_gradient:hover,
 .center__btn_gradient:focus {
 	background-position: center bottom;
+}
+
+.contact__btn {
+	z-index: 2;
+	display: flex;
+	gap: 0.6rem;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	padding: 0.75em 1.25em;
+	margin-bottom: 2px;
+	font-size: 1rem;
+	letter-spacing: var(--text-headings-spacing);
+	text-align: center;
+	color: var(--btn-color)
+}
+
+.contact__btn > p {
+	font-weight: 700;
+}
+
+.contact__btn::before {
+	position: absolute;
+	left: 3px;
+	z-index: -1;
+	content: "";
+	border-radius: 20px;
+	width: 6.243rem;
+	height: 6.243rem;
+	border-radius: 50%;
+	background-color: #45b0b7;
 }
 
 /* Blured radial gradients */
@@ -169,7 +215,7 @@ Center__Buttons
 }
 
 /* Links */
-.contact__links > a {
+.description__links > a {
 	margin: 4px;
 	padding: 4px;
 }
@@ -177,23 +223,26 @@ Center__Buttons
 /* ========
 Typography
 ======== */
-.center,
+.center button,
 .description__job {
 	font-family: var(--font-headings);
 	font-weight: 900;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
-.description__job {
-	font-size: clamp(1rem, 2.5vw, 1.625rem);
-}
-
-.description__name {
+.description__name,
+.description__links,
+.center__title {
 	font-size: clamp(0.75rem, 2.5vw, 1.125rem);
 }
 
-.contact > h2 {
+.center__title {
+	font-weight: 800;
+}
+
+.contact__info > h2 {
 	font-size: clamp(1rem, 2.5vw, 1.125rem);
+	font-family: var(--font-headings);
 }
 
 /* =====
@@ -204,5 +253,21 @@ Media
 @media (min-width: 480px) {
 	.center__btn_about::after {
 		inset: 20% 0 0 70%;
+	}
+
+	.description {
+		padding: 1.5em 4em;
+	}
+
+	.contact {
+		gap: .5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.grid,
+	.about_article {
+		opacity: 1;
+		margin-bottom: 2rem;
 	}
 }
