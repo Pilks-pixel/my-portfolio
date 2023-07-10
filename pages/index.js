@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";	
+import { useState, useRef, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
-
 import { About, ProjectGrid } from "@/components/index";
 
 export default function Home() {
@@ -15,10 +13,11 @@ export default function Home() {
 	const handleClick = e => {
 		function matchSection() {
 			const firstWordPattern = new RegExp(e.target.id.split("_")[0]);
+
 			const sectionNode = itemsRef.current.filter(node => {
-        return firstWordPattern.test(node.id)
-      })
-			return sectionNode[0]
+				return firstWordPattern.test(node.id);
+			});
+			return sectionNode[0];
 		}
 
 		matchSection().scrollIntoView({
@@ -39,20 +38,20 @@ export default function Home() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.20,
+		threshold: 0.2,
 	};
 
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } 
+	const callback = (entries, observer) => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) {
+				return;
+			}
 
-      entry.target.classList.add(`${styles.visable}`)
+			entry.target.classList.add(`${styles.visable}`);
 
-      observer.unobserve(entry.target);
-    });
-  };
+			observer.unobserve(entry.target);
+		});
+	};
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(callback, options);
@@ -78,15 +77,18 @@ export default function Home() {
 				<header className={styles.description}>
 					<h2 className={styles.description__name}>Peter Pilkington</h2>
 					<div className={styles.description__links}>
-							<a href='https://github.com/Pilks-pixel' target='_blank'>
-								Github
-							</a>
-							<a
-								href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-								target='_blank'
-							>
-								Linkedin
-							</a>
+						<a id='contact_btn' tabIndex="0" onClick={e => handleClick(e)}>
+							Contact
+						</a>
+						<a href='https://github.com/Pilks-pixel' target='_blank'>
+							Github
+						</a>
+						<a
+							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
+							target='_blank'
+						>
+							Linkedin
+						</a>
 					</div>
 				</header>
 
@@ -138,22 +140,28 @@ export default function Home() {
 					>
 						<About />
 					</section>
-					<footer className={styles.contact}>
+					<footer
+						id='contact_container'
+						className={styles.contact}
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+					>
 						<div className={styles.contact__info}>
 							<h2>Let’s work together</h2>
 							<p>peterpilkington@hotmail.com</p>
 							<p>+44 07804839393</p>
 						</div>
 						<button className={styles.contact__btn}>
-						<p>
-						 GET IN TOUCH
-						</p>
-						<FaArrowRight />
-						 </button>
-						
+							<a href='mailto:peterpilkington@hotmail.com'>GET IN TOUCH</a>
+							<FaArrowRight className={styles.btn__arrow}/>
+						</button>
 					</footer>
+					<h4 className={styles.tagline}>PETER PILKINGTON 2022</h4>
 				</main>
-
 			</div>
 		</>
 	);

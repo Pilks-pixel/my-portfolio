@@ -20,7 +20,6 @@ function ProjectGrid() {
 
 	const cards = cardsWithId.map((card, index) => {
 		const even = alternateOrder(index);
-		console.log(card);
 		return (
 			<Link
 				href={card.src}
@@ -28,16 +27,18 @@ function ProjectGrid() {
 				className={styles.project_container__card}
 			>
 				<div
-					className={`${styles.card__img} ${even && styles.card__img_even}  `}
+					className={`${styles.card__img} ${even && styles.card__img_even}`}
 					style={{ backgroundImage: `url(${card.primaryImage})` }}
 				>
-					<div className={styles.card__content}>
+					<div className={styles.card__content}
+					>
 					<p>{card.description}</p>
 					</div>
 					
 				</div>
 				<div className={styles.card__info}>
 					<h3 className={styles.info__heading}>{card.name}</h3>
+
 					<button className={styles.info__btn}>
 						<p>View Project</p>
 						<FaArrowRight />

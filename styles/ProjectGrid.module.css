@@ -22,6 +22,7 @@ Project Grid Layout
 .card__img,
 .card__info {
 	width: min(100%, 400px);
+
 }
 
 .card__img {

@@ -6,7 +6,7 @@ Layout
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"header"
 		"main";
@@ -26,6 +26,7 @@ Layout
 .contact {
 	display: flex;
 	padding: 1em;
+	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 }
@@ -42,13 +43,12 @@ Layout
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	gap: 2.5rem;
-	margin-bottom: 5rem;
+	margin-bottom: 4rem;
 }
 
 .contact__info > * {
-	margin-bottom: 1rem;
+	margin-bottom: 1.75rem;
 	text-align: start;
-	flex: 2;
 }
 
 .contact__info > p {
@@ -58,9 +58,14 @@ Layout
 	max-width: max-content;
 }
 
+.tagline {
+	margin: 0 auto 4rem auto;
+	text-align: center;
+}
+
 .center {
 	margin: 10rem auto;
-	min-height: 100wh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -71,7 +76,7 @@ Layout
 .grid,
 .about_article {
 	opacity: 0;
-	margin-bottom: min(15%, 5rem)
+	margin-bottom: min(15%, 6rem);
 }
 
 .visable {
@@ -154,7 +159,7 @@ Buttons
 	font-size: 1rem;
 	letter-spacing: var(--text-headings-spacing);
 	text-align: center;
-	color: var(--btn-color)
+	color: var(--btn-color);
 }
 
 .contact__btn > p {
@@ -171,6 +176,7 @@ Buttons
 	height: 6.243rem;
 	border-radius: 50%;
 	background-color: #45b0b7;
+	transition: all 350ms linear;
 }
 
 /* Blured radial gradients */
@@ -206,6 +212,7 @@ Buttons
 	transition: width 500ms linear, height 500ms linear;
 }
 
+/* hover & focus */
 .center__btn_gradient:hover::before,
 .center__btn_gradient:focus::before,
 .center__btn_about:hover:after,
@@ -214,11 +221,29 @@ Buttons
 	height: 150px;
 }
 
+.contact__btn:hover::before,
+.contact__btn:focus::before {
+	transform: scale(1.1);
+	filter: blur(35px);
+}
+
+.contact__btn:hover .btn__arrow,
+.contact__btn:focus .btn__arrow,
+.description__links > a:hover,
+.description__links > a:focus{
+	color: #45b0b7;
+}
+
+
 /* Links */
 .description__links > a {
 	margin: 4px;
 	padding: 4px;
+	cursor: pointer;
+	transition: color 350ms ease;
 }
+
+
 
 /* ========
 Typography
@@ -260,7 +285,7 @@ Media
 	}
 
 	.contact {
-		gap: .5rem;
+		gap: 0.5rem;
 	}
 }
 
@@ -269,5 +294,23 @@ Media
 	.about_article {
 		opacity: 1;
 		margin-bottom: 2rem;
+	}
+}
+
+@media (max-width: 300px) {
+	.description__links,
+	.contact {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.description__links {
+		max-width: 50%;
+	}
+
+	.contact {
+		font-size: 0.8rem;
 	}
 }
