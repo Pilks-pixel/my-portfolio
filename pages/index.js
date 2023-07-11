@@ -77,7 +77,7 @@ export default function Home() {
 				<header className={styles.description}>
 					<h2 className={styles.description__name}>Peter Pilkington</h2>
 					<div className={styles.description__links}>
-						<a id='contact_btn' tabIndex="0" onClick={e => handleClick(e)}>
+						<a id='contact_btn' tabIndex='0' onClick={e => handleClick(e)}>
 							Contact
 						</a>
 						<a href='https://github.com/Pilks-pixel' target='_blank'>
@@ -142,25 +142,27 @@ export default function Home() {
 					</section>
 					<footer
 						id='contact_container'
-						className={styles.contact}
 						ref={node => {
 							if (node) {
 								const nodeArr = getArr();
 								nodeArr.push(node);
 							}
 						}}
+						className={styles.container__contact}
 					>
-						<div className={styles.contact__info}>
-							<h2>Let’s work together</h2>
-							<p>peterpilkington@hotmail.com</p>
-							<p>+44 07804839393</p>
+						<div className={styles.contact}>
+							<div className={styles.contact__info}>
+								<h2>Let’s work together</h2>
+								<p>peterpilkington@hotmail.com</p>
+								<p>+44 07914757197</p>
+							</div>
+							<button className={styles.contact__btn}>
+								<a href='mailto:peterpilkington@hotmail.com'>GET IN TOUCH</a>
+								<FaArrowRight className={styles.btn__arrow} />
+							</button>
 						</div>
-						<button className={styles.contact__btn}>
-							<a href='mailto:peterpilkington@hotmail.com'>GET IN TOUCH</a>
-							<FaArrowRight className={styles.btn__arrow}/>
-						</button>
+						<h4 className={styles.contact__tagline}>PETER PILKINGTON 2022</h4>
 					</footer>
-					<h4 className={styles.tagline}>PETER PILKINGTON 2022</h4>
 				</main>
 			</div>
 		</>

@@ -4,7 +4,6 @@ import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import {
-	SiCss3,
 	SiReact,
 	SiNetlify,
 	SiMongodb,

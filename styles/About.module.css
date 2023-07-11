@@ -31,9 +31,12 @@ Layout
 	margin-bottom: min(10%, 5rem);
 }
 
-.skills__sub_title,
 .about__sub_title {
-	margin-bottom: min(10%, 3rem);
+	margin-bottom: min(10%, 4rem);
+}
+
+.skills__sub_title {
+	margin-bottom: min(12%, 8rem);
 }
 
 .about > p:last-child {
@@ -95,7 +98,7 @@ Typography
 ========= */
 .about__title,
 .skills__title {
-	font-size: clamp(1.5rem, 3.5vw, 3rem);
+	font-size: clamp(1.5rem, 3vw, 1.75rem);
 	font-family: var(--font-headings);
 	letter-spacing: 0.07em;
 	line-height: 1.2;
@@ -112,7 +115,7 @@ Typography
 .about__sub_title,
 .skills__sub_title {
 	line-height: 1.2;
-	font-size: clamp(1rem, 2vw, 2rem);
+	font-size: clamp(1rem, 2vw, 1.25rem);
 	text-transform: uppercase;
 }
 

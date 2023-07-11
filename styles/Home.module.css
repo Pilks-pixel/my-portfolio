@@ -20,13 +20,18 @@ Layout
 	grid-area: main;
 	overflow: auto;
 	padding: 3em 0 1em 0;
+} 
+
+.container__contact {
+	padding: 5rem 0;
+	min-height: min(70%, 700px);
+	background-color: var(--background-secondary);
 }
 
 .description,
 .contact {
 	display: flex;
 	padding: 1em;
-	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 }
@@ -42,8 +47,9 @@ Layout
 .contact {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	gap: 2.5rem;
-	margin-bottom: 4rem;
+	gap: 3.5rem;
+	margin-top: 6rem;
+	margin-bottom: 6rem;
 }
 
 .contact__info > * {
@@ -52,13 +58,13 @@ Layout
 }
 
 .contact__info > p {
-	border: 1px solid #fff;
+	border: 1px solid var(--text-color-dark);
 	border-radius: 3.5625rem;
 	padding: 0.5em 0.75em;
 	max-width: max-content;
 }
 
-.tagline {
+.contact__tagline {
 	margin: 0 auto 4rem auto;
 	text-align: center;
 }
@@ -76,7 +82,14 @@ Layout
 .grid,
 .about_article {
 	opacity: 0;
-	margin-bottom: min(15%, 6rem);
+}
+
+.grid {
+	margin-bottom: min(15%, 9rem);
+}
+
+.about_article {
+	margin-bottom: 8rem
 }
 
 .visable {
@@ -122,7 +135,7 @@ Buttons
 	padding: 0;
 	margin-bottom: 2px;
 	color: var(--btn-color);
-	font-size: clamp(2rem, 10vw, 5.5rem);
+	font-size: clamp(2rem, 10vw, 5rem);
 	font-weight: inherit;
 	max-width: 90%;
 }
@@ -234,6 +247,11 @@ Buttons
 	color: #45b0b7;
 }
 
+.contact__btn:hover,
+.contact__btn:focus {
+	color: var(--text-color-dark);
+}
+
 
 /* Links */
 .description__links > a {
@@ -258,18 +276,30 @@ Typography
 .description__name,
 .description__links,
 .center__title {
-	font-size: clamp(0.75rem, 2.5vw, 1.125rem);
+	font-size: clamp(0.75rem, 2vw, 1rem);
 }
 
 .center__title {
 	font-weight: 800;
+	color: #85847C;
 }
 
 .contact__info > h2 {
-	font-size: clamp(1rem, 2.5vw, 1.125rem);
+	font-size: clamp(1rem, 2vw, 1rem);
 	font-family: var(--font-headings);
 }
 
+.contact__info > p {
+	font-size: 0.6rem;
+}
+
+.container__contact {
+	color: var(--text-color-dark);
+}
+
+.contact__tagline {
+	font-size: 0.625rem;
+}
 /* =====
 Media
 ===== */
@@ -293,7 +323,7 @@ Media
 	.grid,
 	.about_article {
 		opacity: 1;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 }
 

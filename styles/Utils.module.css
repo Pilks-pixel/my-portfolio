@@ -7,11 +7,10 @@ Layout
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"header"
-		"main"
-		"footer";
+		"main";
 }
 
 .wrapper > .description {
@@ -21,53 +20,38 @@ Layout
 .wrapper > .main {
 	grid-area: main;
 	overflow: auto;
-	padding: 3em 0 1em 0;
+	padding: 5em;
 }
 
-.wrapper > .contact {
-	grid-area: footer;
-}
-
-.description,
-.contact {
+.description {
 	display: flex;
 	padding: 1em;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0.5em;
 	text-align: center;
-}
-
-.description {
 	top: 0;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	backdrop-filter: blur(5px);
 }
 
-.contact {
-	bottom: 0;
-	box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: var(--background);
-}
 
 /* Section containers */
-.title {
-	padding: 1em 1.5em;
-}
-
 .sections {
 	/* outline: 2px solid hotpink; */
 	padding: 0 1em;
 	margin-bottom: 5rem;
 }
 
+.title,
 .sections h2,
-.sections h3,
-.sections p {
-	margin-bottom: 0.5em;
+.sections h3 {
+	max-width: 85%;
+	margin: 0 auto 2.5rem;
 }
 
 .sections p {
+	margin-bottom: 2rem;
 	max-width: 500px;
 }
 
@@ -87,7 +71,7 @@ Layout
 }
 
 .hero_section > :last-child {
-	flex-basis: 300px;
+	flex-basis: 350px;
 	flex-grow: 1;
 }
 
@@ -98,8 +82,8 @@ Layout
 
 /* Aside section */
 .hero_section__aside {
-	margin: 2rem;
-	padding: 0.5em;
+	margin: 1rem 0.75em;
+	padding: 1.25em;
 	border: 2px solid var(--btn-color);
 	border-radius: 8px;
 	text-align: center;
@@ -144,7 +128,7 @@ Layout
 .aside__info,
 .keyword__list {
 	line-height: 1.3;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 
 /* Grid container sections */
@@ -153,7 +137,7 @@ Layout
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 	place-items: center;
-	grid-gap: 3em;
+	grid-gap: 3rem 1.5rem;
 }
 
 /* Features */
@@ -216,7 +200,7 @@ Layout
 .flex__image {
 	width: 90%;
 	max-width: 800px;
-	height: min(50vh, 400px)
+	height: min(50vh, 400px);
 }
 
 .main__img {
@@ -233,13 +217,14 @@ Layout
 .planning_section__image,
 .flex__image {
 	opacity: 0;
-	transform-style: preserve-3d;
 }
 
 /* Links */
-.contact__links > a {
+.description__links > a {
 	margin: 4px;
 	padding: 4px;
+	cursor: pointer;
+	transition: color 350ms ease;
 }
 
 /* aside links */
@@ -284,12 +269,12 @@ Typography
 .description__job {
 	font-family: var(--font-headings);
 	font-weight: 900;
-	font-size: clamp(1rem, 2.5vw, 1.625rem);
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
-.description__name {
-	font-size: clamp(0.75rem, 2.5vw, 1.125rem);
+.description__name,
+.description__job {
+	font-size: clamp(0.75rem, 2vw, 1rem);
 }
 
 .contact > h2 {
@@ -352,6 +337,12 @@ Animations
 /* ======
 Media
 ====== */
+@media (min-width: 480px) {
+	.description {
+		padding: 1.5em 4em;
+	}
+}
+
 @media (min-width: 879px) {
 	.hero_section__aside {
 		margin: 0;
@@ -361,4 +352,19 @@ Media
 	.sections {
 		margin-bottom: 15vh;
 	}
+}
+
+@media (max-width: 300px) {
+	.description__links,
+	.contact {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.description__links {
+		max-width: 50%;
+	}
+
 }

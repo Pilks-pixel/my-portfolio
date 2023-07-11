@@ -2,7 +2,7 @@
 Project Grid Layout
 ================= */
 .project_container {
-	padding: 6em .5em;
+	padding: 8em .5em;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 6em;
@@ -22,7 +22,6 @@ Project Grid Layout
 .card__img,
 .card__info {
 	width: min(100%, 400px);
-
 }
 
 .card__img {
@@ -34,7 +33,7 @@ Project Grid Layout
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	background-color: lightblue;
+	background-color: inherit;
 	overflow: hidden;
 	box-shadow: var(--picture-shadow);
 	transition: all 0.5s ease;
@@ -51,11 +50,14 @@ Project Grid Layout
 .card__content {
 	position: absolute;
 	margin: 0 auto;
-	padding: .75em 1.75em;
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 30%;
 	background-color: #1b1919;
 	border-radius: var(--border-radius);
-	border: 2px solid #D9D9D9;
-	bottom: 10%;
+	bottom: 5%;
 	right: 5%;
 	left: 5%;
 	transform: translateX(-110%);
@@ -117,6 +119,11 @@ color: var(--text-color-dark);
 
 .info__heading {
 	font-weight: 400;
+}
+
+.card__content {
+	font-size: .75rem;
+	text-align: left;
 }
 
 /* Media */
