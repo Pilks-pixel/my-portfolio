@@ -52,7 +52,7 @@ function quiz() {
 		}
 	});
 
-	console.log(data[0])
+	console.log(data[0]);
 
 	const stack = data.map(project => {
 		if (project.id === "QUIZ") {
@@ -99,7 +99,7 @@ function quiz() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.5,
+		threshold: 0.2,
 	};
 
 	useEffect(() => {
@@ -156,9 +156,8 @@ function quiz() {
 								Quiz Night was designed to provide a fun and interactive quiz
 								experience using the Open trivia API. Users can customise each
 								quiz by subject or difficulty and features a leaderboard where
-								high scores are persisted. In this project, I
-								demonstrate front &amp; back-end skills using React with Node.js
-								and MongoDB.
+								high scores are persisted. In this project, I demonstrate front
+								&amp; back-end skills using React with Node.js and MongoDB.
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>{stack}</ul>
@@ -183,9 +182,8 @@ function quiz() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
-						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
-							<p
+							<div
 								className={utils.planning_section__purpose}
 								ref={node => {
 									if (node) {
@@ -194,12 +192,15 @@ function quiz() {
 									}
 								}}
 							>
-								The purpose of the project was to create a quiz app that
-								entertains users while enhances their knowledge under time
-								pressure. I've planned the app's functionality to create an
-								intuitive UX &amp; UI with colour signlling correct or incorrect
-								answers and messages indicating the game status.
-							</p>
+								<h2>Purpose &amp; Planning</h2>
+								<p>
+									The purpose of the project was to create a quiz app that
+									entertains users while enhances their knowledge under time
+									pressure. I've planned the app's functionality to create an
+									intuitive UX &amp; UI with colour signlling correct or
+									incorrect answers and messages indicating the game status.
+								</p>
+							</div>
 							<Image
 								className={utils.planning_section__image}
 								src='/quiz/figma_screenshot.png'
@@ -377,19 +378,19 @@ function quiz() {
 						>
 							Durring this project I've honed my proficiency in React, making
 							use of reusable components and state management with hooks to
-							create a dynamic and interactive UI. Therefore I also had to learn about
-							ARIA conventions to ensure accessability for all users with dynamic
-							content.
-							<br></br>Further to this I gained experience in setting up a database using
-							MongoDB and implementing CRUD operations to manage leaderboard
-							entries. Giving me valuable experience of a Full Stack Application.
+							create a dynamic and interactive UI. Therefore I also had to learn
+							about ARIA conventions to ensure accessability for all users with
+							dynamic content.
+							<br></br>Further to this I gained experience in setting up a
+							database using MongoDB and implementing CRUD operations to manage
+							leaderboard entries. Giving me valuable experience of a Full Stack
+							Application.
 						</p>
 					</section>
+					<footer className={utils.contact}>
+						<Contact />
+					</footer>
 				</main>
-
-				<footer className={utils.contact}>
-					<Contact />
-				</footer>
 			</div>
 		</>
 	);

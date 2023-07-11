@@ -3,12 +3,7 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import {
-	SiReact,
-	SiNetlify,
-	SiMongodb,
-	SiTailwindcss,
-} from "react-icons/si";
+import { SiReact, SiNetlify, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { data } from "../data";
 import { FaNodeJs } from "react-icons/fa";
 import { Nav, Contact } from "@/components";
@@ -104,7 +99,7 @@ function pixChat() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.5,
+		threshold: 0.2,
 	};
 
 	useEffect(() => {
@@ -186,9 +181,8 @@ function pixChat() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
-						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
-							<p
+							<div
 								className={utils.planning_section__purpose}
 								ref={node => {
 									if (node) {
@@ -197,14 +191,17 @@ function pixChat() {
 									}
 								}}
 							>
-								The primary purpose of Pixel Chat is to enable instant messaging
-								between users whom can also share gifs, like posts or change
-								their profile avatar. Each user creates a profile in order to,
-								allow storage and retrieval of previous messages upon login,
-								therefore I needed to use a database to store user credentials
-								and protect passwords. This meant protected routes were required
-								within the app to authenticate valid users.
-							</p>
+								<h2>Purpose &amp; Planning</h2>
+								<p>
+									The primary purpose of Pixel Chat is to enable instant
+									messaging between users whom can also share gifs, like posts
+									or change their profile avatar. Each user creates a profile in
+									order to, allow storage and retrieval of previous messages
+									upon login, therefore I needed to use a database to store user
+									credentials and protect passwords. This meant protected routes
+									were required within the app to authenticate valid users.
+								</p>
+							</div>
 							<Image
 								className={utils.planning_section__image}
 								src='/chat/figma_screenshot.png'
@@ -289,8 +286,8 @@ function pixChat() {
 									The MERN stack was used, with socket IO in my backend API
 									allowing instant messages between users. While creation of a
 									profile, is handled with Mongo DB, &amp; bcrypt for storage,
-									encryption and authentication of credentials. Additionally user
-									authorization with JWT enables a login to persist across
+									encryption and authentication of credentials. Additionally
+									user authorization with JWT enables a login to persist across
 									multiple requests.
 								</p>
 								<p>
@@ -407,11 +404,10 @@ function pixChat() {
 							</p>
 						</div>
 					</section>
+					<footer className={utils.contact}>
+						<Contact />
+					</footer>
 				</main>
-
-				<footer className={utils.contact}>
-					<Contact />
-				</footer>
 			</div>
 		</>
 	);

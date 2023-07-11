@@ -3,7 +3,7 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { SiCss3, SiJavascript, SiReact, SiGit } from "react-icons/si";
+import { SiCss3, SiJavascript, SiReact,} from "react-icons/si";
 import { data } from "../data";
 import { Contact, Nav } from "@/components";
 
@@ -99,7 +99,7 @@ function nou() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.5,
+		threshold: 0.2,
 	};
 
 	useEffect(() => {
@@ -183,9 +183,8 @@ function nou() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
-						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
-							<p
+							<div
 								className={utils.planning_section__purpose}
 								ref={node => {
 									if (node) {
@@ -193,12 +192,15 @@ function nou() {
 										nodeArr.push(node);
 									}
 								}}
-							>
+								>
+								<h2>Purpose &amp; Planning</h2>
+								<p>
 								This project was made to market and showcase projects to
 								potential clients of the business. It lists the services,
 								creatively displays previous projects and provides a form for
 								enquiries
-							</p>
+								</p>
+							</div>
 							<Image
 								className={utils.planning_section__image}
 								src='/nou/adobe_screenshot.png'
@@ -376,7 +378,7 @@ function nou() {
 						<p
 							ref={node => {
 								if (node) {
-									const nodeArr = getArr();
+									const  nodeArr = getArr();
 									nodeArr.push(node);
 								}
 							}}
@@ -388,11 +390,11 @@ function nou() {
 							like CSS grid.
 						</p>
 					</section>
+					<footer className={utils.contact}>
+						<Contact />
+					</footer>
 				</main>
 
-				<footer className={utils.contact}>
-					<Contact />
-				</footer>
 			</div>
 		</>
 	);
