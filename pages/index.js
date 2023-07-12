@@ -70,7 +70,7 @@ export default function Home() {
 			<div className={styles.wrapper}>
 				<header className={styles.description}>
 					<h2 className={styles.description__name}>Peter Pilkington</h2>
-					<div className={styles.description__links}>
+					<nav className={styles.description__links}>
 						<a id='contact_btn' tabIndex='0' onClick={e => handleClick(e)}>
 							Contact
 						</a>
@@ -83,7 +83,7 @@ export default function Home() {
 						>
 							Linkedin
 						</a>
-					</div>
+					</nav>
 				</header>
 
 				<ScrollToTop pageTop={scrollRef} topElement={itemsRef}/>
