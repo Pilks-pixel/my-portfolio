@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiCss3, SiJavascript, SiReact,} from "react-icons/si";
 import { data } from "../data";
-import { Contact, Nav } from "@/components";
+import { Contact, Nav, ScrollToTop } from "@/components";
 
 function nou() {
 	const itemsRef = useRef(null);
+	const scrollRef = useRef(null);
+
 
 	// Display projects media & info
 	const projectImages = data.map(project => {
@@ -143,8 +145,17 @@ function nou() {
 					<Nav />
 				</header>
 
-				<main className={utils.main}>
-					<section className={utils.title}>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
+				<main className={utils.main} ref={scrollRef}>
+					<section
+					id='top_container'
+					ref={node => {
+						if (node) {
+							const nodeArr = getArr();
+							nodeArr.push(node);
+						}
+					}}
+					className={utils.title}>
 						<h2 className={utils.title_primary}>Nou Design Studio</h2>
 					</section>
 

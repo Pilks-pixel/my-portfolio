@@ -271,6 +271,36 @@ Layout
 	text-align: center;
 }
 
+/* buttons */
+.scrollBtn {
+	opacity: 0;
+	cursor: pointer;
+	position: fixed;
+	bottom: 4%;
+	right: 4%;
+	display: block;
+	border: 1px solid #F5F5F5;;
+	border-radius: 50%;
+	background-color: inherit;
+	padding: 0;
+	width: 50px;
+	height: 50px;
+    z-index: 3;
+    transition: border 500ms ease, color 500ms ease, opacity 500ms ease-in;
+	mix-blend-mode: difference;
+	color:#F5F5F5;
+}
+
+/* .scrollBtn:hover,
+.scrollBtn:focus {
+    border: 1px solid #45b0b7;
+	color: #45b0b7;
+} */
+
+.visable {
+    opacity: 1;
+}
+
 /* gradients */
 .aside__links > a {
 	background-image: linear-gradient(

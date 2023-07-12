@@ -6,10 +6,12 @@ import { useRef, useEffect } from "react";
 import { SiReact, SiNetlify, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { data } from "../data";
 import { FaNodeJs } from "react-icons/fa";
-import { Nav, Contact } from "@/components";
+import { Nav, Contact, ScrollToTop } from "@/components";
+
 
 function pixChat() {
 	const itemsRef = useRef(null);
+	const scrollRef = useRef(null);
 
 	// Display project media & info
 	const projectImages = data.map(project => {
@@ -51,8 +53,6 @@ function pixChat() {
 			);
 		}
 	});
-
-	console.log(data[0]);
 
 	const stack = data.map(project => {
 		if (project.id === "CHAT") {
@@ -143,8 +143,18 @@ function pixChat() {
 					<Nav />
 				</header>
 
-				<main className={utils.main}>
-					<section className={utils.title}>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
+				<main className={utils.main} ref={scrollRef}>
+					<section
+						id='top_container'
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+						className={utils.title}
+					>
 						<h2 className={utils.title_primary}>Pix Chat</h2>
 					</section>
 

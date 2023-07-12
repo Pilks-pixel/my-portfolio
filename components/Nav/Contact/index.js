@@ -1,6 +1,5 @@
 import React from "react";
 import utils from "../../../styles/Utils.module.css"; 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 

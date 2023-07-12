@@ -1,26 +1,20 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { About, ProjectGrid } from "@/components/index";
+import { matchSection } from "@/utils";
+import { About, ProjectGrid, ScrollToTop } from "@/components/index";
 
 export default function Home() {
 	const [projectVisable, setProjectViable] = useState(false);
 	const [aboutVisable, setAboutViable] = useState(false);
 	const itemsRef = useRef(null);
+	const scrollRef = useRef(null);
 
 	const handleClick = e => {
-		function matchSection() {
-			const firstWordPattern = new RegExp(e.target.id.split("_")[0]);
+		const buttonId = e.target.id
 
-			const sectionNode = itemsRef.current.filter(node => {
-				return firstWordPattern.test(node.id);
-			});
-			return sectionNode[0];
-		}
-
-		matchSection().scrollIntoView({
+		matchSection(itemsRef, buttonId).scrollIntoView({
 			behavior: "smooth",
 			block: "nearest",
 			inline: "center",
@@ -92,8 +86,18 @@ export default function Home() {
 					</div>
 				</header>
 
-				<main className={styles.main}>
-					<section className={styles.center}>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef}/>
+				<main className={styles.main} ref={scrollRef}>
+					<section
+						id='top_container'
+						className={styles.center}
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+					>
 						<button
 							id='project_btn'
 							className={`${styles.center__btn} ${styles.center__btn_gradient}`}
