@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../../styles/Nav.module.css";
 
-function Nav() {
+function Nav({handleScroll}) {
 	const [mobileNav, setMobileNav] = useState(false);
+	const router = useRouter();
 
 	const handleClick = () => {
 		setMobileNav(prevMobile => !prevMobile);
@@ -22,16 +24,20 @@ function Nav() {
 			>
 				<span className={styles.srOnly}></span>
 			</button>
-			<div className={
-						mobileNav
-							? styles.description__navPrimary
-							: `${styles.description__navPrimary} ${styles.description__navPrimaryHidden}`
-					}>
-
-				<Link href="/">
-					Home
-				</Link>
-
+			<div
+				className={
+					mobileNav
+						? styles.description__navPrimary
+						: `${styles.description__navPrimary} ${styles.description__navPrimaryHidden}`
+				}
+			>
+				{router.asPath === "/" ? (
+					<a id='contact_btn' tabIndex='0' onClick={e => handleScroll(e)}>
+						Contact
+					</a>
+				) : (
+					<Link href='/'>Home</Link>
+				)}
 				<a href='https://github.com/Pilks-pixel' target='_blank'>
 					Github
 				</a>

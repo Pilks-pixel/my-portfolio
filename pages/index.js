@@ -3,7 +3,7 @@ import styles from "@/styles/Home.module.css";
 import { useState, useRef, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { matchSection } from "@/utils";
-import { About, ProjectGrid, ScrollToTop } from "@/components/index";
+import { About, ProjectGrid, ScrollToTop, Nav } from "@/components/index";
 
 export default function Home() {
 	const [projectVisable, setProjectViable] = useState(false);
@@ -12,7 +12,7 @@ export default function Home() {
 	const scrollRef = useRef(null);
 
 	const handleClick = e => {
-		const buttonId = e.target.id
+		const buttonId = e.target.id;
 
 		matchSection(itemsRef, buttonId).scrollIntoView({
 			behavior: "smooth",
@@ -69,24 +69,10 @@ export default function Home() {
 
 			<div className={styles.wrapper}>
 				<header className={styles.description}>
-					<h2 className={styles.description__name}>Peter Pilkington</h2>
-					<nav className={styles.description__links}>
-						<a id='contact_btn' tabIndex='0' onClick={e => handleClick(e)}>
-							Contact
-						</a>
-						<a href='https://github.com/Pilks-pixel' target='_blank'>
-							Github
-						</a>
-						<a
-							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-							target='_blank'
-						>
-							Linkedin
-						</a>
-					</nav>
+					<Nav handleScroll={handleClick} />
 				</header>
 
-				<ScrollToTop pageTop={scrollRef} topElement={itemsRef}/>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
 				<main className={styles.main} ref={scrollRef}>
 					<section
 						id='top_container'
