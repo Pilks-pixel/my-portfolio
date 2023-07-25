@@ -4,7 +4,8 @@ const data = [
 		id: "QUIZ",
 		src: "/quiz",
 		primaryImage: "mock_quiz.png",
-		images: ["/quiz/tablet.png", "/quiz/mobile.png", "/quiz/desktop.png"],
+		images: ["/quiz/questions_screenshot.png", "/quiz/mobile_test.png", "/quiz/leaderboard_screenshot.png"],
+		
 		video: "/quiz/quiz_screen.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
 		description:

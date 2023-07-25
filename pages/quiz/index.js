@@ -205,10 +205,10 @@ function quiz() {
 							>
 								<h2>Purpose &amp; Planning</h2>
 								<p>
-									The purpose of the project was to create a quiz app that
-									entertains users while enhances their knowledge under time
+									The project purpose was to create a quiz app that
+									entertains users while enhancing their knowledge under time
 									pressure. I've planned the app's functionality to create an
-									intuitive UX &amp; UI with colour signlling correct or
+									intuitive UX &amp; UI with colour signalling correct or
 									incorrect answers and messages indicating the game status.
 								</p>
 							</div>
@@ -235,7 +235,7 @@ function quiz() {
 									}
 								}}
 							>
-								While planning the app, I choose to use the MVC (Model, View,
+								While planning I choose an MVC (Model, View,
 								Controller) design pattern. This provided a clear separation of
 								concerns between client, server and database. With the API used
 								to efficiently send requests between client and database.
@@ -246,7 +246,7 @@ function quiz() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/quiz/mobile.png'
+								src='/quiz/desktop_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
@@ -301,12 +301,14 @@ function quiz() {
 									Vanilla JS to allow the use of reusable and dynamic components
 									to handle real-time score tracking and countdown timers for
 									each question / answer combination.
-									<br></br>
+								</p>
+								<p>
 									Node.js enabled server-side logic and database interactions.
 									MongoDB, a NoSQL database, offered flexibility in storing and
 									querying the simple nature of leaderboard data. While Netlify
 									&amp; Render were used for deployment.
 								</p>
+									
 							</div>
 						</div>
 					</section>
@@ -379,6 +381,14 @@ function quiz() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
+						<h3>Accessibility &amp; Performance</h3>
+						<Image
+						className={utils.conclusion__image}
+						src='/quiz/performance.png'
+						alt='Lighthouse performance report'
+						height={600}
+						width={800}
+						 />
 						<p
 							ref={node => {
 								if (node) {

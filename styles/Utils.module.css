@@ -50,7 +50,7 @@ Layout
 .sections h2,
 .sections h3 {
 	max-width: 100%;
-	margin: 0 auto 2.5rem;
+	margin: 0 auto 3rem;
 	padding: 0 1em;
 }
 
@@ -74,9 +74,13 @@ Layout
 .features__flex {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: flex-start;
 	gap: 1.5em;
 }
+
+.hero_section {
+	align-items: flex-start;
+}
+
 
 /* hero image section with side element */
 .hero_section > :first-child {
@@ -147,15 +151,16 @@ Layout
 
 /* Grid container sections */
 .section_grid {
-	padding: 1em;
+	padding: 1em 0;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 	place-items: center;
-	grid-gap: 3rem 1.5rem;
+	grid-gap: 5rem 1.5rem;
 }
 
 /* Features */
 .features__flex {
+	align-items: center;
 	padding: 3em 1em;
 	justify-content: center;
 	gap: 2.5em;
@@ -203,7 +208,8 @@ Layout
 /* images */
 .main__img,
 .planning_section__image,
-.flex__image {
+.flex__image,
+.conclusion__image {
 	height: auto;
 	border-radius: 8px;
 	box-shadow: var(--picture-shadow);
@@ -213,25 +219,38 @@ Layout
 .planning_section__image,
 .flex__image {
 	width: 100%;
-	max-width: 800px;
-	height: min(50vh, 400px);
+	opacity: 0;
+}
+
+.conclusion__image  {
+	width: min(100%, 400px);
+	margin-bottom: 3rem;
+	
 }
 
 .main__img {
 	width: 100%;
 	max-width: 850px;
 	min-height: 300px;
-	object-fit: cover;
+}
+
+.planning_section__image {
+	aspect-ratio: .75 / .5;
+	max-width: 600px;
 }
 
 .flex__image {
 	max-width: 400px;
+	aspect-ratio: 1 / .75;
 }
 
-.planning_section__image,
-.flex__image {
-	opacity: 0;
+.flex__image[src*="mobile"] {
+	width: auto;
+	height: 100%;
+	object-fit: scale-down;
+	aspect-ratio: unset;
 }
+
 
 /* Links */
 .description__links > a {
@@ -290,12 +309,6 @@ Layout
 	mix-blend-mode: difference;
 	color:#F5F5F5;
 }
-
-/* .scrollBtn:hover,
-.scrollBtn:focus {
-    border: 1px solid #45b0b7;
-	color: #45b0b7;
-} */
 
 .visable {
     opacity: 1;
@@ -421,14 +434,8 @@ Media
 }
 
 @media (max-width: 300px) {
-	.description__links {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.description__links {
-		max-width: 50%;
+	.planning_section__image[src*="mobile"] {
+		width: 100%;
 	}
 }
+
