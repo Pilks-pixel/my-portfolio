@@ -6,7 +6,7 @@ const data = [
 		primaryImage: "mock_quiz.png",
 		images: ["/quiz/questions_screenshot.png", "/quiz/mobile_test.png", "/quiz/leaderboard_screenshot.png"],
 		
-		video: "/quiz/quiz_screen.mp4",
+		video: "/quiz/compressed_video.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
 		description:
 			"React Quiz app using Open trivia API with MongoDB to store scores in a leaderboard",
