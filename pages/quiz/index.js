@@ -205,11 +205,11 @@ function quiz() {
 							>
 								<h2>Purpose &amp; Planning</h2>
 								<p>
-									The project purpose was to create a quiz app that
-									entertains users while enhancing their knowledge under time
-									pressure. I've planned the app's functionality to create an
-									intuitive UX &amp; UI with colour signalling correct or
-									incorrect answers and messages indicating the game status.
+									The project purpose was to create a quiz app that entertains
+									users while enhancing their knowledge under time pressure.
+									I've planned the app's functionality to create an intuitive UX
+									&amp; UI with colour signalling correct or incorrect answers
+									and messages indicating the game status.
 								</p>
 							</div>
 							<Image
@@ -235,11 +235,11 @@ function quiz() {
 									}
 								}}
 							>
-								While planning I choose an MVC (Model, View,
-								Controller) design pattern. This provided a clear separation of
-								concerns between client, server and database. With the API used
-								to efficiently send requests between client and database.
-								Allowing the storage and retrieval of player scores.
+								While planning I choose an MVC (Model, View, Controller) design
+								pattern. This provided a clear separation of concerns between
+								client, server and database. With the API used to efficiently
+								send requests between client and database. Allowing the storage
+								and retrieval of player scores.
 								<br></br>I also used the Open Trivia API for fetching quiz
 								questions which could be customised by user input for enhanced
 								user experience.
@@ -308,7 +308,6 @@ function quiz() {
 									querying the simple nature of leaderboard data. While Netlify
 									&amp; Render were used for deployment.
 								</p>
-									
 							</div>
 						</div>
 					</section>
@@ -316,7 +315,7 @@ function quiz() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={utils.features__flex}>
+						<div className={`${utils.features__flex_text} ${utils.features__flex}`}>
 							<div
 								ref={node => {
 									if (node) {
@@ -327,14 +326,17 @@ function quiz() {
 							>
 								<h3>Leaderboard</h3>
 								<p>
-									Creating the leaderboard functionality involved designing the
-									database schema, implementing data retrieval and insertion
+									Creating the leaderboard functionality involved designing a
+									database schema and implementing data retrieval / insertion
 									CRUD operations.
 								</p>
 								<p>
-									As this funtionality only required queries from GET and POST
-									requests I used a JS class to create the database schema
-									without using an ORM.
+									I've used the Axios library for its built-in error handling,
+									automatically rejecting promises for non-successful HTTP
+									responses and a less verbose syntax, parsing JSON response
+									data by default. This funtionality only required queries
+									from GET / POST requests therefore I used a JS class to create the
+									database schema without the need of an ORM.
 								</p>
 							</div>
 							<div
@@ -380,15 +382,15 @@ function quiz() {
 					</section>
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
-						<h2>What I learned</h2>
+						<h2 className={utils.conclusion__title}>What I learned</h2>
 						<h3>Accessibility &amp; Performance</h3>
 						<Image
-						className={utils.conclusion__image}
-						src='/quiz/performance.png'
-						alt='Lighthouse performance report'
-						height={600}
-						width={800}
-						 />
+							className={utils.conclusion__image}
+							src='/quiz/performance.png'
+							alt='Lighthouse performance report'
+							height={600}
+							width={800}
+						/>
 						<p
 							ref={node => {
 								if (node) {
