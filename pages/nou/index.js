@@ -254,7 +254,7 @@ function nou() {
 					</section>
 
 					<section className={`${utils.stack} ${utils.sections}`}>
-						<h2>Stack &amp; Features</h2>
+						<h2>Stack</h2>
 						<div className={utils.section_grid}>
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
@@ -274,10 +274,6 @@ function nou() {
 										<SiCss3 color='#1572B6' size={42} />
 										CSS
 									</li>
-									<li className={utils.list__icon}>
-										<SiJavascript color='#F0DB4F' size={42} />
-										Javascript ES6
-									</li>
 									<li className={`${utils.list__icon} ${utils.list_img}`}>
 										<Image
 											src='/vercel.svg'
@@ -286,6 +282,10 @@ function nou() {
 											height={60}
 										/>
 										Vercel
+									</li>
+									<li className={utils.list__icon}>
+										<SiJavascript color='#F0DB4F' size={42} />
+										Javascript ES6
 									</li>
 								</ul>
 							</div>
@@ -307,7 +307,7 @@ function nou() {
 									excellent user experience.
 									<br></br>
 									Next also meant Vercel was used for deployment, which meaning
-									I could utilise seprate production and feature deployments
+									I could utilise separate production and feature deployments
 									alongside version control.
 								</p>
 							</div>

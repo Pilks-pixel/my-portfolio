@@ -215,7 +215,7 @@ function pixChat() {
 							<Image
 								className={utils.planning_section__image}
 								src='/chat/figma_screenshot.png'
-								alt='Trello Kanban board picture'
+								alt='Figma design picture'
 								height={600}
 								width={800}
 								ref={node => {
@@ -243,8 +243,8 @@ function pixChat() {
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/chat/trello_screenshot.png'
-								alt='Trello Kanban board picture'
+								src='/chat/schema_screenshot.png'
+								alt='Schema Mongo picture'
 								height={600}
 								width={800}
 								ref={node => {
@@ -304,8 +304,8 @@ function pixChat() {
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
 									For styling I've chosen Tailwind because its utility classes
-									enabled me to match my Figma prototype quickly and meant
-									styles were easier to parse inside JSX. While Netlify &amp;
+									enabled me to match my Figma prototype quickly and meant improved
+									style readability inside JSX. While Netlify &amp;
 									Render were used for deployment and linked with GitHub repos
 									to enable continuous integration.
 								</p>
@@ -316,7 +316,7 @@ function pixChat() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={utils.features__flex}>
+						<div className={`${utils.features__flex_text} ${utils.features__flex}`}>
 							<div
 								ref={node => {
 									if (node) {
@@ -327,7 +327,7 @@ function pixChat() {
 							>
 								<h3>Like / Laugh reactions</h3>
 								<p>
-									I wanted users to be able to react to received messages. This
+									I wanted users to be able to react to messages. This
 									was challenging as it required updating the senders message in
 									real time as well as messages stored in the database while
 									additionally only rendering reactions to a sender if the
@@ -358,9 +358,9 @@ function pixChat() {
 								</p>
 								<p>
 									To fulfill this I've used a JSON web token, generated upon a
-									successful login or registration request to the API. This is
-									then stored in local storage, allowing access for CRUD
-									requests to the server side. I further use this to create
+									successful login or registration. This is
+									then stored in local storage, allowing access for client
+									requests to the server. I further use this to create
 									private and public route components with React router,
 									authenticated by the token in local storage. This ensures a
 									user can only access authorized pages in the app.
@@ -410,7 +410,7 @@ function pixChat() {
 								Making API routes for C.R.U.D functionality among users /
 								messages, storing them in a database, and retrieving message
 								history between users, strengthened my knowledge of RESTful API
-								principles and HTTP requests using the axios library.
+								principles and HTTP requests using the Axios library.
 							</p>
 						</div>
 					</section>

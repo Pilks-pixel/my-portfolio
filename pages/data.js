@@ -34,8 +34,8 @@ const data = [
 		name: "Pixel Chat",
 		id: "CHAT",
 		src: "/chat",
-		primaryImage: "mockup_pixel_chat.png",
-		images: ["/chat/desktop.png", "/chat/mobile.png", "/chat/tablet.png"],
+		primaryImage: "/chat/avatar_screenshot.png",
+		images: ["/chat/chat.png", "/chat/mobile_screenshot.png", "/chat/avatar_screenshot.png"],
 		video: "/nou/nou_screen.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
 		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
@@ -43,4 +43,3 @@ const data = [
 ];
 
 export { data };
-
