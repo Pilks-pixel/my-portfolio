@@ -382,7 +382,7 @@ function quiz() {
 					</section>
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
-						<h2 className={utils.conclusion__title}>What I learned</h2>
+						<h2>What I learned</h2>
 						<h3>Accessibility &amp; Performance</h3>
 						<Image
 							className={utils.conclusion__image}

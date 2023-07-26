@@ -3,14 +3,13 @@ import Head from "next/head";
 import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { SiCss3, SiJavascript, SiReact,} from "react-icons/si";
+import { SiCss3, SiJavascript, SiReact } from "react-icons/si";
 import { data } from "../data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
 function nou() {
 	const itemsRef = useRef(null);
 	const scrollRef = useRef(null);
-
 
 	// Display projects media & info
 	const projectImages = data.map(project => {
@@ -55,14 +54,11 @@ function nou() {
 
 	const stack = data.map(project => {
 		if (project.id === "NOU") {
-		  return(
-			project.stack.map((item, index) => {
-			  return <li key={index} >{item}</li>
-			})
-		  )
+			return project.stack.map((item, index) => {
+				return <li key={index}>{item}</li>;
+			});
 		}
-	  })
-	
+	});
 
 	// WAAPI animations
 	const fadeInKeyImgFrame = [
@@ -148,14 +144,15 @@ function nou() {
 				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
 				<main className={utils.main} ref={scrollRef}>
 					<section
-					id='top_container'
-					ref={node => {
-						if (node) {
-							const nodeArr = getArr();
-							nodeArr.push(node);
-						}
-					}}
-					className={utils.title}>
+						id='top_container'
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+						className={utils.title}
+					>
 						<h2 className={utils.title_primary}>Nou Design Studio</h2>
 					</section>
 
@@ -170,9 +167,7 @@ function nou() {
 								with validation and email submission.
 							</p>
 							<div className={utils.aside__keyword}>
-								<ul className={utils.keyword__list}>
-									{stack}
-								</ul>
+								<ul className={utils.keyword__list}>{stack}</ul>
 							</div>
 							<div className={utils.aside__links}>
 								<a
@@ -203,13 +198,13 @@ function nou() {
 										nodeArr.push(node);
 									}
 								}}
-								>
+							>
 								<h2>Purpose &amp; Planning</h2>
 								<p>
-								This project was made to market and showcase projects to
-								potential clients of the business. It lists the services,
-								creatively displays previous projects and provides a form for
-								enquiries
+									This project was made to market and showcase projects to
+									potential clients of the business. It lists the services,
+									creatively displays previous projects and provides a form for
+									enquiries
 								</p>
 							</div>
 							<Image
@@ -236,11 +231,11 @@ function nou() {
 								}}
 							>
 								I&apos;ve worked to the clients designs from Adobe XD, to create
-								a webpage that is fully responsive. Workflow was managed with
-								use of a Kanban board to outline an MVP and then break down
-								goals into actionable tasks. While Version control was managed
-								with GitHub, including feature branches to avoid breaking
-								commits to the main branch.
+								a webpage that is fully responsive. Workflow was managed with a
+								Trello Kanban board, outlining an MVP then breaking down goals
+								into actionable tasks. While Version control was managed with
+								GitHub, including feature branches to avoid breaking commits to
+								the main branch.
 							</p>
 							<Image
 								className={utils.planning_section__image}
@@ -305,14 +300,14 @@ function nou() {
 								}}
 							>
 								<p>
-									This website is built with React and the Next.js meta
-									framework. Next enabled optimised development and deployment
-									features like automatic code spliting, lazy loaded images and
-									improved SEO. Allowing me to deliver a performant website with
+									This website is built with React and Next.js. Next enabled
+									development and deployment features like automatic code
+									spliting, lazy loaded &amp; optimised images with improved
+									SEO. Allowing me to deliver a performant website with
 									excellent user experience.
 									<br></br>
-									Next also meant Vercel was used for deployment, which meant I
-									could utilise seprate production and feature deployments
+									Next also meant Vercel was used for deployment, which meaning
+									I could utilise seprate production and feature deployments
 									alongside version control.
 								</p>
 							</div>
@@ -322,7 +317,9 @@ function nou() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={utils.features__flex}>
+						<div
+							className={`${utils.features__flex_text} ${utils.features__flex}`}
+						>
 							<div
 								ref={node => {
 									if (node) {
@@ -333,17 +330,18 @@ function nou() {
 							>
 								<h3>Animations</h3>
 								<p>
-									Parallax scroll was used with CSS transitions to add fliar to
-									the site. I also chose to use an the web animation API with an
-									intersection observer which allowed animation according to
-									viewport position, giving a more polished UI and improved
-									perfomance.
+									Parallax scrolling was used with CSS transitions to add fliar
+									to the site. I also chose to use an the web animation API with
+									an intersection observer to allow element animation according
+									to viewport position and improved perfomance.
 								</p>
 								<p>
-									This was tricky as I wanted different elements to fade in at
-									array of Refs and iterate over in the observer. This allowed
-									me to animate elements based on position in the viewport and
-									apply delays based on element tag names.
+									This was tricky as I wanted different elements to fade in with
+									varied timings. Therefore had to use callback functions on
+									elements to create create an array of Refs and iterate over in
+									the observer. This allowed me to animate elements on entering
+									the viewport and apply delays based on tag names,
+									giving a more polished UI.
 								</p>
 							</div>
 							<div
@@ -359,9 +357,8 @@ function nou() {
 									Getting the site to be responsive at all screen sizes, meant
 									needing to utilize layout tools like Grid and Flexbox. Media
 									queries were also useful to define breakpoints but I tried to
-									implement modern CSS functions like clamp in order to give
-									staggered timings, so had to use callback functions to create
-									an responsive text without media queries.
+									implement modern CSS functions like clamp / min, to create
+									responsive text and layouts without media queries.
 								</p>
 							</div>
 							<div
@@ -375,7 +372,7 @@ function nou() {
 								<h3>Contact Form</h3>
 								<p>
 									The useState hook allowed a controlled form with validation
-									for user input, including Regex pattern for email inputs. I
+									for user input, including a Regex pattern for email inputs. I
 									was able to make use of the in built next js API. This allowed
 									me to handle form submission of user data with the node mailer
 									library.
@@ -389,7 +386,7 @@ function nou() {
 						<p
 							ref={node => {
 								if (node) {
-									const  nodeArr = getArr();
+									const nodeArr = getArr();
 									nodeArr.push(node);
 								}
 							}}
@@ -405,7 +402,6 @@ function nou() {
 						<Contact />
 					</footer>
 				</main>
-
 			</div>
 		</>
 	);

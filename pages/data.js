@@ -16,11 +16,10 @@ const data = [
 		id: "NOU",
 		src: "/nou",
 		primaryImage: "/mockup_nou.png",
-		images: ["/nou/desktop.png", "/nou/mobile.png", "/nou/tablet.png"],
+		images: ["/nou/desktop_screenshot.png", "/nou/mobile_screenshot.png", "/nou/contact_screenshot.png"],
 		video: "/nou/nou_screen.mp4",
 		stack: [
 			"Next.js",
-
 			"React",
 			"CSS",
 			"Responsive Design",
