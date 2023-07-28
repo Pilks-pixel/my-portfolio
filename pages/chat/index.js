@@ -8,7 +8,6 @@ import { data } from "../data";
 import { FaNodeJs } from "react-icons/fa";
 import { Nav, Contact, ScrollToTop } from "@/components";
 
-
 function pixChat() {
 	const itemsRef = useRef(null);
 	const scrollRef = useRef(null);
@@ -304,8 +303,8 @@ function pixChat() {
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
 									For styling I've chosen Tailwind because its utility classes
-									enabled me to match my Figma prototype quickly and meant improved
-									style readability inside JSX. While Netlify &amp;
+									enabled me to match my Figma prototype quickly and meant
+									improved style readability inside JSX. While Netlify &amp;
 									Render were used for deployment and linked with GitHub repos
 									to enable continuous integration.
 								</p>
@@ -316,7 +315,9 @@ function pixChat() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={`${utils.features__flex_text} ${utils.features__flex}`}>
+						<div
+							className={`${utils.features__flex_text} ${utils.features__flex}`}
+						>
 							<div
 								ref={node => {
 									if (node) {
@@ -327,8 +328,8 @@ function pixChat() {
 							>
 								<h3>Like / Laugh reactions</h3>
 								<p>
-									I wanted users to be able to react to messages. This
-									was challenging as it required updating the senders message in
+									I wanted users to be able to react to messages. This was
+									challenging as it required updating the senders message in
 									real time as well as messages stored in the database while
 									additionally only rendering reactions to a sender if the
 									receiver clicked a reaction button.
@@ -358,12 +359,12 @@ function pixChat() {
 								</p>
 								<p>
 									To fulfill this I've used a JSON web token, generated upon a
-									successful login or registration. This is
-									then stored in local storage, allowing access for client
-									requests to the server. I further use this to create
-									private and public route components with React router,
-									authenticated by the token in local storage. This ensures a
-									user can only access authorized pages in the app.
+									successful login or registration. This is then stored in local
+									storage, allowing access for client requests to the server. I
+									further use this to create private and public route components
+									with React router, authenticated by the token in local
+									storage. This ensures a user can only access authorized pages
+									in the app.
 								</p>
 							</div>
 							<div
@@ -393,6 +394,14 @@ function pixChat() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
+						<h3>Accessibility &amp; Performance</h3>
+						<Image
+							className={utils.conclusion__image}
+							src='/chat/performance_screenshot.png'
+							alt='Lighthouse performance report'
+							height={600}
+							width={800}
+						/>
 						<div
 							ref={node => {
 								if (node) {
@@ -403,14 +412,20 @@ function pixChat() {
 						>
 							<p>
 								Overall, this project enhanced my skills in full-stack
-								development, creating real-time communication, without the need
-								for manual refreshing using React, Socket.io, and Node.js.
+								development, creating real-time communication, without manual
+								refreshing using React, Socket.io, and Node.js.
 							</p>
 							<p>
 								Making API routes for C.R.U.D functionality among users /
 								messages, storing them in a database, and retrieving message
 								history between users, strengthened my knowledge of RESTful API
 								principles and HTTP requests using the Axios library.
+							</p>
+							<p>
+								Additionally I improved my knowledge of accessibility, testing
+								the app using the VoiceOver screen reader and Axe Dev Tools
+								chrome extension to ensure I met WCAG standards on
+								accessibility.
 							</p>
 						</div>
 					</section>
