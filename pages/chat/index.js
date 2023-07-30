@@ -37,7 +37,7 @@ function pixChat() {
 	});
 
 	const projectVideo = data.map(project => {
-		if (project.id === "QUIZ") {
+		if (project.id === "CHAT") {
 			return (
 				<video
 					width='800'

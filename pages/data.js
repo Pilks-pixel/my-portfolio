@@ -36,7 +36,7 @@ const data = [
 		src: "/chat",
 		primaryImage: "/chat/avatar_screenshot.png",
 		images: ["/chat/chat.png", "/chat/mobile_screenshot.png", "/chat/avatar_screenshot.png"],
-		video: "/nou/nou_screen.mp4",
+		video: "/chat/chat_video.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
 		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
 	},
