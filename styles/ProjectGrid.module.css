@@ -29,14 +29,11 @@ Project Grid Layout
 	height: min(50vh, 300px);
 	padding: 2rem 0 0;
 	border-radius: var(--border-radius);
-	text-align: center;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	background-color: inherit;
+	/* text-align: center; */
 	overflow: hidden;
 	box-shadow: var(--picture-shadow);
 	transition: all 0.5s ease;
+	z-index: 0;
 }
 
 .card__info {
@@ -62,6 +59,7 @@ Project Grid Layout
 	left: 5%;
 	transform: translateX(-110%);
 	transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	z-index: 1;
 }
 
 /* buttons */

@@ -30,19 +30,24 @@ function ProjectGrid() {
 					className={`${styles.card__img} ${even && styles.card__img_even}`}
 					style={{ backgroundImage: `url(${card.primaryImage})` }}
 				>
-					<div className={styles.card__content}
-					>
-					<p>{card.description}</p>
+					<Image
+						src={card.primaryImage}
+						fill={true}
+						alt={"project background image"}
+						placeholder='blur'
+						style={{ objectFit: "cover" }}
+					/>
+					<div className={styles.card__content}>
+						<p>{card.description}</p>
 					</div>
-					
 				</div>
 				<div className={styles.card__info}>
 					<h3 className={styles.info__heading}>{card.name}</h3>
 
-					<button className={styles.info__btn}>
+					<div role='button' className={styles.info__btn}>
 						<p>View Project</p>
 						<FaArrowRight />
-					</button>
+					</div>
 				</div>
 			</Link>
 		);

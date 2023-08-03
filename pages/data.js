@@ -8,7 +8,8 @@ import chat from '../public/chat/chat.png'
 import mobileChat from '../public/chat/mobile_screenshot.png'
 import avatar from '../public/chat/avatar_screenshot.png'
 
-// import mockup from '../public/mock_quiz.png'
+import mockupQuiz from '../public/mock_quiz.png'
+import mockupNou from '../public/mockup_nou.png'
 
 
 
@@ -18,7 +19,7 @@ const data = [
 		name: "Quiz Night",
 		id: "QUIZ",
 		src: "/quiz",
-		primaryImage: mockup,
+		primaryImage: mockupQuiz,
 		images: [questions, mobile, leaderboard],
 		
 		video: "/quiz/compressed_video.mp4",
@@ -30,7 +31,7 @@ const data = [
 		name: "Nou Design Studio",
 		id: "NOU",
 		src: "/nou",
-		primaryImage: "/mockup_nou.png",
+		primaryImage: mockupNou,
 		images: [desktop, mobileNou, contact],
 		video: "/nou/nou_screen.mp4",
 		stack: [
@@ -49,7 +50,7 @@ const data = [
 		name: "Pixel Chat",
 		id: "CHAT",
 		src: "/chat",
-		primaryImage: "/chat/avatar_screenshot.png",
+		primaryImage: avatar,
 		images: [chat, mobileChat, avatar],
 		video: "/chat/chat_video.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
