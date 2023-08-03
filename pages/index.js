@@ -71,7 +71,7 @@ export default function Home() {
 				<header className={styles.description}>
 					<Nav handleScroll={handleClick} />
 				</header>
-
+            
 				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
 				<main className={styles.main} ref={scrollRef}>
 					<section

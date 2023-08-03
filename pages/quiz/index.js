@@ -21,8 +21,6 @@ function quiz() {
 						className={utils.flex__image}
 						src={img}
 						alt={`${project.name} picture`}
-						height={600}
-						width={800}
 						key={index}
 						ref={node => {
 							if (node) {
@@ -315,7 +313,9 @@ function quiz() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={`${utils.features__flex_text} ${utils.features__flex}`}>
+						<div
+							className={`${utils.features__flex_text} ${utils.features__flex}`}
+						>
 							<div
 								ref={node => {
 									if (node) {
@@ -334,8 +334,8 @@ function quiz() {
 									I've used the Axios library for its built-in error handling,
 									automatically rejecting promises for non-successful HTTP
 									responses and a less verbose syntax, parsing JSON response
-									data by default. This funtionality only required queries
-									from GET / POST requests therefore I used a JS class to create the
+									data by default. This funtionality only required queries from
+									GET / POST requests therefore I used a JS class to create the
 									database schema without the need of an ORM.
 								</p>
 							</div>
@@ -391,7 +391,7 @@ function quiz() {
 							height={600}
 							width={800}
 						/>
-						<p
+						<div
 							ref={node => {
 								if (node) {
 									const nodeArr = getArr();
@@ -399,16 +399,20 @@ function quiz() {
 								}
 							}}
 						>
-							Durring this project I've honed my proficiency in React, making
-							use of reusable components and state management with hooks to
-							create a dynamic and interactive UI. Therefore I also had to learn
-							about ARIA conventions to ensure accessability for all users with
-							dynamic content.
-							<br></br>Further to this I gained experience in setting up a
-							database using MongoDB and implementing CRUD operations to manage
-							leaderboard entries. Giving me valuable experience of a Full Stack
-							Application.
-						</p>
+							<p>
+								Durring this project I've honed my proficiency in React, making
+								use of reusable components and state management with hooks to
+								create a dynamic and interactive UI. Therefore I also had to
+								learn about ARIA conventions to ensure accessability for all
+								users with dynamic content.
+							</p>
+							<p>
+								Further to this I gained experience in setting up a database
+								using MongoDB and implementing CRUD operations to manage
+								leaderboard entries. Giving me valuable experience of a Full
+								Stack Application.
+							</p>
+						</div>
 					</section>
 					<footer className={utils.contact}>
 						<Contact />

@@ -20,8 +20,6 @@ function nou() {
 						className={utils.flex__image}
 						src={img}
 						alt={`${project.name} picture`}
-						height={600}
-						width={800}
 						key={index}
 						ref={node => {
 							if (node) {
@@ -306,7 +304,7 @@ function nou() {
 									SEO. Allowing me to deliver a performant website with
 									excellent user experience.
 									<br></br>
-									Next also meant Vercel was used for deployment, which meaning
+									Next also meant Vercel was used for deployment, meaning
 									I could utilise separate production and feature deployments
 									alongside version control.
 								</p>
@@ -340,8 +338,8 @@ function nou() {
 									varied timings. Therefore had to use callback functions on
 									elements to create create an array of Refs and iterate over in
 									the observer. This allowed me to animate elements on entering
-									the viewport and apply delays based on tag names,
-									giving a more polished UI.
+									the viewport and apply delays based on tag names, giving a
+									more polished UI.
 								</p>
 							</div>
 							<div
@@ -383,7 +381,16 @@ function nou() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<p
+						<h3>Accessibility &amp; Performance</h3>
+						<Image
+							className={utils.conclusion__image}
+							src='/nou/performance_screenshot.png'
+							alt='Lighthouse performance report'
+							height={600}
+							width={800}
+						/>
+
+						<div
 							ref={node => {
 								if (node) {
 									const nodeArr = getArr();
@@ -391,12 +398,27 @@ function nou() {
 								}
 							}}
 						>
-							This project enabled me to learn how to create smooth animations
-							according to uses scroll position. I also learned how to handle
-							user inputs with email submission through node mailer and
-							increased my understanding of responsive design with layout tools
-							like CSS grid.
-						</p>
+							<p>
+								Through this project I've learned how to create a performant
+								site with smooth animations and elements that react to scroll
+								position. Using high quality images meant learning about
+								optimisation including tools such as ImageOptim and next gen
+								formats like WebP.
+							</p>
+
+							<p>
+								This involved becoming familiar Dev tools and Lighthouse to
+								inspect requests / audit performance. A valuable takeaway
+								was learning how to simulate slow networks for mobile
+								devices.
+							</p>
+
+							<p>
+								I also learned how to handle user inputs with email submission
+								through node mailer and increased my understanding of responsive
+								design with layout tools like CSS grid.
+							</p>
+						</div>
 					</section>
 					<footer className={utils.contact}>
 						<Contact />

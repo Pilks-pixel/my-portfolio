@@ -1,10 +1,25 @@
+import questions from '../public/quiz/questions_screenshot.png'
+import mobile from '../public/quiz/mobile_screenshot.png'
+import leaderboard from '../public/quiz/leaderboard_screenshot.png'
+import desktop  from '../public/nou/desktop_screenshot.png'
+import mobileNou from '../public/nou/mobile_screenshot.png'
+import contact from '../public/nou/contact_screenshot.png'
+import chat from '../public/chat/chat.png'
+import mobileChat from '../public/chat/mobile_screenshot.png'
+import avatar from '../public/chat/avatar_screenshot.png'
+
+// import mockup from '../public/mock_quiz.png'
+
+
+
+
 const data = [
 	{
 		name: "Quiz Night",
 		id: "QUIZ",
 		src: "/quiz",
-		primaryImage: "mock_quiz.png",
-		images: ["/quiz/questions_screenshot.png", "/quiz/mobile_test.png", "/quiz/leaderboard_screenshot.png"],
+		primaryImage: mockup,
+		images: [questions, mobile, leaderboard],
 		
 		video: "/quiz/compressed_video.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
@@ -16,7 +31,7 @@ const data = [
 		id: "NOU",
 		src: "/nou",
 		primaryImage: "/mockup_nou.png",
-		images: ["/nou/desktop_screenshot.png", "/nou/mobile_screenshot.png", "/nou/contact_screenshot.png"],
+		images: [desktop, mobileNou, contact],
 		video: "/nou/nou_screen.mp4",
 		stack: [
 			"Next.js",
@@ -35,7 +50,7 @@ const data = [
 		id: "CHAT",
 		src: "/chat",
 		primaryImage: "/chat/avatar_screenshot.png",
-		images: ["/chat/chat.png", "/chat/mobile_screenshot.png", "/chat/avatar_screenshot.png"],
+		images: [chat, mobileChat, avatar],
 		video: "/chat/chat_video.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
 		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"

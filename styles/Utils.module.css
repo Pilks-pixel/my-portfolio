@@ -412,7 +412,7 @@ Animations
 .planning_section__purpose,
 .stack__features,
 .features__flex > div,
-.conclusion > div {
+.conclusion > div{
 	opacity: 0;
 }
 

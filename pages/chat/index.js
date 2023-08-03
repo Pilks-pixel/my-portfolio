@@ -21,8 +21,6 @@ function pixChat() {
 						className={utils.flex__image}
 						src={img}
 						alt={`${project.name} picture`}
-						height={600}
-						width={800}
 						key={index}
 						ref={node => {
 							if (node) {
