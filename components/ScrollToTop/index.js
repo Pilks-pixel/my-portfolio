@@ -37,6 +37,7 @@ const ScrollToTop = ({ pageTop, topElement }) => {
 		<>
 			<button
 				id="top_btn"
+				aria-label="back to top"
 				className={`${utils.scrollBtn} ${showScrollBtn && utils.visable}`}
 				onClick={e => handleClick(e)}
 			>

@@ -55,6 +55,24 @@ export default function Home() {
 		target.forEach(item => observer.observe(item));
 	}, []);
 
+	const asciiArt = `
+	 /$$   /$$           /$$ /$$                 /$$      /$$                     /$$       /$$ /$$
+	| $$  | $$          | $$| $$                | $$  /$ | $$                    | $$      | $$| $$
+	| $$  | $$  /$$$$$$ | $$| $$  /$$$$$$       | $$ /$$$| $$  /$$$$$$   /$$$$$$ | $$  /$$$$$$$| $$
+	| $$$$$$$$ /$$__  $$| $$| $$ /$$__  $$      | $$/$$ $$ $$ /$$__  $$ /$$__  $$| $$ /$$__  $$| $$
+	| $$__  $$| $$$$$$$$| $$| $$| $$  \  $$      | $$$$_  $$$$| $$  \ $$| $$    \__/| $$| $$  | $$|__/
+	| $$  | $$| $$_____/| $$| $$| $$  | $$      | $$$/ \  $$$| $$  | $$| $$       | $$| $$  | $$    
+	| $$  | $$|  $$$$$$$| $$| $$|  $$$$$$/      | $$/   \  $$|  $$$$$$/| $$       | $$|  $$$$$$$ /$$
+	|__/  |__/ \_______/|__/|__/ \______/         |__/     \__/ \______/ |__/       |__/ \_______/|__/
+																 
+	
+MADE BY PETE PILKINGTON 2023
+`;
+
+console.log(asciiArt);
+
+
+
 	return (
 		<>
 			<Head>
@@ -71,7 +89,7 @@ export default function Home() {
 				<header className={styles.description}>
 					<Nav handleScroll={handleClick} />
 				</header>
-            
+
 				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
 				<main className={styles.main} ref={scrollRef}>
 					<section
@@ -102,7 +120,7 @@ export default function Home() {
 						>
 							About&nbsp;/&gt;
 						</button>
-						<h2 className={styles.center__title}>FULL STACK DEVELOPER </h2>
+						<h1 className={styles.center__title}>FULL STACK DEVELOPER </h1>
 					</section>
 
 					<section
@@ -146,12 +164,15 @@ export default function Home() {
 								<p>peterpilkington@hotmail.com</p>
 								<p>+44 07914757197</p>
 							</div>
-							<button className={styles.contact__btn}>
-								<a href='mailto:peterpilkington@hotmail.com'>GET IN TOUCH</a>
-								<FaArrowRight className={styles.btn__arrow} />
-							</button>
+
+							<a
+								className={styles.contact__btn}
+								href='mailto:peterpilkington@hotmail.com'
+							>
+								GET IN TOUCH <FaArrowRight className={styles.btn__arrow} />
+							</a>
 						</div>
-						<h4 className={styles.contact__tagline}>PETER PILKINGTON 2022</h4>
+						<h3 className={styles.contact__tagline}>PETER PILKINGTON 2022</h3>
 					</footer>
 				</main>
 			</div>

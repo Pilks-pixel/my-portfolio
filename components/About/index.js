@@ -83,38 +83,38 @@ function About() {
 					</p>
 					<ul className={styles.skills__list}>
 						<li>
-							<SiHtml5 color='#E44D26' size={42} /> HTML{" "}
+							<SiHtml5 color='#E44D26' size={42} aria-label="Html" /> HTML{" "}
 						</li>
 						<li>
-							<SiCss3 color='#1572B6' size={42} /> CSS
+							<SiCss3 color='#1572B6' size={42} aria-label="Css" /> CSS
 						</li>
 						<li>
-							<SiJavascript color='#F0DB4F' size={42} />
+							<SiJavascript color='#F0DB4F' size={42} aria-label="Javascript" />
 							Javascript
 						</li>
 						<li>
-							<SiReact color='#61DAFB' size={42} /> React
+							<SiReact color='#61DAFB' size={42} aria-label="React" /> React
 						</li>
 						<li>
-							<FaNodeJs color='#3C873A' size={42} />
+							<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
 							Node.js &amp; Express.js
 						</li>
 						<li>
-							<SiTailwindcss color='#06B6D4' size={42} />
+							<SiTailwindcss color='#06B6D4' size={42} aria-label="Tailwind" />
 							Tailwind CSS
 						</li>
 						<li>
-							<SiMongodb color='#47A248' size={42} /> Mongo DB
+							<SiMongodb color='#47A248' size={42} aria-label="Mongodb" /> Mongo DB
 						</li>
 						<li>
-							<SiGit color='#F05032' size={42} /> Git
+							<SiGit color='#F05032' size={42} aria-label="Git" /> Git
 						</li>
 						<li>
 							<Image src='/next.svg' alt='Next.js icon' width={60} height={45} />
 							Next.js
 						</li>
 						<li>
-							<SiFigma color='#F24E1E' size={42} />
+							<SiFigma color='#F24E1E' size={42} aria-label="Figma" />
 							Figma
 						</li>
 						<li>Agile Methodology</li>

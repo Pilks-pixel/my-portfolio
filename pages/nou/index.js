@@ -151,13 +151,13 @@ function nou() {
 						}}
 						className={utils.title}
 					>
-						<h2 className={utils.title_primary}>Nou Design Studio</h2>
+						<h1 className={utils.title_primary}>Nou Design Studio</h1>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
 						<div className={utils.hero_section__main}>{projectVideo}</div>
 						<aside className={utils.hero_section__aside}>
-							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
+							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
 								This site was created for a branding and web design studio. It's
 								built with React / Next.js, showcasing reponsive design,
@@ -257,7 +257,7 @@ function nou() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} /> React
+										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_img}`}>
 										<Image
@@ -269,7 +269,7 @@ function nou() {
 										Next.js
 									</li>
 									<li className={utils.list__icon}>
-										<SiCss3 color='#1572B6' size={42} />
+										<SiCss3 color='#1572B6' size={42} aria-label="Css" />
 										CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_img}`}>
@@ -282,7 +282,7 @@ function nou() {
 										Vercel
 									</li>
 									<li className={utils.list__icon}>
-										<SiJavascript color='#F0DB4F' size={42} />
+										<SiJavascript color='#F0DB4F' size={42} aria-label="Javascript" />
 										Javascript ES6
 									</li>
 								</ul>

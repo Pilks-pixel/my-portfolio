@@ -51,8 +51,6 @@ function quiz() {
 		}
 	});
 
-	console.log(data[0]);
-
 	const stack = data.map(project => {
 		if (project.id === "QUIZ") {
 			return project.stack.map((item, index) => {
@@ -154,13 +152,13 @@ function quiz() {
 						}}
 						className={utils.title}
 					>
-						<h2 className={utils.title_primary}>Quiz Night</h2>
+						<h1 className={utils.title_primary}>Quiz Night</h1>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
 						<div className={utils.hero_section__main}>{projectVideo}</div>
 						<aside className={utils.hero_section__aside}>
-							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
+							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
 								Quiz Night was designed to provide a fun and interactive quiz
 								experience using the Open trivia API. Users can customise each
@@ -264,21 +262,21 @@ function quiz() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} /> React
+										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
 									</li>
 									<li className={utils.list__icon}>
-										<FaNodeJs color='#3C873A' size={42} />
+										<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} /> MongoDB
+										<SiMongodb color='#47A248' size={42} aria-label="MongoDB" /> MongoDB
 									</li>
 									<li className={utils.list__icon}>
-										<SiCss3 color='#1572B6' size={42} />
+										<SiCss3 color='#1572B6' size={42} aria-label="Css" />
 										CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiNetlify size={50} color='#00ad9f' />
+										<SiNetlify size={50} color='#00ad9f' aria-label="Netlify" />
 										Netlify
 									</li>
 								</ul>

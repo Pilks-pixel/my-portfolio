@@ -152,13 +152,13 @@ function pixChat() {
 						}}
 						className={utils.title}
 					>
-						<h2 className={utils.title_primary}>Pix Chat</h2>
+						<h1 className={utils.title_primary}>Pix Chat</h1>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
 						<div className={utils.hero_section__main}>{projectVideo}</div>
 						<aside className={utils.hero_section__aside}>
-							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
+							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
 								Pixel Chat allows users to share messages and gifs with others
 								that can interact with their posts. In this project, I
@@ -260,21 +260,21 @@ function pixChat() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} /> React
+										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
 									</li>
 									<li className={utils.list__icon}>
-										<FaNodeJs color='#3C873A' size={42} />
+										<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} /> MongoDB
+										<SiMongodb color='#47A248' size={42} aria-label="Mongo DB" /> MongoDB
 									</li>
 									<li className={utils.list__icon}>
-										<SiTailwindcss color='#06B6D4' size={42} />
+										<SiTailwindcss color='#06B6D4' size={42} aria-label="Tail Wind" />
 										Tailwind CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiNetlify size={50} color='#00ad9f' />
+										<SiNetlify size={50} color='#00ad9f' aria-label="Netlify" />
 										Netlify
 									</li>
 								</ul>

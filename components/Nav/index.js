@@ -18,6 +18,7 @@ function Nav({handleScroll}) {
 
 			<button
 				className={styles.mobileNavToggle}
+				aria-label='mobile menu'
 				aria-controls='navPrimary'
 				aria-expanded={mobileNav}
 				onClick={handleClick}
@@ -25,6 +26,7 @@ function Nav({handleScroll}) {
 				<span className={styles.srOnly}></span>
 			</button>
 			<div
+				id="navPrimary"
 				className={
 					mobileNav
 						? styles.description__navPrimary

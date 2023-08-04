@@ -28,7 +28,6 @@ function ProjectGrid() {
 			>
 				<div
 					className={`${styles.card__img} ${even && styles.card__img_even}`}
-					style={{ backgroundImage: `url(${card.primaryImage})` }}
 				>
 					<Image
 						src={card.primaryImage}
@@ -36,15 +35,16 @@ function ProjectGrid() {
 						alt={"project background image"}
 						placeholder='blur'
 						style={{ objectFit: "cover" }}
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					/>
 					<div className={styles.card__content}>
 						<p>{card.description}</p>
 					</div>
 				</div>
 				<div className={styles.card__info}>
-					<h3 className={styles.info__heading}>{card.name}</h3>
+					<h2 className={styles.info__heading}>{card.name}</h2>
 
-					<div role='button' className={styles.info__btn}>
+					<div role='button' tabIndex="0" className={styles.info__btn}>
 						<p>View Project</p>
 						<FaArrowRight />
 					</div>
