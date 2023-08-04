@@ -6,10 +6,11 @@ import { useRef, useEffect } from "react";
 import { SiCss3, SiReact, SiNetlify, SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { data } from "../data";
-import { Contact, Nav } from "@/components";
+import { Contact, Nav, ScrollToTop } from "@/components";
 
 function quiz() {
 	const itemsRef = useRef(null);
+	const scrollRef = useRef(null);
 
 	// Display project media & info
 	const projectImages = data.map(project => {
@@ -20,8 +21,6 @@ function quiz() {
 						className={utils.flex__image}
 						src={img}
 						alt={`${project.name} picture`}
-						height={600}
-						width={800}
 						key={index}
 						ref={node => {
 							if (node) {
@@ -51,8 +50,6 @@ function quiz() {
 			);
 		}
 	});
-
-	console.log(data[0])
 
 	const stack = data.map(project => {
 		if (project.id === "QUIZ") {
@@ -99,7 +96,7 @@ function quiz() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.5,
+		threshold: 0.2,
 	};
 
 	useEffect(() => {
@@ -143,22 +140,31 @@ function quiz() {
 					<Nav />
 				</header>
 
-				<main className={utils.main}>
-					<section className={utils.title}>
-						<h2 className={utils.title_primary}>Quiz Night</h2>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
+				<main className={utils.main} ref={scrollRef}>
+					<section
+						id='top_container'
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+						className={utils.title}
+					>
+						<h1 className={utils.title_primary}>Quiz Night</h1>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
 						<div className={utils.hero_section__main}>{projectVideo}</div>
 						<aside className={utils.hero_section__aside}>
-							<h3 className={utils.aside__title}>Project T.L.D.R</h3>
+							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
 								Quiz Night was designed to provide a fun and interactive quiz
 								experience using the Open trivia API. Users can customise each
 								quiz by subject or difficulty and features a leaderboard where
-								high scores are persisted. In this project, I
-								demonstrate front &amp; back-end skills using React with Node.js
-								and MongoDB.
+								high scores are persisted. In this project, I demonstrate front
+								&amp; back-end skills using React with Node.js and MongoDB.
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>{stack}</ul>
@@ -183,9 +189,8 @@ function quiz() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
-						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
-							<p
+							<div
 								className={utils.planning_section__purpose}
 								ref={node => {
 									if (node) {
@@ -194,12 +199,15 @@ function quiz() {
 									}
 								}}
 							>
-								The purpose of the project was to create a quiz app that
-								entertains users while enhances their knowledge under time
-								pressure. I've planned the app's functionality to create an
-								intuitive UX &amp; UI with colour signlling correct or incorrect
-								answers and messages indicating the game status.
-							</p>
+								<h2>Purpose &amp; Planning</h2>
+								<p>
+									The project purpose was to create a quiz app that entertains
+									users while enhancing their knowledge under time pressure.
+									I've planned the app's functionality to create an intuitive UX
+									&amp; UI with colour signalling correct or incorrect answers
+									and messages indicating the game status.
+								</p>
+							</div>
 							<Image
 								className={utils.planning_section__image}
 								src='/quiz/figma_screenshot.png'
@@ -223,18 +231,18 @@ function quiz() {
 									}
 								}}
 							>
-								While planning the app, I choose to use the MVC (Model, View,
-								Controller) design pattern. This provided a clear separation of
-								concerns between client, server and database. With the API used
-								to efficiently send requests between client and database.
-								Allowing the storage and retrieval of player scores.
+								While planning I choose an MVC (Model, View, Controller) design
+								pattern. This provided a clear separation of concerns between
+								client, server and database. With the API used to efficiently
+								send requests between client and database. Allowing the storage
+								and retrieval of player scores.
 								<br></br>I also used the Open Trivia API for fetching quiz
 								questions which could be customised by user input for enhanced
 								user experience.
 							</p>
 							<Image
 								className={utils.planning_section__image}
-								src='/quiz/mobile.png'
+								src='/quiz/desktop_screenshot.png'
 								alt='Trello Kanban board picture'
 								height={600}
 								width={800}
@@ -254,21 +262,21 @@ function quiz() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} /> React
+										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
 									</li>
 									<li className={utils.list__icon}>
-										<FaNodeJs color='#3C873A' size={42} />
+										<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} /> MongoDB
+										<SiMongodb color='#47A248' size={42} aria-label="MongoDB" /> MongoDB
 									</li>
 									<li className={utils.list__icon}>
-										<SiCss3 color='#1572B6' size={42} />
+										<SiCss3 color='#1572B6' size={42} aria-label="Css" />
 										CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiNetlify size={50} color='#00ad9f' />
+										<SiNetlify size={50} color='#00ad9f' aria-label="Netlify" />
 										Netlify
 									</li>
 								</ul>
@@ -289,7 +297,8 @@ function quiz() {
 									Vanilla JS to allow the use of reusable and dynamic components
 									to handle real-time score tracking and countdown timers for
 									each question / answer combination.
-									<br></br>
+								</p>
+								<p>
 									Node.js enabled server-side logic and database interactions.
 									MongoDB, a NoSQL database, offered flexibility in storing and
 									querying the simple nature of leaderboard data. While Netlify
@@ -302,7 +311,9 @@ function quiz() {
 					<section className={`${utils.challenges} ${utils.sections}`}>
 						<h2>Features &amp; Challenges</h2>
 						<div className={utils.features__flex}>{projectImages}</div>
-						<div className={utils.features__flex}>
+						<div
+							className={`${utils.features__flex_text} ${utils.features__flex}`}
+						>
 							<div
 								ref={node => {
 									if (node) {
@@ -313,14 +324,17 @@ function quiz() {
 							>
 								<h3>Leaderboard</h3>
 								<p>
-									Creating the leaderboard functionality involved designing the
-									database schema, implementing data retrieval and insertion
+									Creating the leaderboard functionality involved designing a
+									database schema and implementing data retrieval / insertion
 									CRUD operations.
 								</p>
 								<p>
-									As this funtionality only required queries from GET and POST
-									requests I used a JS class to create the database schema
-									without using an ORM.
+									I've used the Axios library for its built-in error handling,
+									automatically rejecting promises for non-successful HTTP
+									responses and a less verbose syntax, parsing JSON response
+									data by default. This funtionality only required queries from
+									GET / POST requests therefore I used a JS class to create the
+									database schema without the need of an ORM.
 								</p>
 							</div>
 							<div
@@ -367,7 +381,15 @@ function quiz() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<p
+						<h3>Accessibility &amp; Performance</h3>
+						<Image
+							className={utils.conclusion__image}
+							src='/quiz/performance.png'
+							alt='Lighthouse performance report'
+							height={600}
+							width={800}
+						/>
+						<div
 							ref={node => {
 								if (node) {
 									const nodeArr = getArr();
@@ -375,21 +397,25 @@ function quiz() {
 								}
 							}}
 						>
-							Durring this project I've honed my proficiency in React, making
-							use of reusable components and state management with hooks to
-							create a dynamic and interactive UI. Therefore I also had to learn about
-							ARIA conventions to ensure accessability for all users with dynamic
-							content.
-							<br></br>Further to this I gained experience in setting up a database using
-							MongoDB and implementing CRUD operations to manage leaderboard
-							entries. Giving me valuable experience of a Full Stack Application.
-						</p>
+							<p>
+								Durring this project I've honed my proficiency in React, making
+								use of reusable components and state management with hooks to
+								create a dynamic and interactive UI. Therefore I also had to
+								learn about ARIA conventions to ensure accessability for all
+								users with dynamic content.
+							</p>
+							<p>
+								Further to this I gained experience in setting up a database
+								using MongoDB and implementing CRUD operations to manage
+								leaderboard entries. Giving me valuable experience of a Full
+								Stack Application.
+							</p>
+						</div>
 					</section>
+					<footer className={utils.contact}>
+						<Contact />
+					</footer>
 				</main>
-
-				<footer className={utils.contact}>
-					<Contact />
-				</footer>
 			</div>
 		</>
 	);

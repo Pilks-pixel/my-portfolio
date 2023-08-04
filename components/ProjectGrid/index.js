@@ -4,10 +4,10 @@ import styles from "../../styles/ProjectGrid.module.css";
 import Link from "next/link";
 import { data } from "../../pages/data";
 import { v4 as uuidv4 } from "uuid";
-
+import { FaArrowRight } from "react-icons/fa";
 
 function ProjectGrid() {
-    // Generate random ID for data
+	// Generate random ID for data
 	const cardsWithId = data.map(card => {
 		return {
 			...card,
@@ -15,27 +15,41 @@ function ProjectGrid() {
 		};
 	});
 
-    // Render project cards from the data
+	// Render project cards from the data
+	const alternateOrder = index => index % 2;
 
-	const cards = cardsWithId.map(card => {
-		console.log(card);
+	const cards = cardsWithId.map((card, index) => {
+		const even = alternateOrder(index);
 		return (
-			<Link 
-			href={card.src}
-			key={card.id}
-			>
-				<div 
+			<Link
+				href={card.src}
+				key={card.id}
 				className={styles.project_container__card}
-				style={{'backgroundImage' : `url(${card.primaryImage})`}}
+			>
+				<div
+					className={`${styles.card__img} ${even && styles.card__img_even}`}
 				>
-					<div className={styles.card__info}>
-						<h3>{card.name}</h3>
+					<Image
+						src={card.primaryImage}
+						fill={true}
+						alt={"project background image"}
+						placeholder='blur'
+						style={{ objectFit: "cover" }}
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					/>
+					<div className={styles.card__content}>
 						<p>{card.description}</p>
 					</div>
 				</div>
+				<div className={styles.card__info}>
+					<h2 className={styles.info__heading}>{card.name}</h2>
 
+					<div role='button' tabIndex="0" className={styles.info__btn}>
+						<p>View Project</p>
+						<FaArrowRight />
+					</div>
+				</div>
 			</Link>
-			
 		);
 	});
 

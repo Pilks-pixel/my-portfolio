@@ -1,26 +1,20 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { About, ProjectGrid } from "@/components/index";
+import { FaArrowRight } from "react-icons/fa";
+import { matchSection } from "@/utils";
+import { About, ProjectGrid, ScrollToTop, Nav } from "@/components/index";
 
 export default function Home() {
 	const [projectVisable, setProjectViable] = useState(false);
 	const [aboutVisable, setAboutViable] = useState(false);
 	const itemsRef = useRef(null);
+	const scrollRef = useRef(null);
 
 	const handleClick = e => {
-		function matchSection() {
-			const firstWordPattern = new RegExp(e.target.id.split("_")[0]);
-			const sectionNode = itemsRef.current.filter(node => {
-        return firstWordPattern.test(node.id)
-      })
-			return sectionNode[0]
-		}
+		const buttonId = e.target.id;
 
-		matchSection().scrollIntoView({
+		matchSection(itemsRef, buttonId).scrollIntoView({
 			behavior: "smooth",
 			block: "nearest",
 			inline: "center",
@@ -38,20 +32,20 @@ export default function Home() {
 	const options = {
 		root: null,
 		rootMargin: "0px",
-		threshold: 0.20,
+		threshold: 0.2,
 	};
 
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } 
+	const callback = (entries, observer) => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) {
+				return;
+			}
 
-      entry.target.classList.add(`${styles.visable}`)
+			entry.target.classList.add(`${styles.visable}`);
 
-      observer.unobserve(entry.target);
-    });
-  };
+			observer.unobserve(entry.target);
+		});
+	};
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(callback, options);
@@ -60,6 +54,24 @@ export default function Home() {
 
 		target.forEach(item => observer.observe(item));
 	}, []);
+
+	const asciiArt = `
+	 /$$   /$$           /$$ /$$                 /$$      /$$                     /$$       /$$ /$$
+	| $$  | $$          | $$| $$                | $$  /$ | $$                    | $$      | $$| $$
+	| $$  | $$  /$$$$$$ | $$| $$  /$$$$$$       | $$ /$$$| $$  /$$$$$$   /$$$$$$ | $$  /$$$$$$$| $$
+	| $$$$$$$$ /$$__  $$| $$| $$ /$$__  $$      | $$/$$ $$ $$ /$$__  $$ /$$__  $$| $$ /$$__  $$| $$
+	| $$__  $$| $$$$$$$$| $$| $$| $$  \  $$      | $$$$_  $$$$| $$  \ $$| $$    \__/| $$| $$  | $$|__/
+	| $$  | $$| $$_____/| $$| $$| $$  | $$      | $$$/ \  $$$| $$  | $$| $$       | $$| $$  | $$    
+	| $$  | $$|  $$$$$$$| $$| $$|  $$$$$$/      | $$/   \  $$|  $$$$$$/| $$       | $$|  $$$$$$$ /$$
+	|__/  |__/ \_______/|__/|__/ \______/         |__/     \__/ \______/ |__/       |__/ \_______/|__/
+																 
+	
+MADE BY PETE PILKINGTON 2023
+`;
+
+console.log(asciiArt);
+
+
 
 	return (
 		<>
@@ -75,12 +87,21 @@ export default function Home() {
 
 			<div className={styles.wrapper}>
 				<header className={styles.description}>
-					<h2 className={styles.description__name}>Peter Pilkington</h2>
-					<h1 className={styles.description__job}>full Stack developer</h1>
+					<Nav handleScroll={handleClick} />
 				</header>
 
-				<main className={styles.main}>
-					<section className={styles.center}>
+				<ScrollToTop pageTop={scrollRef} topElement={itemsRef} />
+				<main className={styles.main} ref={scrollRef}>
+					<section
+						id='top_container'
+						className={styles.center}
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+					>
 						<button
 							id='project_btn'
 							className={`${styles.center__btn} ${styles.center__btn_gradient}`}
@@ -97,8 +118,9 @@ export default function Home() {
 							aria-expanded={aboutVisable}
 							aria-controls='about_container'
 						>
-							About /&gt;
+							About&nbsp;/&gt;
 						</button>
+						<h1 className={styles.center__title}>FULL STACK DEVELOPER </h1>
 					</section>
 
 					<section
@@ -126,22 +148,33 @@ export default function Home() {
 					>
 						<About />
 					</section>
-				</main>
+					<footer
+						id='contact_container'
+						ref={node => {
+							if (node) {
+								const nodeArr = getArr();
+								nodeArr.push(node);
+							}
+						}}
+						className={styles.container__contact}
+					>
+						<div className={styles.contact}>
+							<div className={styles.contact__info}>
+								<h2>Let’s work together</h2>
+								<p>peterpilkington@hotmail.com</p>
+								<p>+44 07914757197</p>
+							</div>
 
-				<footer className={styles.contact}>
-					<h2>contact</h2>
-					<div className={styles.contact__links}>
-						<a href='https://github.com/Pilks-pixel' target='_blank'>
-							<FaGithub size={32} />
-						</a>
-						<a
-							href='https://www.linkedin.com/in/peter-pilkington-322262107/'
-							target='_blank'
-						>
-							<FaLinkedin size={32} color='#0077b5' />
-						</a>
-					</div>
-				</footer>
+							<a
+								className={styles.contact__btn}
+								href='mailto:peterpilkington@hotmail.com'
+							>
+								GET IN TOUCH <FaArrowRight className={styles.btn__arrow} />
+							</a>
+						</div>
+						<h3 className={styles.contact__tagline}>PETER PILKINGTON 2022</h3>
+					</footer>
+				</main>
 			</div>
 		</>
 	);

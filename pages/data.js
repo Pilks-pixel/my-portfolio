@@ -1,21 +1,38 @@
+import questions from '../public/quiz/questions_screenshot.png'
+import mobile from '../public/quiz/mobile_screenshot.png'
+import leaderboard from '../public/quiz/leaderboard_screenshot.png'
+import desktop  from '../public/nou/desktop_screenshot.png'
+import mobileNou from '../public/nou/mobile_screenshot.png'
+import contact from '../public/nou/contact_screenshot.png'
+import chat from '../public/chat/chat.png'
+import mobileChat from '../public/chat/mobile_screenshot.png'
+import avatar from '../public/chat/avatar_screenshot.png'
+
+import mockupQuiz from '../public/mock_quiz.png'
+import mockupNou from '../public/mockup_nou.png'
+
+
+
+
 const data = [
 	{
 		name: "Quiz Night",
 		id: "QUIZ",
 		src: "/quiz",
-		primaryImage: "/quiz.png",
-		images: ["/quiz/tablet.png", "/quiz/mobile.png", "/quiz/desktop.png"],
-		video: "/quiz/quiz_screen.mp4",
+		primaryImage: mockupQuiz,
+		images: [questions, mobile, leaderboard],
+		
+		video: "/quiz/compressed_video.mp4",
 		stack: ["React", "CSS", "Node.js", "Express", "MongoDB", "React Router"],
 		description:
-			"Quiz Night was built in React and uses the Open trivia api letting the user cusomise their quiz and uses MongoDB to store scores in a leaderboard",
+			"React Quiz app using Open trivia API with MongoDB to store scores in a leaderboard",
 	},
 	{
 		name: "Nou Design Studio",
 		id: "NOU",
 		src: "/nou",
-		primaryImage: "/nou.png",
-		images: ["/nou/desktop.png", "/nou/mobile.png", "/nou/tablet.png"],
+		primaryImage: mockupNou,
+		images: [desktop, mobileNou, contact],
 		video: "/nou/nou_screen.mp4",
 		stack: [
 			"Next.js",
@@ -30,16 +47,15 @@ const data = [
 		description: "Nou is a brand and web design studio, inspired by minimalism",
 	},
 	{
-		name: "Pix Chat",
+		name: "Pixel Chat",
 		id: "CHAT",
 		src: "/chat",
-		primaryImage: "/nou.png",
-		images: ["/chat/desktop.png", "/chat/mobile.png", "/chat/tablet.png"],
-		video: "/nou/nou_screen.mp4",
+		primaryImage: avatar,
+		images: [chat, mobileChat, avatar],
+		video: "/chat/chat_video.mp4",
 		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
-		description: "Real time chat with Socket IO",
+		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
 	},
 ];
 
 export { data };
-

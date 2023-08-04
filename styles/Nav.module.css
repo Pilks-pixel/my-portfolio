@@ -1,0 +1,128 @@
+.description__navPrimary > a {
+    position: relative;
+	margin: 4px;
+	padding: 4px;
+	cursor: pointer;
+	transition: color 350ms ease;
+}
+
+.description__navPrimary > a:hover,
+.description__navPrimary > a:focus {
+	color: #45b0b7;
+}
+
+.mobileNavToggle {
+	z-index: 100;
+	display: none;
+    width: 2.5em;
+    height: 2em;
+}
+
+/* Mobile Nav Toggle button Animation */
+.srOnly,
+.srOnly::before,
+.srOnly::after {
+    width: 30px;
+	height: 3px;
+	background-color:var(--text-color);
+	transition: all 500ms ease-out;
+}
+
+.srOnly {
+	position: relative;
+	display: block;
+}
+
+.srOnly::before,
+.srOnly::after {
+	content: " ";
+	position: absolute;
+	right: 0;
+	left: 0;
+
+}
+
+.srOnly::after {
+    top: 6px;
+}
+
+.srOnly::before {
+    bottom: 6px;
+}
+
+/* ===========
+Typography
+============*/
+.description__name {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+}
+
+
+/* ====
+Media
+===== */
+
+@media (max-width: 480px) {
+	.description__navPrimary {
+        padding: min(30%, 5em) 1em;
+		position: fixed;
+        height: 100vh;
+		inset: 0 0 0 30%;
+        display: flex;
+		flex-direction: column;
+        gap: 1rem;
+		transition: transform 350ms ease-out;
+        background: rgba(245, 245, 239, 0.4); 
+	}
+
+    @supports (backdrop-filter: blur(45px)) {
+        .description__navPrimary {
+            background: rgba(245, 245, 239, 0.4);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
+    .description__navPrimary > a {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        width: min(60%, 100px);
+        color: var(--text-color-dark);
+        border-bottom: 1px solid var(--text-color-dark);
+        padding-bottom: 1rem;
+    }
+
+    .description__navPrimary > a:last-child {
+        border: none;
+    }
+
+	.description__navPrimaryHidden {
+		transform: translateX(130%);
+	}
+
+    .mobileNavToggle {
+		display: block;
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		background-color: inherit;
+		border: none;
+	}
+
+    .mobileNavToggle[aria-expanded="true"] > .srOnly,
+	.mobileNavToggle[aria-expanded="true"] > .srOnly::after {
+	 background-color:var(--text-color-dark);
+
+	}
+
+    .mobileNavToggle[aria-expanded="true"] > .srOnly::before {
+        opacity: 0;
+	}
+
+	.mobileNavToggle[aria-expanded="true"] > .srOnly {
+		transform: translateY(0.1em) rotate(40deg) scale(0.75);
+	}
+
+	.mobileNavToggle[aria-expanded="true"] > .srOnly::after {
+		transform: translateY(-0.5em) rotate(-80deg);
+	}
+}
