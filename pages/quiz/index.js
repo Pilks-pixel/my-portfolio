@@ -212,7 +212,7 @@ function Quiz() {
 							<Image
 								className={utils.planning_section__image}
 								src='/quiz/figma_screenshot.png'
-								alt='Trello Kanban board picture'
+								alt='Figma picture'
 								height={600}
 								width={800}
 								ref={node => {
@@ -244,7 +244,7 @@ function Quiz() {
 							<Image
 								className={utils.planning_section__image}
 								src='/quiz/desktop_screenshot.png'
-								alt='Trello Kanban board picture'
+								alt='settings menu picture'
 								height={600}
 								width={800}
 								ref={node => {
