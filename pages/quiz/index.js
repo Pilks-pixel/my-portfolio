@@ -425,4 +425,4 @@ function Quiz() {
 	);
 }
 
-export default quiz;
+export default Quiz;
