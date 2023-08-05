@@ -99,7 +99,7 @@ function PixChat() {
 		threshold: 0.2,
 	};
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// eslint-disable react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -123,7 +123,7 @@ function PixChat() {
 
 		target.forEach(item => observer.observe(item));
 	}, [itemsRef]);
-	// eslint-enable-next-line react-hooks/exhaustive-deps
+	// eslint-enable react-hooks/exhaustive-deps
 
 	return (
 		<>
@@ -312,7 +312,7 @@ function PixChat() {
 								<p>
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
-									For styling I've chosen Tailwind because its utility classes
+									For styling I&apos;ve chosen Tailwind because its utility classes
 									enabled me to match my Figma prototype quickly and meant
 									improved style readability inside JSX. While Netlify &amp;
 									Render were used for deployment and linked with GitHub repos

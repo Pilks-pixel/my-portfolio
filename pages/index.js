@@ -47,7 +47,7 @@ export default function Home() {
 		});
 	};
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// eslint-disable react-hooks/exhaustive-deps
 	useEffect(() => {
 		const observer = new IntersectionObserver(callback, options);
 
@@ -55,7 +55,7 @@ export default function Home() {
 
 		target.forEach(item => observer.observe(item));
 	}, []);
-	// eslint-enable-next-line react-hooks/exhaustive-deps
+	// eslint-enable react-hooks/exhaustive-deps
 
 	console.log(asciiArt);
 

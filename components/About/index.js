@@ -65,7 +65,7 @@ function About() {
 					>
 						<em> 5 Why&apos;s</em>
 					</a>{" "}
-					to push though obstacles. Which means I'm excited to continue growing
+					to push though obstacles. Which means I&apos;m excited to continue growing
 					and perfecting the craft of web development.
 				</p>
 				<p>
