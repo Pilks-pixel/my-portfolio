@@ -4,7 +4,7 @@ import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiCss3, SiJavascript, SiReact } from "react-icons/si";
-import { data } from "../data";
+import { data } from "../../utils/data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
 function Nou() {
@@ -98,7 +98,6 @@ function Nou() {
 		threshold: 0.2,
 	};
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -121,8 +120,9 @@ function Nou() {
 		let target = itemsRef.current;
 
 		target.forEach(item => observer.observe(item));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
-	// eslint-enable-next-line react-hooks/exhaustive-deps
+
 
 	return (
 		<>
@@ -161,7 +161,7 @@ function Nou() {
 						<aside className={utils.hero_section__aside}>
 							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
-								This site was created for a branding and web design studio. It's
+								This site was created for a branding and web design studio. It&apos;s
 								built with React / Next.js, showcasing reponsive design,
 								animations including parallax scroll, web animations API, forms
 								with validation and email submission.
@@ -401,7 +401,7 @@ function Nou() {
 							}}
 						>
 							<p>
-								Through this project I've learned how to create a performant
+								Through this project I&apos;ve learned how to create a performant
 								site with smooth animations and elements that react to scroll
 								position. Using high quality images meant learning about
 								optimisation including tools such as ImageOptim and next gen

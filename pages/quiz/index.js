@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiCss3, SiReact, SiNetlify, SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
-import { data } from "../data";
+import { data } from "../../utils/data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
 function Quiz() {
@@ -99,7 +99,6 @@ function Quiz() {
 		threshold: 0.2,
 	};
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -122,8 +121,9 @@ function Quiz() {
 		let target = itemsRef.current;
 
 		target.forEach(item => observer.observe(item));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
-	// eslint-enable-next-line react-hooks/exhaustive-deps
+
 
 	return (
 		<>
@@ -205,7 +205,7 @@ function Quiz() {
 								<p>
 									The project purpose was to create a quiz app that entertains
 									users while enhancing their knowledge under time pressure.
-									I've planned the app's functionality to create an intuitive UX
+									I&apos;ve planned the app&apos;s functionality to create an intuitive UX
 									&amp; UI with colour signalling correct or incorrect answers
 									and messages indicating the game status.
 								</p>
@@ -425,4 +425,4 @@ function Quiz() {
 	);
 }
 
-export default quiz;
+export default Quiz;

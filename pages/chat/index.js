@@ -4,7 +4,7 @@ import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiReact, SiNetlify, SiMongodb, SiTailwindcss } from "react-icons/si";
-import { data } from "../data";
+import { data } from "../../utils/data";
 import { FaNodeJs } from "react-icons/fa";
 import { Nav, Contact, ScrollToTop } from "@/components";
 
@@ -99,7 +99,7 @@ function PixChat() {
 		threshold: 0.2,
 	};
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -122,8 +122,9 @@ function PixChat() {
 		let target = itemsRef.current;
 
 		target.forEach(item => observer.observe(item));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
-	// eslint-enable-next-line react-hooks/exhaustive-deps
+
 
 	return (
 		<>
@@ -312,7 +313,7 @@ function PixChat() {
 								<p>
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
-									For styling I've chosen Tailwind because its utility classes
+									For styling I&apos;ve chosen Tailwind because its utility classes
 									enabled me to match my Figma prototype quickly and meant
 									improved style readability inside JSX. While Netlify &amp;
 									Render were used for deployment and linked with GitHub repos
