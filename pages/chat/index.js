@@ -99,7 +99,6 @@ function PixChat() {
 		threshold: 0.2,
 	};
 
-
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -124,7 +123,6 @@ function PixChat() {
 		target.forEach(item => observer.observe(item));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
-
 
 	return (
 		<>
@@ -191,6 +189,7 @@ function PixChat() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
+						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
 							<div
 								className={utils.planning_section__purpose}
@@ -201,7 +200,6 @@ function PixChat() {
 									}
 								}}
 							>
-								<h2>Purpose &amp; Planning</h2>
 								<p>
 									The primary purpose of Pixel Chat is to enable instant
 									messaging between users whom can also share gifs, like posts
@@ -313,11 +311,11 @@ function PixChat() {
 								<p>
 									The API was built in Node.js giving full C.R.U.D functionality
 									that allows users messages / profile to be updated or deleted.
-									For styling I&apos;ve chosen Tailwind because its utility classes
-									enabled me to match my Figma prototype quickly and meant
-									improved style readability inside JSX. While Netlify &amp;
-									Render were used for deployment and linked with GitHub repos
-									to enable continuous integration.
+									For styling I&apos;ve chosen Tailwind because its utility
+									classes enabled me to match my Figma prototype quickly and
+									meant improved style readability inside JSX. While Netlify
+									&amp; Render were used for deployment and linked with GitHub
+									repos to enable continuous integration.
 								</p>
 							</div>
 						</div>
@@ -369,13 +367,13 @@ function PixChat() {
 									protect CRUD requests to the API.
 								</p>
 								<p>
-									To fulfill this I&apos;ve used a JSON web token, generated upon a
-									successful login or registration. This is then stored in local
-									storage, allowing access for client requests to the server. I
-									further use this to create private and public route components
-									with React router, authenticated by the token in local
-									storage. This ensures a user can only access authorized pages
-									in the app.
+									To fulfill this I&apos;ve used a JSON web token, generated
+									upon a successful login or registration. This is then stored
+									in local storage, allowing access for client requests to the
+									server. I further use this to create private and public route
+									components with React router, authenticated by the token in
+									local storage. This ensures a user can only access authorized
+									pages in the app.
 								</p>
 							</div>
 							<div
@@ -389,15 +387,15 @@ function PixChat() {
 								<h3>Bad Word Regex</h3>
 								<p>
 									Chat apps are prone to inappropriate / abusive messages
-									therefore I&apos;ve decided to implement a parser built with regex
-									to replace any profanities.
+									therefore I&apos;ve decided to implement a parser built with
+									regex to replace any profanities.
 								</p>
 								<p>
-									To accomplish this I&apos;ve used an array of common inappropriate
-									words and created a regex constructor which iterates the array
-									matching against dynamic content from user input. I&apos;ve
-									composed this with the JS replace method to match and swap the
-									bad words with a crossed out alternative.
+									To accomplish this I&apos;ve used an array of common
+									inappropriate words and created a regex constructor which
+									iterates the array matching against dynamic content from user
+									input. I&apos;ve composed this with the JS replace method to
+									match and swap the bad words with a crossed out alternative.
 								</p>
 							</div>
 						</div>
@@ -405,39 +403,44 @@ function PixChat() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<h3>Accessibility &amp; Performance</h3>
-						<Image
-							className={utils.conclusion__image}
-							src='/chat/performance_screenshot.png'
-							alt='Lighthouse performance report'
-							height={600}
-							width={800}
-						/>
-						<div
-							ref={node => {
-								if (node) {
-									const nodeArr = getArr();
-									nodeArr.push(node);
-								}
-							}}
-						>
-							<p>
-								Overall, this project enhanced my skills in full-stack
-								development, creating real-time communication, without manual
-								refreshing using React, Socket.io, and Node.js.
-							</p>
-							<p>
-								Making API routes for C.R.U.D functionality among users /
-								messages, storing them in a database, and retrieving message
-								history between users, strengthened my knowledge of RESTful API
-								principles and HTTP requests using the Axios library.
-							</p>
-							<p>
-								Additionally I improved my knowledge of accessibility, testing
-								the app using the VoiceOver screen reader and Axe Dev Tools
-								chrome extension to ensure I met WCAG standards on
-								accessibility.
-							</p>
+						<div className={utils.conclusion__flex}>
+							<aside>
+								<h3>Accessibility &amp; Performance</h3>
+								<Image
+									className={utils.conclusion__image}
+									src='/chat/performance_screenshot.png'
+									alt='Lighthouse performance report'
+									height={600}
+									width={800}
+								/>
+							</aside>
+							<div
+								className={utils.conclusion__text}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
+								<p>
+									Overall, this project enhanced my skills in full-stack
+									development, creating real-time communication, without manual
+									refreshing using React, Socket.io, and Node.js.
+								</p>
+								<p>
+									Making API routes for C.R.U.D functionality among users /
+									messages, storing them in a database, and retrieving message
+									history between users, strengthened my knowledge of RESTful API
+									principles and HTTP requests using the Axios library.
+								</p>
+								<p>
+									Additionally I improved my knowledge of accessibility, testing
+									the app using the VoiceOver screen reader and Axe Dev Tools
+									chrome extension to ensure I met WCAG standards on
+									accessibility.
+								</p>
+							</div>
 						</div>
 					</section>
 					<footer className={utils.contact}>

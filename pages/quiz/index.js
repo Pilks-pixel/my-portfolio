@@ -124,7 +124,6 @@ function Quiz() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
 
-
 	return (
 		<>
 			<Head>
@@ -191,6 +190,7 @@ function Quiz() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
+						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
 							<div
 								className={utils.planning_section__purpose}
@@ -201,13 +201,12 @@ function Quiz() {
 									}
 								}}
 							>
-								<h2>Purpose &amp; Planning</h2>
 								<p>
 									The project purpose was to create a quiz app that entertains
 									users while enhancing their knowledge under time pressure.
-									I&apos;ve planned the app&apos;s functionality to create an intuitive UX
-									&amp; UI with colour signalling correct or incorrect answers
-									and messages indicating the game status.
+									I&apos;ve planned the app&apos;s functionality to create an
+									intuitive UX &amp; UI with colour signalling correct or
+									incorrect answers and messages indicating the game status.
 								</p>
 							</div>
 							<Image
@@ -333,12 +332,12 @@ function Quiz() {
 									CRUD operations.
 								</p>
 								<p>
-									I&apos;ve used the Axios library for its built-in error handling,
-									automatically rejecting promises for non-successful HTTP
-									responses and a less verbose syntax, parsing JSON response
-									data by default. This funtionality only required queries from
-									GET / POST requests therefore I used a JS class to create the
-									database schema without the need of an ORM.
+									I&apos;ve used the Axios library for its built-in error
+									handling, automatically rejecting promises for non-successful
+									HTTP responses and a less verbose syntax, parsing JSON
+									response data by default. This funtionality only required
+									queries from GET / POST requests therefore I used a JS class
+									to create the database schema without the need of an ORM.
 								</p>
 							</div>
 							<div
@@ -351,11 +350,11 @@ function Quiz() {
 							>
 								<h3>Dynamic Answer Buttons</h3>
 								<p>
-									To create an intuitive UX &amp; UI, I&apos;ve used button colour to
-									indicate correct / incorrect answers on click or at countdown
-									0. To show these and and generate new questions in a single
-									function I had to utilise set timeout function. Thus ensuring
-									less code repetition and enhanced readability.
+									To create an intuitive UX &amp; UI, I&apos;ve used button
+									colour to indicate correct / incorrect answers on click or at
+									countdown 0. To show these and and generate new questions in a
+									single function I had to utilise set timeout function. Thus
+									ensuring less code repetition and enhanced readability.
 								</p>
 							</div>
 							<div
@@ -385,35 +384,41 @@ function Quiz() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<h3>Accessibility &amp; Performance</h3>
-						<Image
-							className={utils.conclusion__image}
-							src='/quiz/performance.png'
-							alt='Lighthouse performance report'
-							height={600}
-							width={800}
-						/>
-						<div
-							ref={node => {
-								if (node) {
-									const nodeArr = getArr();
-									nodeArr.push(node);
-								}
-							}}
-						>
-							<p>
-								Durring this project I&apos;ve honed my proficiency in React, making
-								use of reusable components and state management with hooks to
-								create a dynamic and interactive UI. Therefore I also had to
-								learn about ARIA conventions to ensure accessability for all
-								users with dynamic content.
-							</p>
-							<p>
-								Further to this I gained experience in setting up a database
-								using MongoDB and implementing CRUD operations to manage
-								leaderboard entries. Giving me valuable experience of a Full
-								Stack Application.
-							</p>
+						<div className={utils.conclusion__flex}>
+							<aside>
+								<h3>Accessibility &amp; Performance</h3>
+								<Image
+									className={utils.conclusion__image}
+									src='/quiz/performance.png'
+									alt='Lighthouse performance report'
+									height={600}
+									width={800}
+								/>
+							</aside>
+
+							<div
+								className={utils.conclusion__text}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
+								<p>
+									Durring this project I&apos;ve honed my proficiency in React,
+									making use of reusable components and state management with
+									hooks to create a dynamic and interactive UI. Therefore I also
+									had to learn about ARIA conventions to ensure accessability
+									for all users with dynamic content.
+								</p>
+								<p>
+									Further to this I gained experience in setting up a database
+									using MongoDB and implementing CRUD operations to manage
+									leaderboard entries. Giving me valuable experience of a Full
+									Stack Application.n
+								</p>
+							</div>
 						</div>
 					</section>
 					<footer className={utils.contact}>
