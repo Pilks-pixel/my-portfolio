@@ -47,15 +47,16 @@ export default function Home() {
 		});
 	};
 
-	// eslint-disable react-hooks/exhaustive-deps
+
 	useEffect(() => {
 		const observer = new IntersectionObserver(callback, options);
 
 		let target = itemsRef.current;
 
 		target.forEach(item => observer.observe(item));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	// eslint-enable react-hooks/exhaustive-deps
+
 
 	console.log(asciiArt);
 

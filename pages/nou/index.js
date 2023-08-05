@@ -98,7 +98,6 @@ function Nou() {
 		threshold: 0.2,
 	};
 
-	// eslint-disable react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -121,8 +120,9 @@ function Nou() {
 		let target = itemsRef.current;
 
 		target.forEach(item => observer.observe(item));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
-	// eslint-enable react-hooks/exhaustive-deps
+
 
 	return (
 		<>

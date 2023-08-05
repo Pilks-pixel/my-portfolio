@@ -13,7 +13,6 @@ const ScrollToTop = ({ pageTop, topElement }) => {
 		winScrollValue > 100 ? setShowScrollBtn(true) : setShowScrollBtn(false);
 	};
 
-	// eslint-disable react-hooks/exhaustive-deps
 	useEffect(() => {
 		const pageTopElement = pageTop.current;
 
@@ -21,8 +20,9 @@ const ScrollToTop = ({ pageTop, topElement }) => {
 		return () => {
 			pageTopElement.removeEventListener("scroll", handleScroll);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	// eslint-enable react-hooks/exhaustive-deps
+
 
 	const handleClick = e => {
 		const buttonId = e.currentTarget.id;
