@@ -8,7 +8,7 @@ import { FaNodeJs } from "react-icons/fa";
 import { data } from "../data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
-function quiz() {
+function Quiz() {
 	const itemsRef = useRef(null);
 	const scrollRef = useRef(null);
 
@@ -99,6 +99,7 @@ function quiz() {
 		threshold: 0.2,
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -122,6 +123,7 @@ function quiz() {
 
 		target.forEach(item => observer.observe(item));
 	}, [itemsRef]);
+	// eslint-enable-next-line react-hooks/exhaustive-deps
 
 	return (
 		<>
@@ -262,21 +264,23 @@ function quiz() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
+										<SiReact color='#61DAFB' size={42} aria-label='React' />{" "}
+										React
 									</li>
 									<li className={utils.list__icon}>
-										<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
+										<FaNodeJs color='#3C873A' size={42} aria-label='Node' />
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} aria-label="MongoDB" /> MongoDB
+										<SiMongodb color='#47A248' size={42} aria-label='MongoDB' />{" "}
+										MongoDB
 									</li>
 									<li className={utils.list__icon}>
-										<SiCss3 color='#1572B6' size={42} aria-label="Css" />
+										<SiCss3 color='#1572B6' size={42} aria-label='Css' />
 										CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiNetlify size={50} color='#00ad9f' aria-label="Netlify" />
+										<SiNetlify size={50} color='#00ad9f' aria-label='Netlify' />
 										Netlify
 									</li>
 								</ul>
@@ -329,7 +333,7 @@ function quiz() {
 									CRUD operations.
 								</p>
 								<p>
-									I've used the Axios library for its built-in error handling,
+									I&apos;ve used the Axios library for its built-in error handling,
 									automatically rejecting promises for non-successful HTTP
 									responses and a less verbose syntax, parsing JSON response
 									data by default. This funtionality only required queries from
@@ -347,7 +351,7 @@ function quiz() {
 							>
 								<h3>Dynamic Answer Buttons</h3>
 								<p>
-									To create an intuitive UX &amp; UI, I've used button colour to
+									To create an intuitive UX &amp; UI, I&apos;ve used button colour to
 									indicate correct / incorrect answers on click or at countdown
 									0. To show these and and generate new questions in a single
 									function I had to utilise set timeout function. Thus ensuring
@@ -367,7 +371,7 @@ function quiz() {
 									Adding a timer feature provides some extra excitment to the
 									quiz and would typically be acomplished using a setInterval
 									function. However the challenge was the setInerval API is not
-									compatible with React's state re-renders.
+									compatible with React&apos;s state re-renders.
 								</p>
 								<p>
 									Therefore I needed implement a custom hook that made use of
@@ -398,7 +402,7 @@ function quiz() {
 							}}
 						>
 							<p>
-								Durring this project I've honed my proficiency in React, making
+								Durring this project I&apos;ve honed my proficiency in React, making
 								use of reusable components and state management with hooks to
 								create a dynamic and interactive UI. Therefore I also had to
 								learn about ARIA conventions to ensure accessability for all

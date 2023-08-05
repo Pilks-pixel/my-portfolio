@@ -10,7 +10,6 @@ export default function Document() {
 					href='https://fonts.googleapis.com/css2?family=Bevan&display=swap'
 					rel='stylesheet'
 				/>
-				{/* <script  defer src="web-animations.min.js"></script> */}
 			</Head>
 			<body>
 				<Main />
