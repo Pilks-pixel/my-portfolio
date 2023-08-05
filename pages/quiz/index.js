@@ -205,7 +205,7 @@ function Quiz() {
 								<p>
 									The project purpose was to create a quiz app that entertains
 									users while enhancing their knowledge under time pressure.
-									I've planned the app's functionality to create an intuitive UX
+									I&apos;ve planned the app&apos;s functionality to create an intuitive UX
 									&amp; UI with colour signalling correct or incorrect answers
 									and messages indicating the game status.
 								</p>
