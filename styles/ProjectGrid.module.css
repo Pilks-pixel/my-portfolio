@@ -52,7 +52,8 @@ Project Grid Layout
 	flex-direction: column;
 	justify-content: center;
 	min-height: 30%;
-	background-color: #1b1919;
+	background-color: var(--btn-color);
+	color: var(--text-color-dark);
 	border-radius: var(--border-radius);
 	bottom: 5%;
 	right: 5%;
@@ -122,7 +123,7 @@ color: var(--text-color-dark);
 
 .card__content {
 	font-size: .75rem;
-	text-align: left;
+	text-align: center;
 }
 
 /* Media */
