@@ -4,7 +4,7 @@ import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiReact, SiNetlify, SiMongodb, SiTailwindcss } from "react-icons/si";
-import { data } from "../data";
+import { data } from "../../utils/data";
 import { FaNodeJs } from "react-icons/fa";
 import { Nav, Contact, ScrollToTop } from "@/components";
 

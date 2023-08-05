@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/ProjectGrid.module.css";
 import Link from "next/link";
-import { data } from "../../pages/data";
+import { data } from "../../utils/data";
 import { v4 as uuidv4 } from "uuid";
 import { FaArrowRight } from "react-icons/fa";
 

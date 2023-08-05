@@ -4,7 +4,7 @@ import utils from "../../styles/Utils.module.css";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { SiCss3, SiJavascript, SiReact } from "react-icons/si";
-import { data } from "../data";
+import { data } from "../../utils/data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
 function Nou() {
