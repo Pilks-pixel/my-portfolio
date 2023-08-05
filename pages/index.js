@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { useState, useRef, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { matchSection } from "@/utils";
+import { matchSection, asciiArt } from "@/utils";
 import { About, ProjectGrid, ScrollToTop, Nav } from "@/components/index";
 
 export default function Home() {
@@ -47,6 +47,7 @@ export default function Home() {
 		});
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const observer = new IntersectionObserver(callback, options);
 
@@ -54,24 +55,9 @@ export default function Home() {
 
 		target.forEach(item => observer.observe(item));
 	}, []);
+	// eslint-enable-next-line react-hooks/exhaustive-deps
 
-	const asciiArt = `
-	 /$$   /$$           /$$ /$$                 /$$      /$$                     /$$       /$$ /$$
-	| $$  | $$          | $$| $$                | $$  /$ | $$                    | $$      | $$| $$
-	| $$  | $$  /$$$$$$ | $$| $$  /$$$$$$       | $$ /$$$| $$  /$$$$$$   /$$$$$$ | $$  /$$$$$$$| $$
-	| $$$$$$$$ /$$__  $$| $$| $$ /$$__  $$      | $$/$$ $$ $$ /$$__  $$ /$$__  $$| $$ /$$__  $$| $$
-	| $$__  $$| $$$$$$$$| $$| $$| $$  \  $$      | $$$$_  $$$$| $$  \ $$| $$    \__/| $$| $$  | $$|__/
-	| $$  | $$| $$_____/| $$| $$| $$  | $$      | $$$/ \  $$$| $$  | $$| $$       | $$| $$  | $$    
-	| $$  | $$|  $$$$$$$| $$| $$|  $$$$$$/      | $$/   \  $$|  $$$$$$/| $$       | $$|  $$$$$$$ /$$
-	|__/  |__/ \_______/|__/|__/ \______/         |__/     \__/ \______/ |__/       |__/ \_______/|__/
-																 
-	
-MADE BY PETE PILKINGTON 2023
-`;
-
-console.log(asciiArt);
-
-
+	console.log(asciiArt);
 
 	return (
 		<>

@@ -7,7 +7,7 @@ import { SiCss3, SiJavascript, SiReact } from "react-icons/si";
 import { data } from "../data";
 import { Contact, Nav, ScrollToTop } from "@/components";
 
-function nou() {
+function Nou() {
 	const itemsRef = useRef(null);
 	const scrollRef = useRef(null);
 
@@ -98,6 +98,7 @@ function nou() {
 		threshold: 0.2,
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -121,6 +122,7 @@ function nou() {
 
 		target.forEach(item => observer.observe(item));
 	}, [itemsRef]);
+	// eslint-enable-next-line react-hooks/exhaustive-deps
 
 	return (
 		<>
@@ -429,4 +431,4 @@ function nou() {
 	);
 }
 
-export default nou;
+export default Nou;

@@ -8,7 +8,7 @@ import { data } from "../data";
 import { FaNodeJs } from "react-icons/fa";
 import { Nav, Contact, ScrollToTop } from "@/components";
 
-function pixChat() {
+function PixChat() {
 	const itemsRef = useRef(null);
 	const scrollRef = useRef(null);
 
@@ -99,6 +99,7 @@ function pixChat() {
 		threshold: 0.2,
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const callback = (entries, observer) => {
 			entries.forEach(entry => {
@@ -122,6 +123,7 @@ function pixChat() {
 
 		target.forEach(item => observer.observe(item));
 	}, [itemsRef]);
+	// eslint-enable-next-line react-hooks/exhaustive-deps
 
 	return (
 		<>
@@ -260,21 +262,31 @@ function pixChat() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
+										<SiReact color='#61DAFB' size={42} aria-label='React' />{" "}
+										React
 									</li>
 									<li className={utils.list__icon}>
-										<FaNodeJs color='#3C873A' size={42} aria-label="Node" />
+										<FaNodeJs color='#3C873A' size={42} aria-label='Node' />
 										Node.js &amp; Express.js
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiMongodb color='#47A248' size={42} aria-label="Mongo DB" /> MongoDB
+										<SiMongodb
+											color='#47A248'
+											size={42}
+											aria-label='Mongo DB'
+										/>{" "}
+										MongoDB
 									</li>
 									<li className={utils.list__icon}>
-										<SiTailwindcss color='#06B6D4' size={42} aria-label="Tail Wind" />
+										<SiTailwindcss
+											color='#06B6D4'
+											size={42}
+											aria-label='Tail Wind'
+										/>
 										Tailwind CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_icon}`}>
-										<SiNetlify size={50} color='#00ad9f' aria-label="Netlify" />
+										<SiNetlify size={50} color='#00ad9f' aria-label='Netlify' />
 										Netlify
 									</li>
 								</ul>
@@ -356,7 +368,7 @@ function pixChat() {
 									protect CRUD requests to the API.
 								</p>
 								<p>
-									To fulfill this I've used a JSON web token, generated upon a
+									To fulfill this I&apos;ve used a JSON web token, generated upon a
 									successful login or registration. This is then stored in local
 									storage, allowing access for client requests to the server. I
 									further use this to create private and public route components
@@ -376,13 +388,13 @@ function pixChat() {
 								<h3>Bad Word Regex</h3>
 								<p>
 									Chat apps are prone to inappropriate / abusive messages
-									therefore I've decided to implement a parser built with regex
+									therefore I&apos;ve decided to implement a parser built with regex
 									to replace any profanities.
 								</p>
 								<p>
-									To accomplish this I've used an array of common inappropriate
+									To accomplish this I&apos;ve used an array of common inappropriate
 									words and created a regex constructor which iterates the array
-									matching against dynamic content from user input. I've
+									matching against dynamic content from user input. I&apos;ve
 									composed this with the JS replace method to match and swap the
 									bad words with a crossed out alternative.
 								</p>
@@ -436,4 +448,4 @@ function pixChat() {
 	);
 }
 
-export default pixChat;
+export default PixChat;
