@@ -4,13 +4,13 @@
 
 ## Deployment
 
-:rocket: **Deployed** with Vercel at [nou-design-studio](https://peterpilkington.com)
+:rocket: **Deployed** with Vercel at [peterpilkington.com](https://peterpilkington.com)
 
 ## About
 
 My Portfolio website, built with Next.js. Mobile responsive design with BEM methodology used in CSS. Elements use **Web Animation API** and **Intersection Observer** to create animation on scroll.
 
-To ensure Accessibility I've tested with the VoiceOver screen reader and axe dvtools extension. While Performance was optimized by using ImageOptim and Next's image component, ensuring that only next gen formats like WebP were used to serve images.
+To ensure Accessibility I've tested with the VoiceOver screen reader and axe devtools extension. While Performance was optimized by using ImageOptim and Next's image component, ensuring that only next gen formats like WebP were used to serve images.
 
 
 ## Instructions
