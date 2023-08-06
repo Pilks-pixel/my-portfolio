@@ -176,6 +176,10 @@ Layout
 	margin-bottom: 1rem;
 }
 
+.features__flex_text p:last-child {
+	margin-bottom: .5rem;
+}
+
 .icons__list {
 	position: relative;
 }
@@ -271,6 +275,12 @@ Layout
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 3rem;
+}
+
+.contact__links > a {
+	border: 1px solid var(--text-color);
+	border-radius: 3.5625rem;
+	padding: 0.5em 0.75em;
 }
 
 .description__links > a:hover,
