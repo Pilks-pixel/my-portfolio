@@ -19,7 +19,7 @@ Layout
 .wrapper > .main {
 	grid-area: main;
 	overflow: auto;
-} 
+}
 
 .container__contact {
 	padding: 2rem 0;
@@ -40,7 +40,6 @@ Layout
 	justify-content: space-between;
 	gap: 0.5em;
 	z-index: 99;
-
 }
 
 .contact {
@@ -58,6 +57,10 @@ Layout
 
 .contact__info > p {
 	max-width: max-content;
+}
+
+.contact__info p:not(:first-child) {
+	margin-bottom: 1rem;
 }
 
 .contact__tagline {
@@ -86,7 +89,7 @@ Layout
 }
 
 .about_article {
-	margin-bottom: 8rem
+	margin-bottom: 8rem;
 }
 
 .visable {
@@ -168,7 +171,7 @@ Buttons
 	margin-bottom: 2px;
 	font-size: 1rem;
 	letter-spacing: var(--text-headings-spacing);
-		text-align: center;
+	text-align: center;
 }
 
 .contact__btn > p {
@@ -222,13 +225,6 @@ Buttons
 }
 
 /* hover & focus */
-.center__btn_gradient:hover::before,
-.center__btn_gradient:focus::before,
-.center__btn_about:hover:after,
-.center__btn_about:focus::after {
-	width: 150px;
-	height: 150px;
-}
 
 .contact__btn:hover::before,
 .contact__btn:focus::before {
@@ -239,7 +235,7 @@ Buttons
 .contact__btn:hover .btn__arrow,
 .contact__btn:focus .btn__arrow,
 .description__links > a:hover,
-.description__links > a:focus{
+.description__links > a:focus {
 	color: #45b0b7;
 }
 
@@ -248,7 +244,6 @@ Buttons
 	color: var(--text-color-dark);
 }
 
-
 /* Links */
 .description__links > a {
 	margin: 4px;
@@ -256,8 +251,6 @@ Buttons
 	cursor: pointer;
 	transition: color 350ms ease;
 }
-
-
 
 /* ========
 Typography
@@ -277,7 +270,7 @@ Typography
 
 .center__title {
 	font-weight: 800;
-	color: #85847C;
+	color: #85847c;
 }
 
 .contact__info > h2 {
@@ -335,5 +328,15 @@ Media
 
 	.contact {
 		font-size: 0.8rem;
+	}
+}
+
+@media (hover: hover) {
+	.center__btn_gradient:hover::before,
+	.center__btn_gradient:focus::before,
+	.center__btn_about:hover:after,
+	.center__btn_about:focus::after {
+		width: 150px;
+		height: 150px;
 	}
 }
