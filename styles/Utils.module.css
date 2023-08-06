@@ -113,7 +113,6 @@ Layout
 	margin: 0 auto;
 }
 
-.aside__title,
 .aside__links {
 	margin-bottom: 1rem;
 }
@@ -297,7 +296,7 @@ Layout
 	padding: 0.5em 0.75em;
 	background-color: var(--btn-color);
 	box-shadow: var(--picture-shadow);
-	color: inherit;
+	color: var(--text-color-dark);
 	font-family: inherit;
 	font-size: 1.1rem;
 	cursor: pointer;
@@ -345,7 +344,7 @@ Layout
 .aside__links > a:hover,
 .aside__links > a:focus {
 	background-position: center bottom;
-	color: var(--background);
+	color: var(--text-color);
 }
 
 /* ========
@@ -445,7 +444,7 @@ Media
 		margin-bottom: 12%;
 	}
 
-	.sections h2 {
+	.sections h2:not(.aside__title) {
 		margin: 0 auto 5rem;
 	}
 	
