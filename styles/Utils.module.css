@@ -37,8 +37,7 @@ Layout
 
 /* Section containers */
 .sections:not(.conclusion) {
-	/* outline: 2px solid hotpink; */
-	margin: 0 auto 8rem;
+	margin: 0 auto 3rem;
 }
 
 .title,
@@ -61,20 +60,21 @@ Layout
 }
 
 .conclusion {
-	max-width: 800px;
-	margin: 0 auto 5rem;
-}
-
-.conclusion p {
-	max-width: 800px;
+	margin: 0 auto 6.5rem;
 }
 
 /* flex containers */
 .hero_section,
-.features__flex {
+.features__flex,
+.conclusion__flex {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.5em;
+}
+
+.conclusion__flex {
+	align-items: center;
+	justify-content: center;
 }
 
 .hero_section {
@@ -113,7 +113,6 @@ Layout
 	margin: 0 auto;
 }
 
-.aside__title,
 .aside__links {
 	margin-bottom: 1rem;
 }
@@ -161,18 +160,23 @@ Layout
 /* Features */
 .features__flex {
 	align-items: center;
-	padding: 3em 1em;
+	padding: 0 1em;
 	justify-content: center;
 	gap: 2.5em;
 }
 
 .features__flex_text {
 	align-items: flex-start;
+	margin-top: 4rem;
 }
 
 .features__flex p,
 .stack__features p {
 	margin-bottom: 1rem;
+}
+
+.features__flex_text p:last-child {
+	margin-bottom: .5rem;
 }
 
 .icons__list {
@@ -272,6 +276,12 @@ Layout
 	gap: 3rem;
 }
 
+.contact__links > a {
+	border: 1px solid var(--text-color);
+	border-radius: 3.5625rem;
+	padding: 0.5em 0.75em;
+}
+
 .description__links > a:hover,
 .description__links > a:focus,
 .contact__links > a:hover,
@@ -286,7 +296,7 @@ Layout
 	padding: 0.5em 0.75em;
 	background-color: var(--btn-color);
 	box-shadow: var(--picture-shadow);
-	color: inherit;
+	color: var(--text-color-dark);
 	font-family: inherit;
 	font-size: 1.1rem;
 	cursor: pointer;
@@ -334,7 +344,7 @@ Layout
 .aside__links > a:hover,
 .aside__links > a:focus {
 	background-position: center bottom;
-	color: var(--background);
+	color: var(--text-color);
 }
 
 /* ========
@@ -393,11 +403,6 @@ Typography
 	text-align: justify;
 }
 
-/* body */
-.conclusion {
-	text-align: left;
-}
-
 /* Aside */
 .keyword__list > li {
 	color: var(--background);
@@ -412,7 +417,7 @@ Animations
 .planning_section__purpose,
 .stack__features,
 .features__flex > div,
-.conclusion > div{
+.conclusion__text{
 	opacity: 0;
 }
 
@@ -436,10 +441,10 @@ Media
 	}
 
 	.sections:not(.conclusion) {
-		margin-bottom: 17%;
+		margin-bottom: 12%;
 	}
 
-	.sections h2 {
+	.sections h2:not(.aside__title) {
 		margin: 0 auto 5rem;
 	}
 	

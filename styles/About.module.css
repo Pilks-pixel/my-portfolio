@@ -32,7 +32,7 @@ Layout
 }
 
 .about__sub_title {
-	margin-bottom: min(10%, 4rem);
+	margin-bottom: min(8%, 3rem);
 }
 
 .skills__sub_title {
@@ -41,7 +41,7 @@ Layout
 
 .about > p:last-child {
 	margin-top: 0.5rem;
-	padding: 1em;
+	padding: 1em 0;
 	border-top: 1px solid var(--btn-color);
 }
 
@@ -116,7 +116,6 @@ Typography
 .skills__sub_title {
 	line-height: 1.2;
 	font-size: clamp(1rem, 2vw, 1.25rem);
-	text-transform: uppercase;
 }
 
 .about__sub_title,

@@ -123,7 +123,6 @@ function Nou() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [itemsRef]);
 
-
 	return (
 		<>
 			<Head>
@@ -161,10 +160,10 @@ function Nou() {
 						<aside className={utils.hero_section__aside}>
 							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
-								This site was created for a branding and web design studio. It&apos;s
-								built with React / Next.js, showcasing reponsive design,
-								animations including parallax scroll, web animations API, forms
-								with validation and email submission.
+								This site was created for a branding and web design studio.
+								It&apos;s built with React / Next.js, showcasing reponsive
+								design, animations including parallax scroll, web animations
+								API, forms with validation and email submission.
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>{stack}</ul>
@@ -189,6 +188,7 @@ function Nou() {
 					</section>
 
 					<section className={`${utils.planning_section} ${utils.sections}`}>
+						<h2>Purpose &amp; Planning</h2>
 						<div className={utils.section_grid}>
 							<div
 								className={utils.planning_section__purpose}
@@ -199,7 +199,6 @@ function Nou() {
 									}
 								}}
 							>
-								<h2>Purpose &amp; Planning</h2>
 								<p>
 									This project was made to market and showcase projects to
 									potential clients of the business. It lists the services,
@@ -259,7 +258,8 @@ function Nou() {
 							<div className={utils.stack__icons}>
 								<ul className={utils.icons__list}>
 									<li className={utils.list__icon}>
-										<SiReact color='#61DAFB' size={42} aria-label="React" /> React
+										<SiReact color='#61DAFB' size={42} aria-label='React' />{" "}
+										React
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_img}`}>
 										<Image
@@ -271,7 +271,7 @@ function Nou() {
 										Next.js
 									</li>
 									<li className={utils.list__icon}>
-										<SiCss3 color='#1572B6' size={42} aria-label="Css" />
+										<SiCss3 color='#1572B6' size={42} aria-label='Css' />
 										CSS
 									</li>
 									<li className={`${utils.list__icon} ${utils.list_img}`}>
@@ -284,7 +284,11 @@ function Nou() {
 										Vercel
 									</li>
 									<li className={utils.list__icon}>
-										<SiJavascript color='#F0DB4F' size={42} aria-label="Javascript" />
+										<SiJavascript
+											color='#F0DB4F'
+											size={42}
+											aria-label='Javascript'
+										/>
 										Javascript ES6
 									</li>
 								</ul>
@@ -306,8 +310,8 @@ function Nou() {
 									SEO. Allowing me to deliver a performant website with
 									excellent user experience.
 									<br></br>
-									Next also meant Vercel was used for deployment, meaning
-									I could utilise separate production and feature deployments
+									Next also meant Vercel was used for deployment, meaning I
+									could utilise separate production and feature deployments
 									alongside version control.
 								</p>
 							</div>
@@ -383,43 +387,46 @@ function Nou() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<h3>Accessibility &amp; Performance</h3>
-						<Image
-							className={utils.conclusion__image}
-							src='/nou/performance_screenshot.png'
-							alt='Lighthouse performance report'
-							height={600}
-							width={800}
-						/>
+						<div className={utils.conclusion__flex}>
+							<aside>
+								<h3>Accessibility &amp; Performance</h3>
+								<Image
+									className={utils.conclusion__image}
+									src='/nou/performance_screenshot.png'
+									alt='Lighthouse performance report'
+									height={600}
+									width={800}
+								/>
+							</aside>
+							<div
+								className={utils.conclusion__text}
+								ref={node => {
+									if (node) {
+										const nodeArr = getArr();
+										nodeArr.push(node);
+									}
+								}}
+							>
+								<p>
+									Through this project I&apos;ve learned how to create a
+									performant site with smooth animations and elements that react
+									to scroll position. Using high quality images meant learning
+									about optimisation including tools such as ImageOptim and next
+									gen formats like WebP.
+								</p>
 
-						<div
-							ref={node => {
-								if (node) {
-									const nodeArr = getArr();
-									nodeArr.push(node);
-								}
-							}}
-						>
-							<p>
-								Through this project I&apos;ve learned how to create a performant
-								site with smooth animations and elements that react to scroll
-								position. Using high quality images meant learning about
-								optimisation including tools such as ImageOptim and next gen
-								formats like WebP.
-							</p>
+								<p>
+									This involved becoming familiar Dev tools and Lighthouse to
+									inspect requests / audit performance. A valuable takeaway was
+									learning how to simulate slow networks for mobile devices.
+								</p>
 
-							<p>
-								This involved becoming familiar Dev tools and Lighthouse to
-								inspect requests / audit performance. A valuable takeaway
-								was learning how to simulate slow networks for mobile
-								devices.
-							</p>
-
-							<p>
-								I also learned how to handle user inputs with email submission
-								through node mailer and increased my understanding of responsive
-								design with layout tools like CSS grid.
-							</p>
+								<p>
+									I also learned how to handle user inputs with email submission
+									through node mailer and increased my understanding of
+									responsive design with layout tools like CSS grid.
+								</p>
+							</div>
 						</div>
 					</section>
 					<footer className={utils.contact}>
