@@ -28,22 +28,22 @@ function About() {
 				</p>
 
 				<p>
-					I&apos;m what you might call a life long learner, having a fascination
+					I&apos;m what you might call a lifelong learner, having a fascination
 					with technology and how things work, since a childhood filled with
 					platform games and Sci-Fi.
 				</p>
 
 				<p>
 					So learning to code has been a rewarding adventure, allowing me to
-					create visually creative UI&apos;s with rich functionality, and clean
+					create visually creative UIs with rich functionality, and clean
 					code.
 				</p>
 
 				<p>
 					Growing up in multicultural London, exposed me to many cultures and
 					customs, teaching me empathy. Together with my experience in growing
-					small businesses, frequently communicating with stakeholders on
-					projects, I&apos;m able put these experiences into practice always
+					small businesses, and frequently communicating with stakeholders on
+					projects, I&apos;m able to put these experiences into practice always
 					considering the user experience and accessibility.
 				</p>
 				<p>
@@ -65,7 +65,7 @@ function About() {
 					>
 						<em> 5 Why&apos;s</em>
 					</a>{" "}
-					to push though obstacles. Which means I&apos;m excited to continue growing
+					to push through obstacles. Which means I&apos;m excited to continue growing
 					and perfecting the craft of web development.
 				</p>
 				<p>
