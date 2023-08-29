@@ -416,7 +416,7 @@ function Quiz() {
 									Further to this I gained experience in setting up a database
 									using MongoDB and implementing CRUD operations to manage
 									leaderboard entries. Giving me valuable experience of a Full
-									Stack Application.n
+									Stack Application.
 								</p>
 							</div>
 						</div>
