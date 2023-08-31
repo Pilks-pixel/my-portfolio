@@ -195,32 +195,47 @@ Buttons
 .center__btn_gradient::before,
 .center__btn_about::after {
 	content: "";
-	width: 10px;
-	height: 10px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
 	position: absolute;
+	-webkit-filter: blur(45px);
 	filter: blur(45px);
 }
 
 .center__btn_gradient::before {
 	inset: 20% 75% 0% 0;
+	background-image: -webkit-radial-gradient(
+		circle closest-side,
+		#23817d,
+		#57969d,
+		var(--background)
+	);
 	background-image: radial-gradient(
 		circle closest-side,
 		#23817d,
 		#57969d,
 		var(--background)
 	);
+	-webkit-transition: width 500ms linear, height 500ms linear;
 	transition: width 500ms linear, height 500ms linear;
 }
 
 .center__btn_about::after {
 	inset: -40% 0 0 60%;
+	background-image: -webkit-radial-gradient(
+		circle closest-side,
+		rgba(255, 255, 255, 1),
+		var(--btn-color),
+		var(--background)
+	);
 	background-image: radial-gradient(
 		circle closest-side,
 		rgba(255, 255, 255, 1),
 		var(--btn-color),
 		var(--background)
 	);
+	-webkit-transition: width 500ms linear, height 500ms linear;
 	transition: width 500ms linear, height 500ms linear;
 }
 
@@ -331,7 +346,8 @@ Media
 	}
 }
 
-@media (hover: hover) {
+/* radial gradient transitions to implement when safari blur filter transition improves */
+/* @media (hover: hover) {
 	.center__btn_gradient:hover::before,
 	.center__btn_gradient:focus::before,
 	.center__btn_about:hover:after,
@@ -339,4 +355,4 @@ Media
 		width: 150px;
 		height: 150px;
 	}
-}
+} */
