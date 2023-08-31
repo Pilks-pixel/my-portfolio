@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../../styles/Nav.module.css";
 
-function Nav({handleScroll}) {
+function Nav({ handleScroll }) {
 	const [mobileNav, setMobileNav] = useState(false);
 	const router = useRouter();
 
@@ -26,7 +26,7 @@ function Nav({handleScroll}) {
 				<span className={styles.srOnly}></span>
 			</button>
 			<div
-				id="navPrimary"
+				id='navPrimary'
 				className={
 					mobileNav
 						? styles.description__navPrimary
@@ -34,19 +34,31 @@ function Nav({handleScroll}) {
 				}
 			>
 				{router.asPath === "/" ? (
-					<a id='contact_btn' tabIndex='0' onClick={e => handleScroll(e)}>
+					<a
+						id='contact_btn'
+						tabIndex='0'
+						onClick={e => {
+							handleScroll(e);
+							handleClick();
+						}}
+					>
 						Contact
 					</a>
 				) : (
 					<Link href='/'>Home</Link>
 				)}
-				<a href='https://github.com/Pilks-pixel' target='_blank'>
+				<a
+					href='https://github.com/Pilks-pixel'
+					target='_blank'
+					onClick={handleClick}
+				>
 					Github
 				</a>
 
 				<a
 					href='https://www.linkedin.com/in/peter-pilkington-322262107/'
 					target='_blank'
+					onClick={handleClick}
 				>
 					Linkedin
 				</a>
