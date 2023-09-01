@@ -404,8 +404,8 @@ function Nou() {
 
 					<section className={`${utils.conclusion} ${utils.sections}`}>
 						<h2>What I learned</h2>
-						<div className={utils.conclusion__flex}>
-							<aside>
+						<div className={utils.section_grid}>
+							<aside className={utils.grid__aside}>
 								<h3>Accessibility &amp; Performance</h3>
 								<Image
 									className={utils.conclusion__image}
