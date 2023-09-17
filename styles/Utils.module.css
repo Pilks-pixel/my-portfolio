@@ -252,9 +252,6 @@ Layout
 	aspect-ratio: 1 / 0.75;
 }
 
-/* TO DO
-mobile image refactor size
-*/
 .flex__image[src*="mobile"] {
 	max-width: 300px;
 	height: auto;

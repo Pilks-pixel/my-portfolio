@@ -170,7 +170,7 @@ function PixChat() {
 						}}
 						className={utils.title}
 					>
-						<h1 className={utils.title_primary}>Pix Chat</h1>
+						<h1 className={utils.title_primary}>Pixel Chat</h1>
 					</section>
 
 					<section className={`${utils.hero_section} ${utils.sections}`}>
