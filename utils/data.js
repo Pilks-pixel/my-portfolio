@@ -16,6 +16,16 @@ import mockupNou from '../public/mockup_nou.png'
 
 const data = [
 	{
+		name: "Pixel Chat",
+		id: "CHAT",
+		src: "/chat",
+		primaryImage: avatar,
+		images: [chat, mobileChat, avatar],
+		video: "/chat/chat_video.mp4",
+		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
+		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
+	},
+	{
 		name: "Quiz Night",
 		id: "QUIZ",
 		src: "/quiz",
@@ -45,16 +55,6 @@ const data = [
 			"Node mailer",
 		],
 		description: "Nou is a brand and web design studio, inspired by minimalism",
-	},
-	{
-		name: "Pixel Chat",
-		id: "CHAT",
-		src: "/chat",
-		primaryImage: avatar,
-		images: [chat, mobileChat, avatar],
-		video: "/chat/chat_video.mp4",
-		stack: ["React", "Tailwind CSS", "Node.js", "Express", "Socket IO", "JWT", "BCRYPT"],
-		description: "Real time chat with Socket IO, featuring user Authorization / Authentication"
 	},
 ];
 
