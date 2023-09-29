@@ -179,10 +179,13 @@ function Quiz() {
 							<h2 className={utils.aside__title}>Project T.L.D.R</h2>
 							<p className={utils.aside__info}>
 								Quiz Night was designed to provide a fun and interactive quiz
-								experience using the Open trivia API. Users can customise each
-								quiz by subject or difficulty and features a leaderboard where
-								high scores are persisted. In this project, I demonstrate front
-								&amp; back-end skills using React with Node.js and MongoDB.
+								experience using the Open trivia API.
+							</p>
+							<p>
+								Users can customise each quiz by subject or difficulty and
+								features a leaderboard where high scores are persisted. In this
+								project, I demonstrate front &amp; back-end skills using React
+								with Node.js and MongoDB.
 							</p>
 							<div className={utils.aside__keyword}>
 								<ul className={utils.keyword__list}>{stack}</ul>
